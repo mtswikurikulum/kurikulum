@@ -30,25 +30,25 @@
         }
         
         .reveal h1 {
-            font-size: 2.8em;
+            font-size: clamp(1.5em, 5vw, 2.8em);
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .reveal h2 {
-            font-size: 2.2em;
-            margin-bottom: 25px;
+            font-size: clamp(1.3em, 4vw, 2.2em);
+            margin-bottom: 15px;
             border-bottom: 3px solid var(--gold);
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
         
         .reveal h3 {
-            font-size: 1.6em;
+            font-size: clamp(1.1em, 3vw, 1.6em);
             color: var(--accent-teal);
         }
         
         .reveal p, .reveal li {
-            font-size: 1.3em;
+            font-size: clamp(0.9em, 2.5vw, 1.3em);
             line-height: 1.6;
             color: var(--dark-text);
         }
@@ -59,27 +59,48 @@
         }
         
         .slides section {
-            padding: 40px 60px;
+            padding: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .slides section {
+                padding: 40px 60px;
+            }
         }
         
         .islamic-pattern {
             position: absolute;
             top: 0;
             right: 0;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             opacity: 0.1;
             background: radial-gradient(circle, var(--gold) 1px, transparent 1px);
             background-size: 20px 20px;
         }
         
+        @media (min-width: 768px) {
+            .islamic-pattern {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        
         .slide-header {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%);
             color: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @media (min-width: 768px) {
+            .slide-header {
+                padding: 30px;
+                margin-bottom: 30px;
+                border-radius: 15px;
+            }
         }
         
         .slide-header h2 {
@@ -91,75 +112,123 @@
         .info-box {
             background: white;
             border-left: 5px solid var(--gold);
-            padding: 25px;
-            margin: 20px 0;
+            padding: 15px;
+            margin: 15px 0;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .info-box {
+                padding: 25px;
+                margin: 20px 0;
+            }
         }
         
         .stat-card {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%);
             color: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             text-align: center;
-            margin: 15px;
+            margin: 10px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
         
-        .stat-card:hover {
-            transform: translateY(-10px);
+        @media (min-width: 768px) {
+            .stat-card {
+                padding: 30px;
+                margin: 15px;
+            }
+            
+            .stat-card:hover {
+                transform: translateY(-10px);
+            }
         }
         
         .stat-number {
-            font-size: 3.5em;
+            font-size: clamp(2em, 6vw, 3.5em);
             font-weight: 700;
             color: var(--gold);
             margin: 10px 0;
         }
         
         .stat-label {
-            font-size: 1.2em;
+            font-size: clamp(0.9em, 2vw, 1.2em);
             opacity: 0.9;
         }
         
         .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 15px;
             align-items: start;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
         }
         
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
         }
         
         .comparison-table {
             width: 100%;
-            margin: 25px 0;
+            margin: 15px 0;
             border-collapse: separate;
             border-spacing: 0;
-            overflow: hidden;
+            overflow-x: auto;
+            display: block;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-table {
+                margin: 25px 0;
+                display: table;
+            }
         }
         
         .comparison-table th {
             background: var(--primary-green);
             color: white;
-            padding: 20px;
-            font-size: 1.3em;
+            padding: 12px 8px;
+            font-size: clamp(0.9em, 2.5vw, 1.3em);
             font-weight: 600;
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-table th {
+                padding: 20px;
+            }
         }
         
         .comparison-table td {
             background: white;
-            padding: 18px;
-            font-size: 1.2em;
+            padding: 10px 8px;
+            font-size: clamp(0.8em, 2vw, 1.2em);
             border-bottom: 1px solid #e0e0e0;
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-table td {
+                padding: 18px;
+            }
         }
         
         .comparison-table tr:last-child td {
@@ -177,19 +246,31 @@
             display: inline-block;
             background: var(--gold);
             color: white;
-            padding: 8px 20px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 1.1em;
+            font-size: clamp(0.8em, 2vw, 1.1em);
             font-weight: 600;
             margin: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .badge {
+                padding: 8px 20px;
+            }
         }
         
         .progress-bar {
             background: #e0e0e0;
             border-radius: 10px;
             overflow: hidden;
-            height: 30px;
+            height: 25px;
             margin: 15px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .progress-bar {
+                height: 30px;
+            }
         }
         
         .progress-fill {
@@ -200,13 +281,13 @@
             justify-content: center;
             color: white;
             font-weight: 600;
-            font-size: 1.1em;
+            font-size: clamp(0.8em, 2vw, 1.1em);
             transition: width 1s ease;
         }
         
         .arabic-text {
             font-family: 'Amiri', serif;
-            font-size: 1.4em;
+            font-size: clamp(1em, 3vw, 1.4em);
             color: var(--primary-green);
             direction: rtl;
             font-weight: 700;
@@ -228,38 +309,84 @@
         
         .icon-box {
             background: white;
-            padding: 25px;
+            padding: 15px;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
         
-        .icon-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        @media (min-width: 768px) {
+            .icon-box {
+                padding: 25px;
+            }
+            
+            .icon-box:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            }
         }
         
         .icon {
-            font-size: 3em;
-            margin-bottom: 15px;
+            font-size: clamp(2em, 5vw, 3em);
+            margin-bottom: 10px;
         }
         
-        .footer-note {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9em;
-            color: var(--accent-teal);
-            opacity: 0.7;
+        @media (min-width: 768px) {
+            .icon {
+                margin-bottom: 15px;
+            }
         }
         
         .chart-container {
             background: white;
-            padding: 30px;
+            padding: 15px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                padding: 30px;
+            }
+        }
+        
+        .kitab-item {
+            background: white;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .kitab-item {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            .kitab-item:hover {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+                transform: translateX(5px);
+            }
+        }
+        
+        .kitab-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(1em, 2.5vw, 1.3em);
+            color: var(--primary-green);
+            font-weight: 700;
+            direction: rtl;
+            margin-bottom: 5px;
+        }
+        
+        .kitab-subject {
+            font-size: clamp(0.75em, 2vw, 0.95em);
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -275,10 +402,10 @@
                 <div style="margin: 40px 0;">
                     <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
                 </div>
-                <p style="font-size: 1.4em; color: var(--accent-teal); font-style: italic;">
+                <p style="font-size: clamp(1em, 3vw, 1.4em); color: var(--accent-teal); font-style: italic;">
                     "Menuju Integrasi Kurikulum Nasional dan Pesantren<br>yang Efektif dan Mendalam"
                 </p>
-                <p style="margin-top: 40px; font-size: 1.2em;">
+                <p style="margin-top: 40px; font-size: clamp(0.9em, 2.5vw, 1.2em);">
                     <strong>YAYASAN POMESMAWI</strong><br>
                     Kabupaten Banyumas, Jawa Tengah<br>
                     2026
@@ -291,7 +418,7 @@
                     <h2>VISI MTs WATHONIYAH ISLAMIYAH</h2>
                 </div>
                 <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
-                    <p style="font-size: 1.5em; text-align: center; line-height: 1.8;">
+                    <p style="font-size: clamp(1em, 3vw, 1.5em); text-align: center; line-height: 1.8;">
                         <strong>"Terwujudnya Generasi <span style="color: var(--gold);">Ulul Albab</span>,<br>
                         yang Senantiasa Memurnikan Aqidah,<br>
                         Mengamalkan Syari'ah, Berakhlaq Karimah,<br>
@@ -299,8 +426,8 @@
                         dan Menebarkan Rahmat bagi Seluruh Alam"</strong>
                     </p>
                 </div>
-                <div style="margin-top: 40px;">
-                    <p class="arabic-text" style="text-align: center; font-size: 1.6em;">
+                <div style="margin-top: 30px;">
+                    <p class="arabic-text" style="text-align: center; font-size: clamp(1.2em, 3.5vw, 1.6em);">
                         رَحْمَةً لِلْعَالَمِينَ
                     </p>
                 </div>
@@ -354,8 +481,8 @@
                         <div class="stat-label">Total Jam<br>Pembelajaran/Minggu</div>
                     </div>
                 </div>
-                <div class="chart-container" style="margin-top: 30px;">
-                    <h3 style="text-align: center; margin-bottom: 20px;">Perbandingan Alokasi Waktu</h3>
+                <div class="chart-container" style="margin-top: 20px;">
+                    <h3 style="text-align: center; margin-bottom: 15px;">Perbandingan Alokasi Waktu</h3>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: 52%;">Kemenag: 52%</div>
                     </div>
@@ -372,7 +499,7 @@
                 <div class="slide-header">
                     <h2>TUJUAN PERUBAHAN KURIKULUM</h2>
                 </div>
-                <div class="grid-2" style="margin-top: 30px;">
+                <div class="grid-2" style="margin-top: 20px;">
                     <div class="info-box">
                         <h3>🎯 Menyeimbangkan Muatan</h3>
                         <p>Kurikulum nasional dan pesantren yang harmonis</p>
@@ -397,21 +524,21 @@
                 <div class="slide-header">
                     <h2>PRINSIP-PRINSIP PERUBAHAN</h2>
                 </div>
-                <div style="margin-top: 30px;">
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3 style="margin-bottom: 15px;">1️⃣ PRIORITAS</h3>
+                <div style="margin-top: 20px;">
+                    <div class="info-box" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">1️⃣ PRIORITAS</h3>
                         <p>Memprioritaskan muatan pesantren tanpa meninggalkan muatan nasional esensial</p>
                     </div>
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3 style="margin-bottom: 15px;">2️⃣ INTEGRASI</h3>
+                    <div class="info-box" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">2️⃣ INTEGRASI</h3>
                         <p>Mengintegrasikan mata pelajaran yang memiliki kesamaan substansi</p>
                     </div>
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3 style="margin-bottom: 15px;">3️⃣ EFISIENSI</h3>
+                    <div class="info-box" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">3️⃣ EFISIENSI</h3>
                         <p>Mengoptimalkan alokasi waktu tanpa membebani peserta didik secara berlebihan</p>
                     </div>
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3 style="margin-bottom: 15px;">4️⃣ KONTINUITAS & FLEKSIBILITAS</h3>
+                    <div class="info-box" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">4️⃣ KONTINUITAS & FLEKSIBILITAS</h3>
                         <p>Memastikan keberlanjutan dan memberikan ruang penyesuaian</p>
                     </div>
                 </div>
@@ -452,7 +579,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p style="text-align: center; margin-top: 30px; font-size: 1.3em;">
+                <p style="text-align: center; margin-top: 20px; font-size: clamp(0.9em, 2.5vw, 1.3em);">
                     <span class="badge">✓ Efisiensi Pembelajaran</span>
                     <span class="badge">✓ Pendalaman Materi</span>
                 </p>
@@ -465,31 +592,31 @@
                 </div>
                 <div class="grid-2">
                     <div class="chart-container">
-                        <h3 style="color: var(--primary-green); margin-bottom: 20px;">SEBELUM</h3>
+                        <h3 style="color: var(--primary-green); margin-bottom: 15px;">SEBELUM</h3>
                         <div class="stat-card" style="margin: 10px 0;">
                             <div class="stat-label">Kurikulum Kemenag</div>
-                            <div class="stat-number" style="font-size: 2.5em;">28 Jam</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em);">28 Jam</div>
                         </div>
                         <div class="stat-card" style="margin: 10px 0;">
                             <div class="stat-label">Kurikulum Pesantren</div>
-                            <div class="stat-number" style="font-size: 2.5em;">26 Jam</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em);">26 Jam</div>
                         </div>
-                        <div style="margin-top: 20px; padding: 15px; background: var(--light-green); border-radius: 10px;">
-                            <p style="font-size: 1.1em; margin: 0;"><strong>Total Mapel:</strong> 25-26</p>
+                        <div style="margin-top: 15px; padding: 12px; background: var(--light-green); border-radius: 10px;">
+                            <p style="font-size: clamp(0.9em, 2vw, 1.1em); margin: 0;"><strong>Total Mapel:</strong> 25-26</p>
                         </div>
                     </div>
                     <div class="chart-container">
-                        <h3 style="color: var(--gold); margin-bottom: 20px;">SESUDAH</h3>
+                        <h3 style="color: var(--gold); margin-bottom: 15px;">SESUDAH</h3>
                         <div class="stat-card" style="margin: 10px 0; background: linear-gradient(135deg, var(--gold) 0%, #c9a030 100%);">
                             <div class="stat-label">Kurikulum Kemenag</div>
-                            <div class="stat-number" style="font-size: 2.5em; color: white;">20 Jam</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em); color: white;">20 Jam</div>
                         </div>
                         <div class="stat-card" style="margin: 10px 0; background: linear-gradient(135deg, var(--gold) 0%, #c9a030 100%);">
                             <div class="stat-label">Kurikulum Pesantren</div>
-                            <div class="stat-number" style="font-size: 2.5em; color: white;">34 Jam</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em); color: white;">34 Jam</div>
                         </div>
-                        <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 10px;">
-                            <p style="font-size: 1.1em; margin: 0;"><strong>Total Mapel:</strong> 21</p>
+                        <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 10px;">
+                            <p style="font-size: clamp(0.9em, 2vw, 1.1em); margin: 0;"><strong>Total Mapel:</strong> 21</p>
                         </div>
                     </div>
                 </div>
@@ -500,7 +627,7 @@
                 <div class="slide-header">
                     <h2>KOMPOSISI KURIKULUM BARU</h2>
                 </div>
-                <div class="grid-3" style="margin-bottom: 30px;">
+                <div class="grid-3" style="margin-bottom: 20px;">
                     <div class="stat-card">
                         <div class="stat-number">20</div>
                         <div class="stat-label">Jam Kurikulum<br>Kemenag</div>
@@ -515,21 +642,21 @@
                     </div>
                 </div>
                 <div class="chart-container">
-                    <h3 style="text-align: center; margin-bottom: 25px;">Persentase Distribusi</h3>
-                    <div class="progress-bar" style="height: 50px;">
-                        <div class="progress-fill" style="width: 37%; font-size: 1.3em;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Persentase Distribusi</h3>
+                    <div class="progress-bar" style="height: clamp(35px, 8vw, 50px);">
+                        <div class="progress-fill" style="width: 37%; font-size: clamp(0.9em, 2.5vw, 1.3em);">
                             Kemenag: 37%
                         </div>
                     </div>
-                    <div class="progress-bar" style="height: 50px; margin-top: 20px;">
-                        <div class="progress-fill" style="width: 63%; background: linear-gradient(90deg, var(--gold) 0%, #c9a030 100%); font-size: 1.3em;">
+                    <div class="progress-bar" style="height: clamp(35px, 8vw, 50px); margin-top: 15px;">
+                        <div class="progress-fill" style="width: 63%; background: linear-gradient(90deg, var(--gold) 0%, #c9a030 100%); font-size: clamp(0.9em, 2.5vw, 1.3em);">
                             Pesantren: 63%
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Slide 10: Penguatan Bahasa Arab -->
+             <!-- Slide 10: Penguatan Bahasa Arab -->
             <section>
                 <div class="slide-header">
                     <h2>PENGUATAN BAHASA ARAB</h2>
@@ -564,350 +691,410 @@
                     </div>
                 </div>
             </section>
+<!-- Slide 11: Mata Pelajaran Pesantren -->
+        <section>
+            <div class="slide-header">
+                <h2>MATA PELAJARAN PESANTREN</h2>
+            </div>
+            <div class="grid-3">
+                <div class="info-box">
+                    <p class="arabic-text">علوم الدين</p>
+                    <h3>Ulumuddin</h3>
+                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">At-Tauhid • Hadits • Al-Quran • At-Tajwid • At-Tafsir • Al-Fiqh • Sirah Nabawi</p>
+                    <div class="badge" style="background: var(--primary-green); margin-top: 10px;">18 Jam/Minggu</div>
+                </div>
+                <div class="info-box">
+                    <p class="arabic-text">اللغة والعلوم الآلية</p>
+                    <h3>Bahasa & Ilmu Alat</h3>
+                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">Al-Lughotul 'Arobiyyah • An-Nahwu • Ash-Shorof • At-Tahaji & Al-Imla • Al-Khot</p>
+                    <div class="badge" style="background: var(--accent-teal); margin-top: 10px;">14 Jam/Minggu</div>
+                </div>
+                <div class="info-box">
+                    <p class="arabic-text">الآداب والأخلاق</p>
+                    <h3>Adab & Akhlak</h3>
+                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">Al-Mahfudzot • Pembentukan Karakter Islami</p>
+                    <div class="badge" style="background: var(--gold); margin-top: 10px;">2 Jam/Minggu</div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Slide 11: Mata Pelajaran Pesantren -->
-            <section>
-                <div class="slide-header">
-                    <h2>MATA PELAJARAN PESANTREN</h2>
+        <!-- Slide 12: Kitab Rujukan -->
+        <section>
+            <div class="slide-header">
+                <h2>📚 KITAB & BUKU RUJUKAN</h2>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: var(--primary-green); margin-bottom: 12px; font-size: clamp(1em, 2.5vw, 1.4em);">📖 Ulumuddin</h3>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">At-Tauhid</div>
+                        <div class="kitab-title">كتاب التوحيد</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Hadits</div>
+                        <div class="kitab-title">الْأَرْبَعِينَ النَّوَوِيَّةُ</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">At-Tajwid</div>
+                        <div class="kitab-title">هِدَايَةُ الصِّبْيَانِ</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">At-Tafsir</div>
+                        <div class="kitab-title">التفسير الْمُيَسَّرُ</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Al-Fiqh</div>
+                        <div class="kitab-title">سَفِينَةُ النَّجَاةِ / مَتْنُ أَبِي شُجَاعٍ</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Sirah Nabawi</div>
+                        <div class="kitab-title">خُلَاصَةُ نُورِ الْيَقِينِ</div>
+                    </div>
                 </div>
-                <div class="grid-3">
-                    <div class="info-box">
-                        <p class="arabic-text">علوم الدين</p>
-                        <h3>Ulumuddin</h3>
-                        <p style="font-size: 1.1em;">At-Tauhid • Hadits • Al-Quran • At-Tajwid • At-Tafsir • Al-Fiqh • Sirah Nabawi</p>
-                        <div class="badge" style="background: var(--primary-green); margin-top: 10px;">18 Jam/Minggu</div>
+                <div>
+                    <h3 style="color: var(--accent-teal); margin-bottom: 12px; font-size: clamp(1em, 2.5vw, 1.4em);">✍️ Bahasa & Ilmu Alat</h3>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Al-Lughotul 'Arobiyyah</div>
+                        <div class="kitab-title">العَرَبِيَّةُ بَيْنَ أَوْلَادِنَا</div>
                     </div>
-                    <div class="info-box">
-                        <p class="arabic-text">اللغة والعلوم الآلية</p>
-                        <h3>Bahasa & Ilmu Alat</h3>
-                        <p style="font-size: 1.1em;">Al-Lughotul 'Arobiyyah • An-Nahwu • Ash-Shorof • At-Tahaji & Al-Imla • Al-Khot</p>
-                        <div class="badge" style="background: var(--accent-teal); margin-top: 10px;">14 Jam/Minggu</div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">At-Tahaji</div>
+                        <div class="kitab-title">التَّهَجِّي</div>
                     </div>
-                    <div class="info-box">
-                        <p class="arabic-text">الآداب والأخلاق</p>
-                        <h3>Adab & Akhlak</h3>
-                        <p style="font-size: 1.1em;">Al-Mahfudzot • Pembentukan Karakter Islami</p>
-                        <div class="badge" style="background: var(--gold); margin-top: 10px;">2 Jam/Minggu</div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Al-Khot</div>
+                        <div class="kitab-title">Qowaid Khot</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">An-Nahwu</div>
+                        <div class="kitab-title">Modul Ust Muflih</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Ash-Shorof</div>
+                        <div class="kitab-title">سُلَّمُ الْمَعْرِفَةِ</div>
+                    </div>
+                    <div class="kitab-item">
+                        <div class="kitab-subject">Al-Mahfudzot</div>
+                        <div class="kitab-title">كِتَابُ الْمَحْفُوظَاتِ</div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Slide 12: Keunggulan Kurikulum Baru -->
-            <section>
-                <div class="slide-header">
-                    <h2>KEUNGGULAN KURIKULUM BARU</h2>
+        <!-- Slide 13: Keunggulan Kurikulum Baru -->
+        <section>
+            <div class="slide-header">
+                <h2>KEUNGGULAN KURIKULUM BARU</h2>
+            </div>
+            <div class="grid-2">
+                <div class="icon-box">
+                    <div class="icon">🔗</div>
+                    <h3>Integrasi Lebih Baik</h3>
+                    <p>PAI Kemenag terintegrasi penuh dengan muatan pesantren</p>
+                    <div class="badge">26 → 21 Mapel</div>
                 </div>
-                <div class="grid-2">
-                    <div class="icon-box">
-                        <div class="icon">🔗</div>
-                        <h3>Integrasi Lebih Baik</h3>
-                        <p>PAI Kemenag terintegrasi penuh dengan muatan pesantren</p>
-                        <div class="badge">26 → 21 Mapel</div>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">⚖️</div>
-                        <h3>Pemerataan Distribusi</h3>
-                        <p>Semua mapel pesantren konsisten di kelas 7, 8, dan 9</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">📖</div>
-                        <h3>Penguatan Bahasa Arab</h3>
-                        <p>Alokasi waktu meningkat dari 10 jam menjadi 14 jam/minggu</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">🎯</div>
-                        <h3>Fokus Kompetensi Inti</h3>
-                        <p>Pendalaman Ulumuddin mendapat 18 jam/minggu</p>
-                    </div>
+                <div class="icon-box">
+                    <div class="icon">⚖️</div>
+                    <h3>Pemerataan Distribusi</h3>
+                    <p>Semua mapel pesantren konsisten di kelas 7, 8, dan 9</p>
                 </div>
-                <div class="info-box" style="margin-top: 30px; text-align: center;">
-                    <p style="font-size: 1.4em; margin: 0;">
-                        <strong>✓ Tetap Memenuhi Standar Nasional</strong>
-                    </p>
-                    <p style="font-size: 1.2em; margin-top: 10px;">
-                        Muatan mata pelajaran umum esensial sesuai standar pemerintah
-                    </p>
+                <div class="icon-box">
+                    <div class="icon">📖</div>
+                    <h3>Penguatan Bahasa Arab</h3>
+                    <p>Alokasi waktu meningkat dari 10 jam menjadi 14 jam/minggu</p>
                 </div>
-            </section>
+                <div class="icon-box">
+                    <div class="icon">🎯</div>
+                    <h3>Fokus Kompetensi Inti</h3>
+                    <p>Pendalaman Ulumuddin mendapat 18 jam/minggu</p>
+                </div>
+            </div>
+            <div class="info-box" style="margin-top: 20px; text-align: center;">
+                <p style="font-size: clamp(1em, 3vw, 1.4em); margin: 0;">
+                    <strong>✓ Tetap Memenuhi Standar Nasional</strong>
+                </p>
+                <p style="font-size: clamp(0.9em, 2.5vw, 1.2em); margin-top: 10px;">
+                    Muatan mata pelajaran umum esensial sesuai standar pemerintah
+                </p>
+            </div>
+        </section>
 
-            <!-- Slide 13: Tahapan Implementasi -->
-            <section>
-                <div class="slide-header">
-                    <h2>TAHAPAN IMPLEMENTASI</h2>
+        <!-- Slide 14: Tahapan Implementasi -->
+        <section>
+            <div class="slide-header">
+                <h2>TAHAPAN IMPLEMENTASI</h2>
+            </div>
+            <div class="info-box" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; margin: 15px 0;">
+                <h3 style="color: white;">TAHAP 1: PERSIAPAN (3 Bulan)</h3>
+                <ul style="color: white;">
+                    <li>Sosialisasi kepada stakeholder</li>
+                    <li>Penyusunan silabus dan RPP</li>
+                    <li>Pelatihan guru dan tenaga kependidikan</li>
+                    <li>Penyiapan sarana dan prasarana</li>
+                </ul>
+            </div>
+            <div class="info-box" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; margin: 15px 0;">
+                <h3 style="color: white;">TAHAP 2: UJI COBA (1 Semester)</h3>
+                <ul style="color: white;">
+                    <li>Implementasi di kelas 7</li>
+                    <li>Monitoring dan evaluasi berkala</li>
+                    <li>Penyesuaian dan perbaikan</li>
+                </ul>
+            </div>
+            <div class="info-box" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; margin: 15px 0;">
+                <h3 style="color: white;">TAHAP 3: IMPLEMENTASI PENUH</h3>
+                <ul style="color: white;">
+                    <li>Tahun ke-2: Kelas 7 dan 8</li>
+                    <li>Tahun ke-3: Semua tingkat (7, 8, 9)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 15: Strategi Pembelajaran -->
+        <section>
+            <div class="slide-header">
+                <h2>STRATEGI PEMBELAJARAN</h2>
+            </div>
+            <div class="grid-2">
+                <div class="icon-box">
+                    <div class="icon">🔗</div>
+                    <h3>Integrasi Pembelajaran</h3>
+                    <p>Menghubungkan antar mata pelajaran yang berkaitan</p>
                 </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; margin: 20px 0;">
-                    <h3 style="color: white;">TAHAP 1: PERSIAPAN (3 Bulan)</h3>
-                    <ul style="color: white;">
-                        <li>Sosialisasi kepada stakeholder</li>
-                        <li>Penyusunan silabus dan RPP</li>
-                        <li>Pelatihan guru dan tenaga kependidikan</li>
-                        <li>Penyiapan sarana dan prasarana</li>
+                <div class="icon-box">
+                    <div class="icon">👥</div>
+                    <h3>Pembelajaran Aktif</h3>
+                    <p>Melibatkan partisipasi aktif peserta didik</p>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">💻</div>
+                    <h3>Berbasis IT</h3>
+                    <p>Memanfaatkan teknologi informasi dalam pembelajaran</p>
+                </div>
+                <div class="icon-box">
+                    <div class="icon">🌍</div>
+                    <h3>Kontekstual</h3>
+                    <p>Menghubungkan materi dengan kehidupan nyata</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Sistem Evaluasi -->
+        <section>
+            <div class="slide-header">
+                <h2>SISTEM EVALUASI</h2>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="info-box" style="margin: 20px 0;">
+                    <h3 style="color: var(--primary-green); margin-bottom: 12px;">📊 EVALUASI PROSES</h3>
+                    <p>Penilaian terhadap proses pembelajaran yang dilakukan secara berkala untuk memastikan kualitas pembelajaran berjalan optimal</p>
+                </div>
+                <div class="info-box" style="margin: 20px 0;">
+                    <h3 style="color: var(--accent-teal); margin-bottom: 12px;">📝 EVALUASI HASIL</h3>
+                    <p>Penilaian terhadap hasil belajar peserta didik melalui ujian dan tes untuk mengukur pencapaian kompetensi</p>
+                </div>
+                <div class="info-box" style="margin: 20px 0;">
+                    <h3 style="color: var(--gold); margin-bottom: 12px;">🎯 EVALUASI PROGRAM</h3>
+                    <p>Penilaian terhadap efektivitas implementasi kurikulum secara keseluruhan untuk perbaikan berkelanjutan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Manfaat Perubahan -->
+        <section>
+            <div class="slide-header">
+                <h2>MANFAAT PERUBAHAN KURIKULUM</h2>
+            </div>
+            <div class="grid-2">
+                <div class="info-box">
+                    <h3>👨‍🎓 Bagi Peserta Didik</h3>
+                    <ul>
+                        <li>Pendidikan seimbang ilmu umum dan agama</li>
+                        <li>Penguasaan bahasa Arab yang baik</li>
+                        <li>Beban belajar lebih efisien</li>
                     </ul>
                 </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; margin: 20px 0;">
-                    <h3 style="color: white;">TAHAP 2: UJI COBA (1 Semester)</h3>
-                    <ul style="color: white;">
-                        <li>Implementasi di kelas 7</li>
-                        <li>Monitoring dan evaluasi berkala</li>
-                        <li>Penyesuaian dan perbaikan</li>
+                <div class="info-box">
+                    <h3>👨‍🏫 Bagi Pendidik</h3>
+                    <ul>
+                        <li>Panduan pembelajaran yang jelas</li>
+                        <li>Alokasi waktu yang memadai</li>
+                        <li>Integrasi materi yang lebih baik</li>
                     </ul>
                 </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; margin: 20px 0;">
-                    <h3 style="color: white;">TAHAP 3: IMPLEMENTASI PENUH</h3>
-                    <ul style="color: white;">
-                        <li>Tahun ke-2: Kelas 7 dan 8</li>
-                        <li>Tahun ke-3: Semua tingkat (7, 8, 9)</li>
+                <div class="info-box">
+                    <h3>🏫 Bagi Lembaga</h3>
+                    <ul>
+                        <li>Peningkatan mutu dan daya saing</li>
+                        <li>Keunggulan sebagai pesantren modern</li>
+                        <li>Reputasi lembaga yang amanah</li>
                     </ul>
                 </div>
-            </section>
+                <div class="info-box">
+                    <h3>👥 Bagi Masyarakat</h3>
+                    <ul>
+                        <li>Lulusan berkualitas dan berakhlak mulia</li>
+                        <li>Kontribusi positif bagi masyarakat</li>
+                        <li>Generasi Ulul Albab yang unggul</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            <!-- Slide 14: Strategi Pembelajaran -->
-            <section>
-                <div class="slide-header">
-                    <h2>STRATEGI PEMBELAJARAN</h2>
+        <!-- Slide 18: Sarana Prasarana -->
+        <section>
+            <div class="slide-header">
+                <h2>KEBUTUHAN SARANA & PRASARANA</h2>
+            </div>
+            <div class="grid-3">
+                <div class="icon-box">
+                    <div class="icon">🏛️</div>
+                    <h3>Ruang Kelas</h3>
+                    <p>Ruang kelas memadai, perpustakaan lengkap, dan aula untuk kegiatan bersama</p>
                 </div>
-                <div class="grid-2">
-                    <div class="icon-box">
-                        <div class="icon">🔗</div>
-                        <h3>Integrasi Pembelajaran</h3>
-                        <p>Menghubungkan antar mata pelajaran yang berkaitan</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">👥</div>
-                        <h3>Pembelajaran Aktif</h3>
-                        <p>Melibatkan partisipasi aktif peserta didik</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">💻</div>
-                        <h3>Berbasis IT</h3>
-                        <p>Memanfaatkan teknologi informasi dalam pembelajaran</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">🌍</div>
-                        <h3>Kontekstual</h3>
-                        <p>Menghubungkan materi dengan kehidupan nyata</p>
-                    </div>
+                <div class="icon-box">
+                    <div class="icon">📚</div>
+                    <h3>Bahan Ajar</h3>
+                    <p>Buku teks, kitab klasik, dan media pembelajaran audio-visual</p>
                 </div>
-            </section>
+                <div class="icon-box">
+                    <div class="icon">👨‍🏫</div>
+                    <h3>Tenaga Pendidik</h3>
+                    <p>Guru kompeten, ustadz/ustadzah ahli, rasio ideal 1:20</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Slide 15: Sistem Evaluasi -->
-            <section>
-                <div class="slide-header">
-                    <h2>SISTEM EVALUASI</h2>
+        <!-- Slide 19: Target Pencapaian -->
+        <section>
+            <div class="slide-header">
+                <h2>TARGET PENCAPAIAN LULUSAN</h2>
+            </div>
+            <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%); margin-bottom: 20px;">
+                <h3 style="text-align: center; color: var(--primary-green); font-size: clamp(1.2em, 3.5vw, 1.8em);">Generasi Ulul Albab</h3>
+            </div>
+            <div class="grid-2">
+                <div class="stat-card">
+                    <div class="icon">🕌</div>
+                    <h3 style="color: white; margin: 12px 0;">Memurnikan Aqidah</h3>
+                    <p style="color: white; opacity: 0.9;">Pemahaman tauhid yang benar dan mendalam</p>
                 </div>
-                <div style="margin-top: 30px;">
-                    <div class="info-box" style="margin: 25px 0;">
-                        <h3 style="color: var(--primary-green); margin-bottom: 15px;">📊 EVALUASI PROSES</h3>
-                        <p>Penilaian terhadap proses pembelajaran yang dilakukan secara berkala untuk memastikan kualitas pembelajaran berjalan optimal</p>
-                    </div>
-                    <div class="info-box" style="margin: 25px 0;">
-                        <h3 style="color: var(--accent-teal); margin-bottom: 15px;">📝 EVALUASI HASIL</h3>
-                        <p>Penilaian terhadap hasil belajar peserta didik melalui ujian dan tes untuk mengukur pencapaian kompetensi</p>
-                    </div>
-                    <div class="info-box" style="margin: 25px 0;">
-                        <h3 style="color: var(--gold); margin-bottom: 15px;">🎯 EVALUASI PROGRAM</h3>
-                        <p>Penilaian terhadap efektivitas implementasi kurikulum secara keseluruhan untuk perbaikan berkelanjutan</p>
-                    </div>
+                <div class="stat-card">
+                    <div class="icon">📿</div>
+                    <h3 style="color: white; margin: 12px 0;">Mengamalkan Syari'ah</h3>
+                    <p style="color: white; opacity: 0.9;">Praktik ibadah yang benar sesuai tuntunan</p>
                 </div>
-            </section>
+                <div class="stat-card">
+                    <div class="icon">🌟</div>
+                    <h3 style="color: white; margin: 12px 0;">Berakhlaq Karimah</h3>
+                    <p style="color: white; opacity: 0.9;">Karakter mulia dalam kehidupan sehari-hari</p>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">📖</div>
+                    <h3 style="color: white; margin: 12px 0;">Mencintai Ilmu</h3>
+                    <p style="color: white; opacity: 0.9;">Semangat belajar sepanjang hayat</p>
+                </div>
+            </div>
+            <div class="info-box" style="margin-top: 20px; text-align: center; background: var(--gold); color: white;">
+                <p class="arabic-text" style="font-size: clamp(1.2em, 3.5vw, 1.8em); color: white; margin-bottom: 8px;">
+                    رَحْمَةً لِلْعَالَمِينَ
+                </p>
+                <p style="font-size: clamp(1em, 2.5vw, 1.4em); margin: 0;">
+                    <strong>Menebarkan Rahmat bagi Seluruh Alam</strong>
+                </p>
+            </div>
+        </section>
 
-            <!-- Slide 16: Manfaat Perubahan -->
-            <section>
-                <div class="slide-header">
-                    <h2>MANFAAT PERUBAHAN KURIKULUM</h2>
+        <!-- Slide 20: Kesimpulan -->
+        <section>
+            <div class="slide-header">
+                <h2>KESIMPULAN</h2>
+            </div>
+            <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
+                <p style="font-size: clamp(1em, 3vw, 1.4em); line-height: 1.8;">
+                    Rancangan perubahan kurikulum ini merupakan <strong style="color: var(--gold);">langkah strategis</strong> untuk:
+                </p>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="info-box" style="margin: 15px 0;">
+                    <h3>✓ Menyeimbangkan Muatan Nasional dan Pesantren</h3>
+                    <p>Dari 52:48 menjadi 37:63 dengan total 54 jam per minggu</p>
                 </div>
-                <div class="grid-2">
-                    <div class="info-box">
-                        <h3>👨‍🎓 Bagi Peserta Didik</h3>
-                        <ul>
-                            <li>Pendidikan seimbang ilmu umum dan agama</li>
-                            <li>Penguasaan bahasa Arab yang baik</li>
-                            <li>Beban belajar lebih efisien</li>
-                        </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>👨‍🏫 Bagi Pendidik</h3>
-                        <ul>
-                            <li>Panduan pembelajaran yang jelas</li>
-                            <li>Alokasi waktu yang memadai</li>
-                            <li>Integrasi materi yang lebih baik</li>
-                        </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>🏫 Bagi Lembaga</h3>
-                        <ul>
-                            <li>Peningkatan mutu dan daya saing</li>
-                            <li>Keunggulan sebagai pesantren modern</li>
-                            <li>Reputasi lembaga yang amanah</li>
-                        </ul>
-                    </div>
-                    <div class="info-box">
-                        <h3>👥 Bagi Masyarakat</h3>
-                        <ul>
-                            <li>Lulusan berkualitas dan berakhlak mulia</li>
-                            <li>Kontribusi positif bagi masyarakat</li>
-                            <li>Generasi Ulul Albab yang unggul</li>
-                        </ul>
-                    </div>
+                <div class="info-box" style="margin: 15px 0;">
+                    <h3>✓ Meningkatkan Efisiensi Pembelajaran</h3>
+                    <p>Mengurangi beban dari 25-26 menjadi 21 mata pelajaran</p>
                 </div>
-            </section>
+                <div class="info-box" style="margin: 15px 0;">
+                    <h3>✓ Memperkuat Identitas Pesantren</h3>
+                    <p>Penguatan Ulumuddin (18 jam) dan Bahasa Arab (14 jam)</p>
+                </div>
+                <div class="info-box" style="margin: 15px 0;">
+                    <h3>✓ Mewujudkan Visi Generasi Ulul Albab</h3>
+                    <p>Lulusan unggul dalam akademik dan keislaman</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Slide 17: Sarana Prasarana -->
-            <section>
-                <div class="slide-header">
-                    <h2>KEBUTUHAN SARANA & PRASARANA</h2>
-                </div>
-                <div class="grid-3">
-                    <div class="icon-box">
-                        <div class="icon">🏛️</div>
-                        <h3>Ruang Kelas</h3>
-                        <p>Ruang kelas memadai, perpustakaan lengkap, dan aula untuk kegiatan bersama</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">📚</div>
-                        <h3>Bahan Ajar</h3>
-                        <p>Buku teks, kitab klasik, dan media pembelajaran audio-visual</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">👨‍🏫</div>
-                        <h3>Tenaga Pendidik</h3>
-                        <p>Guru kompeten, ustadz/ustadzah ahli, rasio ideal 1:20</p>
-                    </div>
-                </div>
-            </section>
+        <!-- Slide 21: Penutup -->
+        <section>
+            <div class="islamic-pattern"></div>
+            <div class="slide-header">
+                <h2>PENUTUP</h2>
+            </div>
+            <div class="info-box" style="background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%); color: white; padding: 30px; margin: 20px 0;">
+                <p class="arabic-text" style="color: white; font-size: clamp(1.3em, 4vw, 2em); text-align: center; margin-bottom: 15px;">
+                    بَارَكَ اللَّهُ فِيكُمْ
+                </p>
+                <p style="text-align: center; font-size: clamp(1em, 3vw, 1.5em); color: white;">
+                    Semoga Allah SWT memberikan kemudahan dan keberkahan<br>dalam setiap langkah perbaikan pendidikan di madrasah ini
+                </p>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: clamp(0.9em, 2.5vw, 1.3em);">
+                    <strong>Kebarongan, 14 Januari 2026</strong><br>
+                    Ketua Tim Penyusun
+                </p>
+                <p style="font-size: clamp(1em, 3vw, 1.4em); color: var(--primary-green); margin-top: 20px;">
+                    <strong>Agus Eko Purnomo, S.Ag.</strong>
+                </p>
+            </div>
+            <div style="margin-top: 30px; padding: 15px; background: var(--light-green); border-radius: 10px;">
+                <p style="text-align: center; font-size: clamp(0.9em, 2.5vw, 1.2em); margin: 0;">
+                    <strong>YAYASAN POMESMAWI</strong><br>
+                    MTs Wathoniyah Islamiyah Kebarongan<br>
+                    Kabupaten Banyumas, Jawa Tengah
+                </p>
+            </div>
+        </section>
 
-            <!-- Slide 18: Target Pencapaian -->
-            <section>
-                <div class="slide-header">
-                    <h2>TARGET PENCAPAIAN LULUSAN</h2>
-                </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%); margin-bottom: 30px;">
-                    <h3 style="text-align: center; color: var(--primary-green); font-size: 1.8em;">Generasi Ulul Albab</h3>
-                </div>
-                <div class="grid-2">
-                    <div class="stat-card">
-                        <div class="icon">🕌</div>
-                        <h3 style="color: white; margin: 15px 0;">Memurnikan Aqidah</h3>
-                        <p style="color: white; opacity: 0.9;">Pemahaman tauhid yang benar dan mendalam</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="icon">📿</div>
-                        <h3 style="color: white; margin: 15px 0;">Mengamalkan Syari'ah</h3>
-                        <p style="color: white; opacity: 0.9;">Praktik ibadah yang benar sesuai tuntunan</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="icon">🌟</div>
-                        <h3 style="color: white; margin: 15px 0;">Berakhlaq Karimah</h3>
-                        <p style="color: white; opacity: 0.9;">Karakter mulia dalam kehidupan sehari-hari</p>
-                    </div>
-                    <div class="stat-card">
-                        <div class="icon">📖</div>
-                        <h3 style="color: white; margin: 15px 0;">Mencintai Ilmu</h3>
-                        <p style="color: white; opacity: 0.9;">Semangat belajar sepanjang hayat</p>
-                    </div>
-                </div>
-                <div class="info-box" style="margin-top: 30px; text-align: center; background: var(--gold); color: white;">
-                    <p class="arabic-text" style="font-size: 1.8em; color: white; margin-bottom: 10px;">
-                        رَحْمَةً لِلْعَالَمِينَ
-                    </p>
-                    <p style="font-size: 1.4em; margin: 0;">
-                        <strong>Menebarkan Rahmat bagi Seluruh Alam</strong>
-                    </p>
-                </div>
-            </section>
-
-            <!-- Slide 19: Kesimpulan -->
-            <section>
-                <div class="slide-header">
-                    <h2>KESIMPULAN</h2>
-                </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
-                    <p style="font-size: 1.4em; line-height: 1.8;">
-                        Rancangan perubahan kurikulum ini merupakan <strong style="color: var(--gold);">langkah strategis</strong> untuk:
-                    </p>
-                </div>
-                <div style="margin-top: 30px;">
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3>✓ Menyeimbangkan Muatan Nasional dan Pesantren</h3>
-                        <p>Dari 52:48 menjadi 37:63 dengan total 54 jam per minggu</p>
-                    </div>
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3>✓ Meningkatkan Efisiensi Pembelajaran</h3>
-                        <p>Mengurangi beban dari 25-26 menjadi 21 mata pelajaran</p>
-                    </div>
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3>✓ Memperkuat Identitas Pesantren</h3>
-                        <p>Penguatan Ulumuddin (18 jam) dan Bahasa Arab (14 jam)</p>
-                    </div>
-                    <div class="info-box" style="margin: 20px 0;">
-                        <h3>✓ Mewujudkan Visi Generasi Ulul Albab</h3>
-                        <p>Lulusan unggul dalam akademik dan keislaman</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Slide 20: Penutup -->
-            <section>
-                <div class="islamic-pattern"></div>
-                <div class="slide-header">
-                    <h2>PENUTUP</h2>
-                </div>
-                <div class="info-box" style="background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%); color: white; padding: 40px; margin: 30px 0;">
-                    <p class="arabic-text" style="color: white; font-size: 2em; text-align: center; margin-bottom: 20px;">
-                        بَارَكَ اللَّهُ فِيكُمْ
-                    </p>
-                    <p style="text-align: center; font-size: 1.5em; color: white;">
-                        Semoga Allah SWT memberikan kemudahan dan keberkahan<br>dalam setiap langkah perbaikan pendidikan di madrasah ini
-                    </p>
-                </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <p style="font-size: 1.3em;">
-                        <strong>Kebarongan, 14 Januari 2026</strong><br>
-                        Ketua Tim Penyusun
-                    </p>
-                    <p style="font-size: 1.4em; color: var(--primary-green); margin-top: 30px;">
-                        <strong>Agus Eko Purnomo, S.Ag.</strong>
-                    </p>
-                </div>
-                <div style="margin-top: 50px; padding: 20px; background: var(--light-green); border-radius: 10px;">
-                    <p style="text-align: center; font-size: 1.2em; margin: 0;">
-                        <strong>YAYASAN POMESMAWI</strong><br>
-                        MTs Wathoniyah Islamiyah Kebarongan<br>
-                        Kabupaten Banyumas, Jawa Tengah
-                    </p>
-                </div>
-            </section>
-
-        </div>
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-    <script>
-        Reveal.initialize({
-            hash: true,
-            transition: 'slide',
-            transitionSpeed: 'default',
-            backgroundTransition: 'fade',
-            controls: true,
-            progress: true,
-            center: true,
-            slideNumber: 'c/t',
-            width: '100%',
-            height: '100%',
-            margin: 0,
-            minScale: 1,
-            maxScale: 1,
-            embedded: false,
-            disableLayout: false
-        });
+</div>
 
-        // Force resize on window resize
-        window.addEventListener('resize', () => {
-            Reveal.layout();
-        });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade',
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: 'c/t',
+        width: '100%',
+        height: '100%',
+        margin: 0.04,
+        minScale: 0.2,
+        maxScale: 2.0,
+        embedded: false,
+        disableLayout: false
+    });
 
-        // Initial layout
+    window.addEventListener('resize', () => {
         Reveal.layout();
-    </script>
+    });
+
+    Reveal.layout();
+</script>
 </body>
-</html>
+</html></parameter>
