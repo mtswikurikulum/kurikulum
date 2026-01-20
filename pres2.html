@@ -431,7 +431,15 @@
            ========================================= */
 
         /* 1. Element Entrance Animations (On Slide Enter) */
-        
+        /* Sembunyikan member secara default */
+.reveal .slides section .member {
+    opacity: 0;
+}
+
+/* Jalankan animasi saat slide aktif (class .present) */
+.reveal .slides section.present .member {
+    animation: flyInBottom 0.8s ease-out forwards;
+}
         /* Fly in from left */
         @keyframes flyInLeft {
             0% { opacity: 0; transform: translateX(-50px); }
@@ -1300,7 +1308,17 @@
                 child.style.animationDelay = `${(index + 1) * 0.15}s`;
             });
         });
-        
+        // 3.b. AUTOMATED STAGGERED DELAYS FOR TEAM (Logika Baru)
+const teamGrids = document.querySelectorAll('.team-grid');
+teamGrids.forEach(grid => {
+    const members = grid.querySelectorAll('.member');
+    members.forEach((member, index) => {
+        // Delay 1 detik per orang (index * 1s)
+        // Member 1 muncul di detik ke-0 (atau 0.5), Member 2 di detik ke-1.5, dst.
+        // Kita tambah sedikit delay awal (0.5s) agar tidak kaget saat slide baru terbuka
+        member.style.animationDelay = `${0.5 + (index * 1)}s`; 
+    });
+});
         // Stagger list items in kitabs
         const kitabs = document.querySelectorAll('.kitab-item');
         kitabs.forEach((item, index) => {
