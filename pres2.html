@@ -381,6 +381,47 @@
             font-weight: 600;
             margin-bottom: 5px;
         }
+		/* Tim Penyusun specific styles */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.member {
+    flex: 1 1 200px;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.member[data-color="gold"] { border-left: 4px solid var(--gold); }
+.member[data-color="teal"] { border-left: 4px solid var(--accent-teal); }
+.member[data-color="green"] { border-left: 4px solid var(--primary-green); }
+
+.member:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(45, 95, 63, 0.2);
+}
+
+.member-name {
+    font-weight: 700;
+    color: var(--primary-green);
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+.badge[data-type="ketua"] { background: var(--gold); }
+.badge[data-type="secretary"] { background: var(--accent-teal); }
+.badge[data-type="unit"] { background: #666; }
+.badge[data-type="consultant"] { background: #888; }
+
 
         /* =========================================
            ANIMATION & INTERACTION STYLES
@@ -1138,15 +1179,6 @@
                     Semoga Allah SWT memberikan kemudahan dan keberkahan<br>dalam setiap langkah perbaikan pendidikan di madrasah ini
                 </p>
             </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: clamp(0.9em, 2.5vw, 1.3em);">
-                    <strong>Kebarongan, 14 Januari 2026</strong><br>
-                    Ketua Tim Penyusun
-                </p>
-                <p style="font-size: clamp(1em, 3vw, 1.4em); color: var(--primary-green); margin-top: 20px;">
-                    <strong>Agus Eko Purnomo, S.Ag.</strong>
-                </p>
-            </div>
             <div style="margin-top: 30px; padding: 15px; background: var(--light-green); border-radius: 10px;">
                 <p style="text-align: center; font-size: clamp(0.9em, 2.5vw, 1.2em); margin: 0;">
                     <strong>YAYASAN POMESMAWI</strong><br>
@@ -1155,7 +1187,72 @@
                 </p>
             </div>
         </section>
+    <section>
+        <div class="slide-header">
+            <h2>TIM PENYUSUN</h2>
+        </div>
+        
+        <div class="team-grid">
+            <div class="member" data-color="gold">
+                <div class="member-name">Agus Eko Purnomo, S.Ag.</div>
+                <span class="badge" data-type="ketua">Ketua</span>
+            </div>
 
+            <div class="member" data-color="teal">
+                <div class="member-name">Nengklif Saberi, S.Si.</div>
+                <span class="badge" data-type="secretary">Sekretaris I</span>
+            </div>
+
+            <div class="member" data-color="teal">
+                <div class="member-name">Imam Suhada, S.T.</div>
+                <span class="badge" data-type="secretary">Sekretaris II</span>
+            </div>
+
+            <div class="member" data-color="teal">
+                <div class="member-name">Sunaryo, S.Pd.</div>
+                <span class="badge" data-type="secretary">Bendahara</span>
+            </div>
+
+            <div class="member" data-color="green">
+                <div class="member-name">Syahidin, S.Ag.</div>
+                <span class="badge" data-type="unit">Unit Pondok</span>
+            </div>
+
+            <div class="member" data-color="green">
+                <div class="member-name">Yoga Sapta Prawira, S.Pd.I</div>
+                <span class="badge" data-type="unit">Unit Pondok</span>
+            </div>
+
+            <div class="member" data-color="green">
+                <div class="member-name">Taufik, S.Ag.</div>
+                <span class="badge" data-type="unit">Unit MA</span>
+            </div>
+
+            <div class="member" data-color="green">
+                <div class="member-name">Mukhlisin, S.Pd.I</div>
+                <span class="badge" data-type="unit">Unit MI</span>
+            </div>
+
+            <div class="member" data-color="gold">
+                <div class="member-name">Ade Saepudin, B.A., M.Pd.</div>
+                <span class="badge" data-type="consultant">Imam Bukhori</span>
+            </div>
+
+            <div class="member" data-color="gold">
+                <div class="member-name">Syakel ElJauhar, Lc.</div>
+                <span class="badge" data-type="consultant">Imam Bukhori</span>
+            </div>
+
+            <div class="member" data-color="gold">
+                <div class="member-name">'Ashim, Lc., M.H.</div>
+                <span class="badge" data-type="consultant">Imam Bukhori</span>
+            </div>
+        </div>
+        
+        <div class="footer-date">
+            <em>Kebarongan, 21 Januari 2026</em>
+        </div>
+    </section>
     </div>
 </div>
 
