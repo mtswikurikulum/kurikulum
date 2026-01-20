@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancangan Perubahan Kurikulum MTs Wathoniyah Islamiyah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-green: #2d5f3f;
+            --gold: #d4af37;
+            --light-green: #e8f4ea;
+            --dark-text: #1a3a2a;
+            --accent-teal: #3a8a7a;
+        }
+        
+        .reveal {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f9f6 0%, #e8f4ea 100%);
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Amiri', serif;
+            color: var(--primary-green);
+            text-transform: none;
+            font-weight: 700;
+        }
+        
+        .reveal h1 {
+            font-size: clamp(1.5em, 5vw, 2.8em);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .reveal h2 {
+            font-size: clamp(1.3em, 4vw, 2.2em);
+            margin-bottom: 15px;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 10px;
+        }
+        
+        .reveal h3 {
+            font-size: clamp(1.1em, 3vw, 1.6em);
+            color: var(--accent-teal);
+        }
+        
+        .reveal p, .reveal li {
+            font-size: clamp(0.9em, 2.5vw, 1.3em);
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+        
+        .reveal strong {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        .slides section {
+            padding: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .slides section {
+                padding: 40px 60px;
+            }
+        }
+        
+        .islamic-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            opacity: 0.1;
+            background: radial-gradient(circle, var(--gold) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .islamic-pattern {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        
+        .slide-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @media (min-width: 768px) {
+            .slide-header {
+                padding: 30px;
+                margin-bottom: 30px;
+                border-radius: 15px;
+            }
+        }
+        
+        .slide-header h2 {
+            color: white;
+            border: none;
+            margin: 0;
+        }
+        
+        .info-box {
+            background: white;
+            border-left: 5px solid var(--gold);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .info-box {
+                padding: 25px;
+                margin: 20px 0;
+            }
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .stat-card {
+                padding: 30px;
+                margin: 15px;
+            }
+        }
+        
+        .stat-number {
+            font-size: clamp(2em, 6vw, 3.5em);
+            font-weight: 700;
+            color: var(--gold);
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            font-size: clamp(0.9em, 2vw, 1.2em);
+            opacity: 0.9;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            align-items: start;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+        }
+        
+        .comparison-table {
+            width: 100%;
+            margin: 15px 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow-x: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-table {
+                margin: 25px 0;
+                display: table;
+            }
+        }
+        
+        .comparison-table th {
+            background: var(--primary-green);
+            color: white;
+            padding: 12px 8px;
+            font-size: clamp(0.9em, 2.5vw, 1.3em);
+            font-weight: 600;
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-table th {
+                padding: 20px;
+            }
+        }
+        
+        .comparison-table td {
+            background: white;
+            padding: 10px 8px;
+            font-size: clamp(0.8em, 2vw, 1.2em);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        @media (min-width: 768px) {
+            .comparison-table td {
+                padding: 18px;
+            }
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .highlight-green {
+            background: var(--light-green);
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: clamp(0.8em, 2vw, 1.1em);
+            font-weight: 600;
+            margin: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .badge {
+                padding: 8px 20px;
+            }
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 25px;
+            margin: 15px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .progress-bar {
+                height: 30px;
+            }
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, var(--primary-green) 0%, var(--accent-teal) 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: clamp(0.8em, 2vw, 1.1em);
+            transition: width 1s ease;
+        }
+        
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: clamp(1em, 3vw, 1.4em);
+            color: var(--primary-green);
+            direction: rtl;
+            font-weight: 700;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li::before {
+            content: "◆";
+            color: var(--gold);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2em;
+            margin-left: 10px;
+        }
+        
+        .icon-box {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .icon-box {
+                padding: 25px;
+            }
+        }
+        
+        .icon {
+            font-size: clamp(2em, 5vw, 3em);
+            margin-bottom: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .icon {
+                margin-bottom: 15px;
+            }
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                padding: 30px;
+            }
+        }
+        
+        .kitab-item {
+            background: white;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .kitab-item {
+                padding: 15px;
+                margin: 10px 0;
+            }
+        }
+        
+        .kitab-title {
+            font-family: 'Amiri', serif;
+            font-size: clamp(1em, 2.5vw, 1.3em);
+            color: var(--primary-green);
+            font-weight: 700;
+            direction: rtl;
+            margin-bottom: 5px;
+        }
+        
+        .kitab-subject {
+            font-size: clamp(0.75em, 2vw, 0.95em);
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* Animation Classes */
+        .slide-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.6s ease forwards;
+        }
+        
+        .slide-out {
+            opacity: 1;
+            transform: translateY(0);
+            animation: slideOut 0.6s ease forwards;
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideOut {
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .fade-out {
+            opacity: 1;
+            animation: fadeOut 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: scaleIn 0.7s ease forwards;
+        }
+        
+        .scale-out {
+            opacity: 1;
+            transform: scale(1);
+            animation: scaleOut 0.7s ease forwards;
+        }
+        
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes scaleOut {
+            to {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
+        
+        /* Safe Hover Animations - Fixed to not make elements invisible */
+        .hover-grow {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-grow:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .hover-pulse {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-pulse:hover {
+            animation: pulse 0.5s ease;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .hover-shake:hover {
+            animation: shake 0.5s ease;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .hover-highlight {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-highlight:hover {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left-color: var(--primary-green);
+        }
+        
+        /* Click Animation Classes */
+        .click-highlight {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .click-highlight.active {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .click-border {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .click-border.active {
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .click-glow {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .click-glow.active {
+            box-shadow: 0 0 25px rgba(45, 95, 63, 0.6);
+            background: linear-gradient(135deg, var(--primary-green) 0%, #3a8a7a 100%);
+            color: white;
+        }
+        
+        /* Animation delays */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        
+        /* Desktop hover effects only */
+        @media (min-width: 768px) {
+            .stat-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .icon-box:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            }
+            
+            .kitab-item:hover {
+                box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Cover -->
+            <section>
+                <div class="islamic-pattern slide-in delay-1"></div>
+                <h1 class="scale-in delay-2">RANCANGAN PERUBAHAN STRUKTUR KURIKULUM</h1>
+                <h3 class="fade-in delay-3">MTs Wathoniyah Islamiyah Kebarongan</h3>
+                <div style="margin: 40px 0;">
+                    <p class="arabic-text fade-in delay-4">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+                </div>
+                <p style="font-size: clamp(1em, 3vw, 1.4em); color: var(--accent-teal); font-style: italic;" class="slide-in delay-5">
+                    "Menuju Integrasi Kurikulum Nasional dan Pesantren<br>yang Efektif dan Mendalam"
+                </p>
+                <p style="margin-top: 40px; font-size: clamp(0.9em, 2.5vw, 1.2em);" class="fade-in delay-4">
+                    <strong>YAYASAN POMESMAWI</strong><br>
+                    Kabupaten Banyumas, Jawa Tengah<br>
+                    2026
+                </p>
+            </section>
+
+            <!-- Slide 2: Visi -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>VISI MTs WATHONIYAH ISLAMIYAH</h2>
+                </div>
+                <div class="info-box hover-lift scale-in delay-1" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
+                    <p style="font-size: clamp(1em, 3vw, 1.5em); text-align: center; line-height: 1.8;">
+                        <strong>"Terwujudnya Generasi <span style="color: var(--gold);">Ulul Albab</span>,<br>
+                        yang Senantiasa Memurnikan Aqidah,<br>
+                        Mengamalkan Syari'ah, Berakhlaq Karimah,<br>
+                        Mencintai Ilmu Pengetahuan,<br>
+                        dan Menebarkan Rahmat bagi Seluruh Alam"</strong>
+                    </p>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p class="arabic-text fade-in delay-2" style="text-align: center; font-size: clamp(1.2em, 3.5vw, 1.6em);">
+                        رَحْمَةً لِلْعَالَمِينَ
+                    </p>
+                </div>
+            </section>
+
+            <!-- Slide 3: Latar Belakang Masalah -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>LATAR BELAKANG PERUBAHAN</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="icon-box click-highlight hover-lift fade-in delay-1">
+                        <div class="icon">⚖️</div>
+                        <h3>Ketidakseimbangan</h3>
+                        <p>Muatan pesantren masih terbatas dibanding kurikulum Kemenag</p>
+                    </div>
+                    <div class="icon-box click-highlight hover-lift fade-in delay-2">
+                        <div class="icon">📚</div>
+                        <h3>Beban Berlebih</h3>
+                        <p>25-26 mata pelajaran per tingkat membebani siswa</p>
+                    </div>
+                    <div class="icon-box click-highlight hover-lift fade-in delay-3">
+                        <div class="icon">🔄</div>
+                        <h3>Tumpang Tindih</h3>
+                        <p>Beberapa materi beririsan mengurangi efektivitas</p>
+                    </div>
+                    <div class="icon-box click-highlight hover-lift fade-in delay-4">
+                        <div class="icon">📊</div>
+                        <h3>Distribusi Tidak Merata</h3>
+                        <p>Mata pelajaran pesantren tidak konsisten di semua tingkat</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Kondisi Saat Ini -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>KONDISI KURIKULUM SAAT INI</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="stat-card click-border hover-lift fade-in delay-1">
+                        <div class="stat-number">28</div>
+                        <div class="stat-label">Jam Kurikulum<br>Kemenag/Minggu</div>
+                    </div>
+                    <div class="stat-card click-border hover-lift fade-in delay-2">
+                        <div class="stat-number">26</div>
+                        <div class="stat-label">Jam Kurikulum<br>Pesantren/Minggu</div>
+                    </div>
+                    <div class="stat-card click-border hover-lift fade-in delay-3">
+                        <div class="stat-number">54</div>
+                        <div class="stat-label">Total Jam<br>Pembelajaran/Minggu</div>
+                    </div>
+                </div>
+                <div class="chart-container scale-in delay-4" style="margin-top: 20px;">
+                    <h3 style="text-align: center; margin-bottom: 15px;">Perbandingan Alokasi Waktu</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 52%;">Kemenag: 52%</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 48%; background: linear-gradient(90deg, var(--gold) 0%, #c9a030 100%);">
+                            Pesantren: 48%
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Tujuan Perubahan -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>TUJUAN PERUBAHAN KURIKULUM</h2>
+                </div>
+                <div class="grid-2" style="margin-top: 20px;">
+                    <div class="info-box click-highlight hover-lift fade-in delay-1">
+                        <h3>🎯 Menyeimbangkan Muatan</h3>
+                        <p>Kurikulum nasional dan pesantren yang harmonis</p>
+                    </div>
+                    <div class="info-box click-highlight hover-lift fade-in delay-2">
+                        <h3>📈 Meningkatkan Kualitas</h3>
+                        <p>Pembelajaran ilmu keislaman secara mendalam</p>
+                    </div>
+                    <div class="info-box click-highlight hover-lift fade-in delay-3">
+                        <h3>🗣️ Memperkuat Bahasa Arab</h3>
+                        <p>Sebagai alat memahami khazanah Islam klasik</p>
+                    </div>
+                    <div class="info-box click-highlight hover-lift fade-in delay-4">
+                        <h3>🌟 Mengoptimalkan Visi-Misi</h3>
+                        <p>Mewujudkan generasi Ulul Albab yang unggul</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Prinsip Perubahan -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>PRINSIP-PRINSIP PERUBAHAN</h2>
+                </div>
+                <div style="margin-top: 20px;">
+                    <div class="info-box click-glow hover-highlight fade-in delay-1" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">1️⃣ PRIORITAS</h3>
+                        <p>Memprioritaskan muatan pesantren tanpa meninggalkan muatan nasional esensial</p>
+                    </div>
+                    <div class="info-box click-glow hover-highlight fade-in delay-2" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">2️⃣ INTEGRASI</h3>
+                        <p>Mengintegrasikan mata pelajaran yang memiliki kesamaan substansi</p>
+                    </div>
+                    <div class="info-box click-glow hover-highlight fade-in delay-3" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">3️⃣ EFISIENSI</h3>
+                        <p>Mengoptimalkan alokasi waktu tanpa membebani peserta didik secara berlebihan</p>
+                    </div>
+                    <div class="info-box click-glow hover-highlight fade-in delay-4" style="margin: 15px 0;">
+                        <h3 style="margin-bottom: 10px;">4️⃣ KONTINUITAS & FLEKSIBILITAS</h3>
+                        <p>Memastikan keberlanjutan dan memberikan ruang penyesuaian</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Strategi Integrasi -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>STRATEGI INTEGRASI KURIKULUM</h2>
+                </div>
+                <table class="comparison-table fade-in delay-1">
+                    <thead>
+                        <tr>
+                            <th>Mata Pelajaran Kemenag</th>
+                            <th>Diintegrasikan Dengan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Al-Qur'an Hadis</strong></td>
+                            <td class="highlight-green">Hadits (Pesantren)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Akidah Akhlak</strong></td>
+                            <td class="highlight-green">At-Tauhid (Pesantren)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fikih</strong></td>
+                            <td class="highlight-green">Al-Fiqh (Pesantren)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SKI</strong></td>
+                            <td class="highlight-green">Sirah Nabawi (Pesantren)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bahasa Arab</strong></td>
+                            <td class="highlight-green">Al-Lughotul 'Arobiyyah (Pesantren)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: center; margin-top: 20px; font-size: clamp(0.9em, 2.5vw, 1.3em);" class="fade-in delay-2">
+                    <span class="badge click-highlight hover-pulse">✓ Efisiensi Pembelajaran</span>
+                    <span class="badge click-highlight hover-pulse">✓ Pendalaman Materi</span>
+                </p>
+            </section>
+
+            <!-- Slide 8: Perbandingan Kurikulum -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>PERBANDINGAN STRUKTUR KURIKULUM</h2>
+                </div>
+                <div class="grid-2">
+                    <div class="chart-container click-border hover-lift fade-in delay-1">
+                        <h3 style="color: var(--primary-green); margin-bottom: 15px;">SEBELUM</h3>
+                        <div class="stat-card" style="margin: 10px 0;">
+                            <div class="stat-label">Kurikulum Kemenag</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em);">28 Jam</div>
+                        </div>
+                        <div class="stat-card" style="margin: 10px 0;">
+                            <div class="stat-label">Kurikulum Pesantren</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em);">26 Jam</div>
+                        </div>
+                        <div style="margin-top: 15px; padding: 12px; background: var(--light-green); border-radius: 10px;">
+                            <p style="font-size: clamp(0.9em, 2vw, 1.1em); margin: 0;"><strong>Total Mapel:</strong> 25-26</p>
+                        </div>
+                    </div>
+                    <div class="chart-container click-border hover-lift fade-in delay-2">
+                        <h3 style="color: var(--gold); margin-bottom: 15px;">SESUDAH</h3>
+                        <div class="stat-card" style="margin: 10px 0; background: linear-gradient(135deg, var(--gold) 0%, #c9a030 100%);">
+                            <div class="stat-label">Kurikulum Kemenag</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em); color: white;">20 Jam</div>
+                        </div>
+                        <div class="stat-card" style="margin: 10px 0; background: linear-gradient(135deg, var(--gold) 0%, #c9a030 100%);">
+                            <div class="stat-label">Kurikulum Pesantren</div>
+                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em); color: white;">34 Jam</div>
+                        </div>
+                        <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 10px;">
+                            <p style="font-size: clamp(0.9em, 2vw, 1.1em); margin: 0;"><strong>Total Mapel:</strong> 21</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Komposisi Kurikulum Baru -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>KOMPOSISI KURIKULUM BARU</h2>
+                </div>
+                <div class="grid-3" style="margin-bottom: 20px;">
+                    <div class="stat-card click-border hover-lift fade-in delay-1">
+                        <div class="stat-number">20</div>
+                        <div class="stat-label">Jam Kurikulum<br>Kemenag</div>
+                    </div>
+                    <div class="stat-card click-border hover-lift fade-in delay-2">
+                        <div class="stat-number">34</div>
+                        <div class="stat-label">Jam Kurikulum<br>Pesantren</div>
+                    </div>
+                    <div class="stat-card click-border hover-lift fade-in delay-3">
+                        <div class="stat-number">54</div>
+                        <div class="stat-label">Total Jam<br>Per Minggu</div>
+                    </div>
+                </div>
+                <div class="chart-container scale-in delay-4">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Persentase Distribusi</h3>
+                    <div class="progress-bar" style="height: clamp(35px, 8vw, 50px);">
+                        <div class="progress-fill" style="width: 37%; font-size: clamp(0.9em, 2.5vw, 1.3em);">
+                            Kemenag: 37%
+                        </div>
+                    </div>
+                    <div class="progress-bar" style="height: clamp(35px, 8vw, 50px); margin-top: 15px;">
+                        <div class="progress-fill" style="width: 63%; background: linear-gradient(90deg, var(--gold) 0%, #c9a030 100%); font-size: clamp(0.9em, 2.5vw, 1.3em);">
+                            Pesantren: 63%
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Slide 10: Penguatan Bahasa Arab -->
+            <section>
+                <div class="slide-header slide-in">
+                    <h2>PENGUATAN BAHASA ARAB</h2>
+                </div>
+                <div class="info-box hover-lift scale-in delay-1" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%); margin-bottom: 30px;">
+                    <p class="arabic-text" style="font-size: 1.8em; text-align: center;">
+                        اللغة والعلوم الآلية
+                    </p>
+                    <p style="text-align: center; font-size: 1.3em; margin-top: 15px;">
+                        <em>(Bahasa dan Ilmu Alat)</em>
+                    </p>
+                </div>
+                <div class="grid-2">
+                    <div class="stat-card click-border hover-lift fade-in delay-2" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
+                        <div class="stat-label">SEBELUM</div>
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Jam/Minggu</div>
+                    </div>
+                    <div class="stat-card click-border hover-lift fade-in delay-3" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
+                        <div class="stat-label">SESUDAH</div>
+                        <div class="stat-number">14</div>
+                        <div class="stat-label">Jam/Minggu</div>
+                    </div>
+                </div>
+                <div class="info-box hover-lift fade-in delay-4" style="margin-top: 30px;">
+                    <h3 style="text-align: center; margin-bottom: 20px;">Empat Kemahiran Berbahasa</h3>
+                    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                        <span class="badge click-highlight hover-pulse">مهارة الاستماع</span>
+                        <span class="badge click-highlight hover-pulse">مهارة الكلام</span>
+                        <span class="badge click-highlight hover-pulse">مهارة القراءة</span>
+                        <span class="badge click-highlight hover-pulse">مهارة الكتابة</span>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Slide 11: Mata Pelajaran Pesantren -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>MATA PELAJARAN PESANTREN</h2>
+            </div>
+            <div class="grid-3">
+                <div class="info-box click-highlight hover-lift fade-in delay-1">
+                    <p class="arabic-text">علوم الدين</p>
+                    <h3>Ulumuddin</h3>
+                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">At-Tauhid • Hadits • Al-Quran • At-Tajwid • At-Tafsir • Al-Fiqh • Sirah Nabawi</p>
+                    <div class="badge click-highlight hover-pulse" style="background: var(--primary-green); margin-top: 10px;">18 Jam/Minggu</div>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-2">
+                    <p class="arabic-text">اللغة والعلوم الآلية</p>
+                    <h3>Bahasa & Ilmu Alat</h3>
+                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">Al-Lughotul 'Arobiyyah • An-Nahwu • Ash-Shorof • At-Tahaji & Al-Imla • Al-Khot</p>
+                    <div class="badge click-highlight hover-pulse" style="background: var(--accent-teal); margin-top: 10px;">14 Jam/Minggu</div>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-3">
+                    <p class="arabic-text">الآداب والأخلاق</p>
+                    <h3>Adab & Akhlak</h3>
+                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">Al-Mahfudzot • Pembentukan Karakter Islami</p>
+                    <div class="badge click-highlight hover-pulse" style="background: var(--gold); margin-top: 10px;">2 Jam/Minggu</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Kitab Rujukan -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>📚 KITAB & BUKU RUJUKAN</h2>
+            </div>
+            <div class="grid-2">
+                <div class="fade-in delay-1">
+                    <h3 style="color: var(--primary-green); margin-bottom: 12px; font-size: clamp(1em, 2.5vw, 1.4em);">📖 Ulumuddin</h3>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">At-Tauhid</div>
+                        <div class="kitab-title">كتاب التوحيد</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Hadits</div>
+                        <div class="kitab-title">الْأَرْبَعِينَ النَّوَوِيَّةُ</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">At-Tajwid</div>
+                        <div class="kitab-title">هِدَايَةُ الصِّبْيَانِ</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">At-Tafsir</div>
+                        <div class="kitab-title">التفسير الْمُيَسَّرُ</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Al-Fiqh</div>
+                        <div class="kitab-title">سَفِينَةُ النَّجَاةِ / مَتْنُ أَبِي شُجَاعٍ</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Sirah Nabawi</div>
+                        <div class="kitab-title">خُلَاصَةُ نُورِ الْيَقِينِ</div>
+                    </div>
+                </div>
+                <div class="fade-in delay-2">
+                    <h3 style="color: var(--accent-teal); margin-bottom: 12px; font-size: clamp(1em, 2.5vw, 1.4em);">✍️ Bahasa & Ilmu Alat</h3>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Al-Lughotul 'Arobiyyah</div>
+                        <div class="kitab-title">العَرَبِيَّةُ بَيْنَ أَوْلَادِنَا</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">At-Tahaji</div>
+                        <div class="kitab-title">التَّهَجِّي</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Al-Khot</div>
+                        <div class="kitab-title">Qowaid Khot</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">An-Nahwu</div>
+                        <div class="kitab-title">Modul Ust Muflih</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Ash-Shorof</div>
+                        <div class="kitab-title">سُلَّمُ الْمَعْرِفَةِ</div>
+                    </div>
+                    <div class="kitab-item click-highlight hover-lift">
+                        <div class="kitab-subject">Al-Mahfudzot</div>
+                        <div class="kitab-title">كِتَابُ الْمَحْفُوظَاتِ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Keunggulan Kurikulum Baru -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>KEUNGGULAN KURIKULUM BARU</h2>
+            </div>
+            <div class="grid-2">
+                <div class="icon-box click-highlight hover-lift fade-in delay-1">
+                    <div class="icon">🔗</div>
+                    <h3>Integrasi Lebih Baik</h3>
+                    <p>PAI Kemenag terintegrasi penuh dengan muatan pesantren</p>
+                    <div class="badge">26 → 21 Mapel</div>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-2">
+                    <div class="icon">⚖️</div>
+                    <h3>Pemerataan Distribusi</h3>
+                    <p>Semua mapel pesantren konsisten di kelas 7, 8, dan 9</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-3">
+                    <div class="icon">📖</div>
+                    <h3>Penguatan Bahasa Arab</h3>
+                    <p>Alokasi waktu meningkat dari 10 jam menjadi 14 jam/minggu</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-4">
+                    <div class="icon">🎯</div>
+                    <h3>Fokus Kompetensi Inti</h3>
+                    <p>Pendalaman Ulumuddin mendapat 18 jam/minggu</p>
+                </div>
+            </div>
+            <div class="info-box hover-lift scale-in delay-5" style="margin-top: 20px; text-align: center;">
+                <p style="font-size: clamp(1em, 3vw, 1.4em); margin: 0;">
+                    <strong>✓ Tetap Memenuhi Standar Nasional</strong>
+                </p>
+                <p style="font-size: clamp(0.9em, 2.5vw, 1.2em); margin-top: 10px;">
+                    Muatan mata pelajaran umum esensial sesuai standar pemerintah
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide 14: Tahapan Implementasi -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>TAHAPAN IMPLEMENTASI</h2>
+            </div>
+            <div class="info-box click-border hover-lift fade-in delay-1" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; margin: 15px 0;">
+                <h3 style="color: white;">TAHAP 1: PERSIAPAN (3 Bulan)</h3>
+                <ul style="color: white;">
+                    <li>Sosialisasi kepada stakeholder</li>
+                    <li>Penyusunan silabus dan RPP</li>
+                    <li>Pelatihan guru dan tenaga kependidikan</li>
+                    <li>Penyiapan sarana dan prasarana</li>
+                </ul>
+            </div>
+            <div class="info-box click-border hover-lift fade-in delay-2" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; margin: 15px 0;">
+                <h3 style="color: white;">TAHAP 2: UJI COBA (1 Semester)</h3>
+                <ul style="color: white;">
+                    <li>Implementasi di kelas 7</li>
+                    <li>Monitoring dan evaluasi berkala</li>
+                    <li>Penyesuaian dan perbaikan</li>
+                </ul>
+            </div>
+            <div class="info-box click-border hover-lift fade-in delay-3" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; margin: 15px 0;">
+                <h3 style="color: white;">TAHAP 3: IMPLEMENTASI PENUH</h3>
+                <ul style="color: white;">
+                    <li>Tahun ke-2: Kelas 7 dan 8</li>
+                    <li>Tahun ke-3: Semua tingkat (7, 8, 9)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Slide 15: Strategi Pembelajaran -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>STRATEGI PEMBELAJARAN</h2>
+            </div>
+            <div class="grid-2">
+                <div class="icon-box click-highlight hover-lift fade-in delay-1">
+                    <div class="icon">🔗</div>
+                    <h3>Integrasi Pembelajaran</h3>
+                    <p>Menghubungkan antar mata pelajaran yang berkaitan</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-2">
+                    <div class="icon">👥</div>
+                    <h3>Pembelajaran Aktif</h3>
+                    <p>Melibatkan partisipasi aktif peserta didik</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-3">
+                    <div class="icon">💻</div>
+                    <h3>Berbasis IT</h3>
+                    <p>Memanfaatkan teknologi informasi dalam pembelajaran</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-4">
+                    <div class="icon">🌍</div>
+                    <h3>Kontekstual</h3>
+                    <p>Menghubungkan materi dengan kehidupan nyata</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Sistem Evaluasi -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>SISTEM EVALUASI</h2>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="info-box click-border hover-lift fade-in delay-1" style="margin: 20px 0;">
+                    <h3 style="color: var(--primary-green); margin-bottom: 12px;">📊 EVALUASI PROSES</h3>
+                    <p>Penilaian terhadap proses pembelajaran yang dilakukan secara berkala untuk memastikan kualitas pembelajaran berjalan optimal</p>
+                </div>
+                <div class="info-box click-border hover-lift fade-in delay-2" style="margin: 20px 0;">
+                    <h3 style="color: var(--accent-teal); margin-bottom: 12px;">📝 EVALUASI HASIL</h3>
+                    <p>Penilaian terhadap hasil belajar peserta didik melalui ujian dan tes untuk mengukur pencapaian kompetensi</p>
+                </div>
+                <div class="info-box click-border hover-lift fade-in delay-3" style="margin: 20px 0;">
+                    <h3 style="color: var(--gold); margin-bottom: 12px;">🎯 EVALUASI PROGRAM</h3>
+                    <p>Penilaian terhadap efektivitas implementasi kurikulum secara keselanjutan untuk perbaikan berkelanjutan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Manfaat Perubahan -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>MANFAAT PERUBAHAN KURIKULUM</h2>
+            </div>
+            <div class="grid-2">
+                <div class="info-box click-highlight hover-lift fade-in delay-1">
+                    <h3>👨‍🎓 Bagi Peserta Didik</h3>
+                    <ul>
+                        <li>Pendidikan seimbang ilmu umum dan agama</li>
+                        <li>Penguasaan bahasa Arab yang baik</li>
+                        <li>Beban belajar lebih efisien</li>
+                    </ul>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-2">
+                    <h3>👨‍🏫 Bagi Pendidik</h3>
+                    <ul>
+                        <li>Panduan pembelajaran yang jelas</li>
+                        <li>Alokasi waktu yang memadai</li>
+                        <li>Integrasi materi yang lebih baik</li>
+                    </ul>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-3">
+                    <h3>🏫 Bagi Lembaga</h3>
+                    <ul>
+                        <li>Peningkatan mutu dan daya saing</li>
+                        <li>Keunggulan sebagai pesantren modern</li>
+                        <li>Reputasi lembaga yang amanah</li>
+                    </ul>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-4">
+                    <h3>👥 Bagi Masyarakat</h3>
+                    <ul>
+                        <li>Lulusan berkualitas dan berakhlak mulia</li>
+                        <li>Kontribusi positif bagi masyarakat</li>
+                        <li>Generasi Ulul Albab yang unggul</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Sarana Prasarana -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>KEBUTUHAN SARANA & PRASARANA</h2>
+            </div>
+            <div class="grid-3">
+                <div class="icon-box click-highlight hover-lift fade-in delay-1">
+                    <div class="icon">🏛️</div>
+                    <h3>Ruang Kelas</h3>
+                    <p>Ruang kelas memadai, perpustakaan lengkap, dan aula untuk kegiatan bersama</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-2">
+                    <div class="icon">📚</div>
+                    <h3>Bahan Ajar</h3>
+                    <p>Buku teks, kitab klasik, dan media pembelajaran audio-visual</p>
+                </div>
+                <div class="icon-box click-highlight hover-lift fade-in delay-3">
+                    <div class="icon">👨‍🏫</div>
+                    <h3>Tenaga Pendidik</h3>
+                    <p>Guru kompeten, ustadz/ustadzah ahli, rasio ideal 1:20</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Target Pencapaian -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>TARGET PENCAPAIAN LULUSAN</h2>
+            </div>
+            <div class="info-box hover-lift scale-in delay-1" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%); margin-bottom: 20px;">
+                <h3 style="text-align: center; color: var(--primary-green); font-size: clamp(1.2em, 3.5vw, 1.8em);">Generasi Ulul Albab</h3>
+            </div>
+            <div class="grid-2">
+                <div class="stat-card click-glow hover-lift fade-in delay-2">
+                    <div class="icon">🕌</div>
+                    <h3 style="color: white; margin: 12px 0;">Memurnikan Aqidah</h3>
+                    <p style="color: white; opacity: 0.9;">Pemahaman tauhid yang benar dan mendalam</p>
+                </div>
+                <div class="stat-card click-glow hover-lift fade-in delay-3">
+                    <div class="icon">📿</div>
+                    <h3 style="color: white; margin: 12px 0;">Mengamalkan Syari'ah</h3>
+                    <p style="color: white; opacity: 0.9;">Praktik ibadah yang benar sesuai tuntunan</p>
+                </div>
+                <div class="stat-card click-glow hover-lift fade-in delay-4">
+                    <div class="icon">🌟</div>
+                    <h3 style="color: white; margin: 12px 0;">Berakhlaq Karimah</h3>
+                    <p style="color: white; opacity: 0.9;">Karakter mulia dalam kehidupan sehari-hari</p>
+                </div>
+                <div class="stat-card click-glow hover-lift fade-in delay-5">
+                    <div class="icon">📖</div>
+                    <h3 style="color: white; margin: 12px 0;">Mencintai Ilmu</h3>
+                    <p style="color: white; opacity: 0.9;">Semangat belajar sepanjang hayat</p>
+                </div>
+            </div>
+            <div class="info-box hover-lift scale-in delay-6" style="margin-top: 20px; text-align: center; background: var(--gold); color: white;">
+                <p class="arabic-text" style="font-size: clamp(1.2em, 3.5vw, 1.8em); color: white; margin-bottom: 8px;">
+                    رَحْمَةً لِلْعَالَمِينَ
+                </p>
+                <p style="font-size: clamp(1em, 2.5vw, 1.4em); margin: 0;">
+                    <strong>Menebarkan Rahmat bagi Seluruh Alam</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide 20: Kesimpulan -->
+        <section>
+            <div class="slide-header slide-in">
+                <h2>KESIMPULAN</h2>
+            </div>
+            <div class="info-box hover-lift scale-in delay-1" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
+                <p style="font-size: clamp(1em, 3vw, 1.4em); line-height: 1.8;">
+                    Rancangan perubahan kurikulum ini merupakan <strong style="color: var(--gold);">langkah strategis</strong> untuk:
+                </p>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="info-box click-highlight hover-lift fade-in delay-2" style="margin: 15px 0;">
+                    <h3>✓ Menyeimbangkan Muatan Nasional dan Pesantren</h3>
+                    <p>Dari 52:48 menjadi 37:63 dengan total 54 jam per minggu</p>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-3" style="margin: 15px 0;">
+                    <h3>✓ Meningkatkan Efisiensi Pembelajaran</h3>
+                    <p>Mengurangi beban dari 25-26 menjadi 21 mata pelajaran</p>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-4" style="margin: 15px 0;">
+                    <h3>✓ Memperkuat Identitas Pesantren</h3>
+                    <p>Penguatan Ulumuddin (18 jam) dan Bahasa Arab (14 jam)</p>
+                </div>
+                <div class="info-box click-highlight hover-lift fade-in delay-5" style="margin: 15px 0;">
+                    <h3>✓ Mewujudkan Visi Generasi Ulul Albab</h3>
+                    <p>Lulusan unggul dalam akademik dan keislaman</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 21: Penutup -->
+        <section>
+            <div class="islamic-pattern slide-in delay-1"></div>
+            <div class="slide-header slide-in delay-2">
+                <h2>PENUTUP</h2>
+            </div>
+            <div class="info-box hover-lift scale-in delay-3" style="background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%); color: white; padding: 30px; margin: 20px 0;">
+                <p class="arabic-text" style="color: white; font-size: clamp(1.3em, 4vw, 2em); text-align: center; margin-bottom: 15px;">
+                    بَارَكَ اللَّهُ فِيكُمْ
+                </p>
+                <p style="text-align: center; font-size: clamp(1em, 3vw, 1.5em); color: white;">
+                    Semoga Allah SWT memberikan kemudahan dan keberkahan<br>dalam setiap langkah perbaikan pendidikan di madrasah ini
+                </p>
+            </div>
+            <div style="text-align: center; margin-top: 30px;" class="fade-in delay-4">
+                <p style="font-size: clamp(0.9em, 2.5vw, 1.3em);">
+                    <strong>Kebarongan, 14 Januari 2026</strong><br>
+                    Ketua Tim Penyusun
+                </p>
+                <p style="font-size: clamp(1em, 3vw, 1.4em); color: var(--primary-green); margin-top: 20px;">
+                    <strong>Agus Eko Purnomo, S.Ag.</strong>
+                </p>
+            </div>
+            <div style="margin-top: 30px; padding: 15px; background: var(--light-green); border-radius: 10px;" class="fade-in delay-5">
+                <p style="text-align: center; font-size: clamp(0.9em, 2.5vw, 1.2em); margin: 0;">
+                    <strong>YAYASAN POMESMAWI</strong><br>
+                    MTs Wathoniyah Islamiyah Kebarongan<br>
+                    Kabupaten Banyumas, Jawa Tengah
+                </p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        transitionSpeed: 'default',
+        backgroundTransition: 'fade',
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: 'c/t',
+        width: '100%',
+        height: '100%',
+        margin: 0.04,
+        minScale: 0.2,
+        maxScale: 2.0,
+        embedded: false,
+        disableLayout: false
+    });
+
+    // Add exit animations for slides
+    Reveal.on('slidechanged', function(event) {
+        // Add exit animation to previous slide elements
+        const prevSlide = event.previousSlide;
+        if (prevSlide) {
+            const elements = prevSlide.querySelectorAll('.slide-in, .fade-in, .scale-in');
+            elements.forEach(el => {
+                if (el.classList.contains('slide-in')) {
+                    el.classList.remove('slide-in');
+                    el.classList.add('slide-out');
+                } else if (el.classList.contains('fade-in')) {
+                    el.classList.remove('fade-in');
+                    el.classList.add('fade-out');
+                } else if (el.classList.contains('scale-in')) {
+                    el.classList.remove('scale-in');
+                    el.classList.add('scale-out');
+                }
+            });
+        }
+        
+        // Add enter animations to current slide elements
+        const currentSlide = event.currentSlide;
+        if (currentSlide) {
+            const elements = currentSlide.querySelectorAll('.slide-out, .fade-out, .scale-out');
+            elements.forEach(el => {
+                if (el.classList.contains('slide-out')) {
+                    el.classList.remove('slide-out');
+                    el.classList.add('slide-in');
+                } else if (el.classList.contains('fade-out')) {
+                    el.classList.remove('fade-out');
+                    el.classList.add('fade-in');
+                } else if (el.classList.contains('scale-out')) {
+                    el.classList.remove('scale-out');
+                    el.classList.add('scale-in');
+                }
+            });
+        }
+    });
+
+    // Click toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle click-highlight elements
+        document.querySelectorAll('.click-highlight').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+            });
+        });
+        
+        // Handle click-border elements
+        document.querySelectorAll('.click-border').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+            });
+        });
+        
+        // Handle click-glow elements
+        document.querySelectorAll('.click-glow').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+            });
+        });
+        
+        // Prevent click events from interfering with Reveal.js navigation
+        document.querySelectorAll('.click-highlight, .click-border, .click-glow').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        Reveal.layout();
+    });
+
+    Reveal.layout();
+</script>
+</body>
+</html>
