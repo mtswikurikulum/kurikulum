@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Deskripsi Panca Cinta – Tambahan TP Rapor</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c1: #1B5E20; /* Cinta Tanah Air – hijau */
+    --c1l: #E8F5E9;
+    --c2: #1565C0; /* Cinta Sesama – biru */
+    --c2l: #E3F2FD;
+    --c3: #6A1B9A; /* Cinta Ilmu – ungu */
+    --c3l: #F3E5F5;
+    --c4: #E65100; /* Cinta Lingkungan – oranye */
+    --c4l: #FFF3E0;
+    --c5: #B71C1C; /* Cinta Diri – merah */
+    --c5l: #FFEBEE;
+    --ink: #1A1A1A;
+    --muted: #5a5a5a;
+    --border: #E0E0E0;
+    --bg: #F8F8F6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+  }
+
+  /* ── HEADER ── */
+  .page-header {
+    background: linear-gradient(135deg, #0D2137 0%, #1B3A5C 100%);
+    padding: 40px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::after {
+    content: '🇮🇩';
+    position: absolute;
+    right: 52px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    opacity: .15;
+  }
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .page-header p {
+    color: rgba(255,255,255,.65);
+    font-size: 13.5px;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  .stat-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 22px;
+  }
+  .stat {
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  .stat-num { font-size: 22px; font-weight: 800; color: #fff; }
+  .stat-lbl { font-size: 11px; color: rgba(255,255,255,.6); letter-spacing: .5px; margin-top: 2px; }
+
+  /* ── CONTROLS ── */
+  .controls {
+    display: flex;
+    gap: 10px;
+    padding: 20px 52px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-btn {
+    padding: 7px 18px;
+    border-radius: 20px;
+    border: 2px solid var(--border);
+    background: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    color: var(--muted);
+  }
+  .filter-btn:hover { opacity: .85; }
+  .filter-btn.active { color: #fff; border-color: transparent; }
+  .filter-btn[data-cat="all"].active { background: #1A1A1A; }
+  .filter-btn[data-cat="1"].active { background: var(--c1); }
+  .filter-btn[data-cat="2"].active { background: var(--c2); }
+  .filter-btn[data-cat="3"].active { background: var(--c3); }
+  .filter-btn[data-cat="4"].active { background: var(--c4); }
+  .filter-btn[data-cat="5"].active { background: var(--c5); }
+
+  .search-wrap {
+    margin-left: auto;
+    position: relative;
+  }
+  .search-wrap input {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    padding: 8px 16px 8px 36px;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    outline: none;
+    width: 240px;
+    background: var(--bg);
+    transition: border-color .2s;
+  }
+  .search-wrap input:focus { border-color: #888; }
+  .search-wrap .icon {
+    position: absolute;
+    left: 12px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: .5;
+  }
+
+  /* ── MAIN ── */
+  .main { padding: 32px 52px 52px; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-emoji { font-size: 28px; }
+  .section-info h2 {
+    font-size: 17px;
+    font-weight: 800;
+  }
+  .section-info p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .section-badge {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    color: #fff;
+  }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+
+  .desc-card {
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-left-width: 4px;
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: box-shadow .2s, transform .15s;
+    cursor: default;
+    position: relative;
+  }
+  .desc-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.09);
+    transform: translateY(-1px);
+  }
+
+  .desc-num {
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .desc-text { font-size: 13.5px; line-height: 1.65; color: var(--ink); flex: 1; }
+  .desc-kko {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-right: 5px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity .2s;
+    padding: 4px;
+  }
+  .desc-card:hover .copy-btn { opacity: .45; }
+  .copy-btn:hover { opacity: 1 !important; }
+
+  .hidden { display: none !important; }
+
+  /* cat colors */
+  .cat-1 { border-left-color: var(--c1); }
+  .cat-1 .desc-num, .cat-1 .desc-kko { background: var(--c1); }
+  .cat-2 { border-left-color: var(--c2); }
+  .cat-2 .desc-num, .cat-2 .desc-kko { background: var(--c2); }
+  .cat-3 { border-left-color: var(--c3); }
+  .cat-3 .desc-num, .cat-3 .desc-kko { background: var(--c3); }
+  .cat-4 { border-left-color: var(--c4); }
+  .cat-4 .desc-num, .cat-4 .desc-kko { background: var(--c4); }
+  .cat-5 { border-left-color: var(--c5); }
+  .cat-5 .desc-num, .cat-5 .desc-kko { background: var(--c5); }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity .3s;
+    pointer-events: none;
+    z-index: 999;
+  }
+  .toast.show { opacity: 1; }
+
+  /* no-result */
+  .no-result {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-size: 15px;
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    .page-header, .controls, .main { padding-left: 20px; padding-right: 20px; }
+    .card-grid { grid-template-columns: 1fr; }
+    .search-wrap { margin-left: 0; width: 100%; }
+    .search-wrap input { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>100 Deskripsi Panca Cinta</h1>
+  <p>Kumpulan deskripsi capaian Tujuan Pembelajaran (TP) berbasis KKO untuk penulisan rapor. Setiap deskripsi diawali dengan Kata Kerja Operasional (KKO) yang terukur dan sesuai tingkat kognitif/afektif.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">100</div><div class="stat-lbl">Total Deskripsi</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Nilai Panca Cinta</div></div>
+    <div class="stat"><div class="stat-num">20</div><div class="stat-lbl">Deskripsi / Nilai</div></div>
+  </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="filter-btn active" data-cat="all">🔍 Semua</button>
+  <button class="filter-btn" data-cat="1">🇮🇩 Tanah Air</button>
+  <button class="filter-btn" data-cat="2">🤝 Sesama</button>
+  <button class="filter-btn" data-cat="3">📚 Ilmu</button>
+  <button class="filter-btn" data-cat="4">🌿 Lingkungan</button>
+  <button class="filter-btn" data-cat="5">💪 Diri Sendiri</button>
+  <div class="search-wrap">
+    <span class="icon">🔎</span>
+    <input type="text" id="searchInput" placeholder="Cari kata kunci atau KKO…">
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="mainContent">
+
+  <!-- ══ 1. CINTA TANAH AIR ══ -->
+  <div class="section" data-section="1">
+    <div class="section-header">
+      <span class="section-emoji">🇮🇩</span>
+      <div class="section-info">
+        <h2 style="color:var(--c1)">Cinta Tanah Air</h2>
+        <p>Nasionalisme · Musyawarah · Persatuan · Kebangsaan · Bela Negara</p>
+      </div>
+      <span class="section-badge" style="background:var(--c1)">20 Deskripsi</span>
+    </div>
+    <div class="card-grid" id="grid-1"></div>
+  </div>
+
+  <!-- ══ 2. CINTA SESAMA ══ -->
+  <div class="section" data-section="2">
+    <div class="section-header">
+      <span class="section-emoji">🤝</span>
+      <div class="section-info">
+        <h2 style="color:var(--c2)">Cinta Sesama</h2>
+        <p>Empati · Toleransi · Menghargai Pendapat · Gotong Royong · Inklusif</p>
+      </div>
+      <span class="section-badge" style="background:var(--c2)">20 Deskripsi</span>
+    </div>
+    <div class="card-grid" id="grid-2"></div>
+  </div>
+
+  <!-- ══ 3. CINTA ILMU ══ -->
+  <div class="section" data-section="3">
+    <div class="section-header">
+      <span class="section-emoji">📚</span>
+      <div class="section-info">
+        <h2 style="color:var(--c3)">Cinta Ilmu</h2>
+        <p>Literasi · Rasa Ingin Tahu · Berpikir Kritis · Inovasi · Belajar Mandiri</p>
+      </div>
+      <span class="section-badge" style="background:var(--c3)">20 Deskripsi</span>
+    </div>
+    <div class="card-grid" id="grid-3"></div>
+  </div>
+
+  <!-- ══ 4. CINTA LINGKUNGAN ══ -->
+  <div class="section" data-section="4">
+    <div class="section-header">
+      <span class="section-emoji">🌿</span>
+      <div class="section-info">
+        <h2 style="color:var(--c4)">Cinta Lingkungan</h2>
+        <p>Kepedulian Alam · Gaya Hidup Hijau · Konservasi · Eco-Literacy · Keberlanjutan</p>
+      </div>
+      <span class="section-badge" style="background:var(--c4)">20 Deskripsi</span>
+    </div>
+    <div class="card-grid" id="grid-4"></div>
+  </div>
+
+  <!-- ══ 5. CINTA DIRI SENDIRI ══ -->
+  <div class="section" data-section="5">
+    <div class="section-header">
+      <span class="section-emoji">💪</span>
+      <div class="section-info">
+        <h2 style="color:var(--c5)">Cinta Diri Sendiri</h2>
+        <p>Regulasi Diri · Kesehatan · Integritas · Tanggung Jawab · Pertumbuhan Pribadi</p>
+      </div>
+      <span class="section-badge" style="background:var(--c5)">20 Deskripsi</span>
+    </div>
+    <div class="card-grid" id="grid-5"></div>
+  </div>
+
+  <div class="no-result" id="noResult">Tidak ada deskripsi yang cocok dengan pencarian.</div>
+</div>
+
+<div class="toast" id="toast">✅ Disalin ke clipboard!</div>
+
+<script>
+const data = {
+  1: [
+    { kko: "Menjelaskan", text: "menjelaskan makna persatuan dan kesatuan bangsa Indonesia dalam kehidupan sehari-hari dengan memberikan contoh nyata dari lingkungan sekitar." },
+    { kko: "Mengidentifikasi", text: "mengidentifikasi simbol-simbol kebangsaan (bendera, lagu kebangsaan, lambang negara) beserta maknanya secara tepat dan percaya diri." },
+    { kko: "Menerapkan", text: "menerapkan nilai-nilai Pancasila sebagai dasar dalam setiap pengambilan keputusan pribadi maupun kelompok di lingkungan sekolah." },
+    { kko: "Menunjukkan", text: "menunjukkan sikap bangga sebagai warga negara Indonesia dengan aktif berpartisipasi dalam kegiatan upacara dan peringatan hari nasional." },
+    { kko: "Menganalisis", text: "menganalisis dampak positif keberagaman suku, budaya, dan agama di Indonesia sebagai kekuatan persatuan bangsa." },
+    { kko: "Membiasakan", text: "membiasakan diri untuk mengutamakan musyawarah mufakat dalam menyelesaikan perbedaan pendapat dengan teman di lingkungan kelas maupun sekolah." },
+    { kko: "Menyajikan", text: "menyajikan informasi tentang kekayaan budaya daerah setempat sebagai bagian dari identitas nasional melalui berbagai media kreatif." },
+    { kko: "Mengaitkan", text: "mengaitkan nilai-nilai semangat sumpah pemuda dengan praktik kehidupan kebangsaan masa kini secara kritis dan reflektif." },
+    { kko: "Mempraktikkan", text: "mempraktikkan sikap bela negara dalam kehidupan sehari-hari melalui partisipasi aktif dalam kegiatan sosial dan kewargaan di sekolah." },
+    { kko: "Membandingkan", text: "membandingkan keunikan budaya berbagai daerah di Indonesia dan menyimpulkan keistimewaan bangsa Indonesia di antara bangsa-bangsa lain." },
+    { kko: "Mengapresiasi", text: "mengapresiasi karya seni, tradisi, dan kearifan lokal daerah sebagai warisan leluhur yang harus dilestarikan oleh generasi muda." },
+    { kko: "Mendemonstrasikan", text: "mendemonstrasikan semangat gotong royong dalam kegiatan kerja bakti atau proyek kelas sebagai wujud cinta tanah air." },
+    { kko: "Merancang", text: "merancang kegiatan pelestarian budaya lokal yang dapat melibatkan seluruh warga sekolah secara inklusif dan menyenangkan." },
+    { kko: "Mengevaluasi", text: "mengevaluasi peran warga negara muda dalam menjaga keutuhan NKRI melalui analisis kasus ancaman disintegrasi bangsa." },
+    { kko: "Mengungkapkan", text: "mengungkapkan rasa syukur atas kemerdekaan Indonesia melalui tindakan nyata berupa disiplin belajar dan prestasi yang mengharumkan bangsa." },
+    { kko: "Menghubungkan", text: "menghubungkan peristiwa sejarah perjuangan bangsa dengan nilai-nilai kepahlawanan yang relevan diterapkan dalam kehidupan peserta didik masa kini." },
+    { kko: "Mempertahankan", text: "mempertahankan sikap cinta produk dalam negeri dengan memilih dan mempromosikan produk lokal di kalangan teman sebaya." },
+    { kko: "Mengomunikasikan", text: "mengomunikasikan kebanggaan terhadap Indonesia melalui karya tulis, presentasi, atau media sosial dengan bahasa yang santun dan bernas." },
+    { kko: "Menelaah", text: "menelaah tantangan-tantangan yang dihadapi bangsa Indonesia di era globalisasi dan merumuskan sikap yang tepat sebagai generasi penerus." },
+    { kko: "Merefleksikan", text: "merefleksikan kontribusi pribadi sebagai bagian dari bangsa Indonesia dalam mewujudkan cita-cita kemerdekaan melalui jurnal diri secara berkala." }
+  ],
+  2: [
+    { kko: "Menunjukkan", text: "menunjukkan sikap empati terhadap teman yang mengalami kesulitan belajar dengan memberikan bantuan secara tulus dan penuh kesabaran." },
+    { kko: "Menghargai", text: "menghargai perbedaan pendapat teman dalam diskusi kelas dengan mendengarkan secara aktif dan merespons secara santun tanpa merendahkan." },
+    { kko: "Menerapkan", text: "menerapkan prinsip tolong-menolong dalam kegiatan belajar kelompok dengan bersedia berbagi pengetahuan kepada teman yang membutuhkan." },
+    { kko: "Membiasakan", text: "membiasakan diri menyapa, memberi salam, dan bersikap ramah kepada semua warga sekolah tanpa membedakan latar belakang." },
+    { kko: "Berpartisipasi", text: "berpartisipasi aktif dalam kegiatan sosial sekolah (bakti sosial, donor darah, kunjungan ke panti) sebagai wujud kepedulian terhadap sesama." },
+    { kko: "Menganalisis", text: "menganalisis nilai-nilai toleransi beragama dalam kehidupan masyarakat dan menerapkannya dalam interaksi sehari-hari di lingkungan sekolah." },
+    { kko: "Mempraktikkan", text: "mempraktikkan komunikasi yang inklusif dengan menghindari ujaran kebencian, stereotip, dan prasangka terhadap kelompok lain." },
+    { kko: "Merespons", text: "merespons situasi konflik antarteman dengan sikap mediasi yang bijaksana, mengutamakan kepentingan bersama di atas kepentingan pribadi." },
+    { kko: "Mengajak", text: "mengajak teman-teman untuk berpartisipasi dalam kegiatan kebersamaan yang membangun rasa persaudaraan dan keakraban di kelas." },
+    { kko: "Mengevaluasi", text: "mengevaluasi perilaku sosial diri sendiri dan teman secara jujur, kemudian merumuskan komitmen perbaikan secara bersama-sama." },
+    { kko: "Mendemonstrasikan", text: "mendemonstrasikan sikap gotong royong dalam menyelesaikan tugas-tugas kelompok dengan pembagian peran yang adil dan bertanggung jawab." },
+    { kko: "Menyesuaikan", text: "menyesuaikan cara berkomunikasi dengan mempertimbangkan perbedaan usia, latar belakang, dan kebutuhan orang lain secara bijaksana." },
+    { kko: "Mengidentifikasi", text: "mengidentifikasi bentuk-bentuk diskriminasi di lingkungan sekolah dan merumuskan langkah konkret untuk mencegah serta mengatasinya." },
+    { kko: "Mengekspresikan", text: "mengekspresikan kepedulian terhadap teman yang berduka atau mengalami masalah melalui kata-kata penghiburan dan tindakan yang tepat." },
+    { kko: "Membangun", text: "membangun hubungan pertemanan yang positif dan saling mendukung dengan seluruh teman kelas tanpa memandang perbedaan yang ada." },
+    { kko: "Menghormati", text: "menghormati hak dan kebebasan orang lain untuk berpendapat, berekspresi, dan beribadah sesuai dengan keyakinannya masing-masing." },
+    { kko: "Mengapresiasi", text: "mengapresiasi keberagaman kemampuan dan bakat teman dengan memberikan dukungan positif dan menghindari sikap meremehkan." },
+    { kko: "Berkolaborasi", text: "berkolaborasi secara aktif dalam proyek lintas kelompok dengan mengedepankan semangat kebersamaan, saling percaya, dan rasa tanggung jawab." },
+    { kko: "Merancang", text: "merancang kegiatan yang mendorong inklusi sosial di kelas sehingga setiap siswa merasa diterima, dihargai, dan menjadi bagian dari komunitas." },
+    { kko: "Merefleksikan", text: "merefleksikan kualitas hubungan sosial yang telah dibangun dan mengidentifikasi langkah-langkah untuk menjadi pribadi yang lebih peduli dan hangat." }
+  ],
+  3: [
+    { kko: "Menjelaskan", text: "menjelaskan konsep-konsep ilmu pengetahuan yang dipelajari dengan bahasa sendiri secara runtut, jelas, dan mudah dipahami oleh orang lain." },
+    { kko: "Menganalisis", text: "menganalisis informasi dari berbagai sumber secara kritis untuk memilah fakta dari opini serta menghindari paparan berita yang tidak valid." },
+    { kko: "Menerapkan", text: "menerapkan strategi belajar mandiri yang efektif dengan menetapkan target, jadwal, dan cara evaluasi kemajuan belajar secara konsisten." },
+    { kko: "Membuktikan", text: "membuktikan penguasaan materi pelajaran melalui penyelesaian soal-soal yang menantang dengan pendekatan berpikir sistematis dan logis." },
+    { kko: "Mengajukan", text: "mengajukan pertanyaan-pertanyaan kritis dan relevan dalam proses pembelajaran sebagai tanda rasa ingin tahu yang tinggi terhadap ilmu." },
+    { kko: "Merancang", text: "merancang proyek atau eksperimen sederhana yang bertujuan menjawab rasa penasaran terhadap fenomena alam atau sosial di sekitar." },
+    { kko: "Mengomunikasikan", text: "mengomunikasikan hasil temuan belajar kepada teman atau guru secara lisan maupun tulisan dengan struktur yang sistematis dan informatif." },
+    { kko: "Mengevaluasi", text: "mengevaluasi kualitas sumber belajar (buku, artikel, video) berdasarkan kriteria validitas, relevansi, dan tingkat kedalaman informasinya." },
+    { kko: "Mengembangkan", text: "mengembangkan kebiasaan membaca secara rutin dari berbagai jenis teks untuk memperluas wawasan dan memperkaya pemahaman lintas bidang ilmu." },
+    { kko: "Menyimpulkan", text: "menyimpulkan esensi dari suatu materi atau diskusi dengan mengintegrasikan berbagai sudut pandang secara jernih dan berimbang." },
+    { kko: "Menciptakan", text: "menciptakan karya tulis, produk, atau solusi kreatif yang merupakan buah dari proses belajar mendalam dan penalaran tingkat tinggi." },
+    { kko: "Membandingkan", text: "membandingkan berbagai teori atau pendekatan dalam suatu topik dan merumuskan kesimpulan yang logis berdasarkan bukti yang ada." },
+    { kko: "Menelaah", text: "menelaah kesalahan dalam jawaban atau cara berpikir sendiri secara terbuka sebagai bagian dari proses belajar yang berkelanjutan." },
+    { kko: "Memanfaatkan", text: "memanfaatkan teknologi digital secara bijak dan produktif sebagai alat bantu dalam proses mencari, mengolah, dan menyajikan informasi." },
+    { kko: "Menghubungkan", text: "menghubungkan konsep-konsep antarmata pelajaran untuk membangun pemahaman yang lebih holistik dan bermakna terhadap suatu permasalahan." },
+    { kko: "Mengorganisasikan", text: "mengorganisasikan catatan dan materi belajar secara sistematis sehingga mudah dipahami kembali dan dapat digunakan sebagai referensi yang efektif." },
+    { kko: "Mengajukan", text: "mengajukan alternatif solusi inovatif terhadap permasalahan yang ditemukan dalam pembelajaran dengan argumen yang terstruktur dan kreatif." },
+    { kko: "Mempertanyakan", text: "mempertanyakan asumsi-asumsi yang lazim diterima dengan semangat inkuiri untuk menemukan pemahaman yang lebih dalam dan autentik." },
+    { kko: "Mendokumentasikan", text: "mendokumentasikan proses dan hasil belajar secara rapi dan berkala sebagai portofolio pertumbuhan intelektual sepanjang semester." },
+    { kko: "Merefleksikan", text: "merefleksikan perkembangan kemampuan berpikir dan belajar diri sendiri secara jujur, kemudian merumuskan rencana peningkatan yang konkret." }
+  ],
+  4: [
+    { kko: "Menjelaskan", text: "menjelaskan hubungan sebab-akibat antara perilaku manusia dan kerusakan lingkungan dengan menggunakan data dan fakta yang relevan." },
+    { kko: "Mengidentifikasi", text: "mengidentifikasi sumber-sumber pencemaran lingkungan di sekitar sekolah dan merumuskan langkah-langkah pencegahan yang dapat dilakukan siswa." },
+    { kko: "Menerapkan", text: "menerapkan prinsip hidup ramah lingkungan (reduce, reuse, recycle) dalam rutinitas harian di sekolah maupun di rumah secara konsisten." },
+    { kko: "Merancang", text: "merancang program pengelolaan sampah sederhana di lingkungan kelas yang melibatkan seluruh warga kelas secara aktif dan bertanggung jawab." },
+    { kko: "Mendemonstrasikan", text: "mendemonstrasikan cara membuat pupuk kompos atau produk daur ulang sederhana sebagai bentuk nyata cinta terhadap lingkungan hidup." },
+    { kko: "Menganalisis", text: "menganalisis dampak perubahan iklim terhadap kehidupan masyarakat lokal dan merumuskan kontribusi nyata yang dapat dilakukan oleh pelajar." },
+    { kko: "Mempraktikkan", text: "mempraktikkan kebiasaan hemat energi dan air di lingkungan sekolah sebagai wujud tanggung jawab generasi muda terhadap keberlanjutan bumi." },
+    { kko: "Membiasakan", text: "membiasakan diri untuk tidak membuang sampah sembarangan dan mengajak teman serta keluarga untuk melakukan hal yang sama." },
+    { kko: "Merumuskan", text: "merumuskan solusi kreatif berbasis kearifan lokal untuk mengatasi permasalahan lingkungan yang ada di komunitas tempat tinggal peserta didik." },
+    { kko: "Mengapresiasi", text: "mengapresiasi keanekaragaman hayati Indonesia dengan menunjukkan sikap peduli terhadap kelestarian flora dan fauna endemik nusantara." },
+    { kko: "Mengevaluasi", text: "mengevaluasi gaya hidup konsumtif yang berpotensi merusak lingkungan dan menggantinya dengan pilihan-pilihan hidup yang lebih berkelanjutan." },
+    { kko: "Berpartisipasi", text: "berpartisipasi aktif dalam kegiatan penghijauan, penanaman pohon, atau bersih-bersih lingkungan sebagai aksi nyata peduli terhadap alam." },
+    { kko: "Mengomunikasikan", text: "mengomunikasikan pesan-pesan kepedulian lingkungan kepada teman sebaya melalui poster, video pendek, atau media lainnya yang kreatif." },
+    { kko: "Membandingkan", text: "membandingkan kondisi lingkungan sebelum dan sesudah dilakukan upaya pelestarian untuk mengukur efektivitas tindakan yang telah diambil." },
+    { kko: "Menghubungkan", text: "menghubungkan nilai-nilai kearifan lokal masyarakat dengan prinsip-prinsip ekologi modern untuk membangun kesadaran lingkungan yang holistik." },
+    { kko: "Menelaah", text: "menelaah kebijakan lingkungan hidup yang berlaku dan menilai relevansinya dengan kondisi nyata lingkungan di wilayah tempat tinggal siswa." },
+    { kko: "Mengusulkan", text: "mengusulkan program lingkungan hidup yang inovatif kepada pihak sekolah atau pemerintah lokal berdasarkan penelitian dan data yang valid." },
+    { kko: "Mempertahankan", text: "mempertahankan komitmen menjaga kebersihan dan keasrian lingkungan sekolah meski tidak ada pengawasan dari guru atau orang dewasa." },
+    { kko: "Mengintegrasikan", text: "mengintegrasikan kesadaran ekologis ke dalam proyek-proyek pembelajaran lintas mata pelajaran secara reflektif dan penuh tanggung jawab." },
+    { kko: "Merefleksikan", text: "merefleksikan dampak tindakan sehari-hari terhadap lingkungan dan merumuskan komitmen perubahan perilaku yang konkret dan terukur." }
+  ],
+  5: [
+    { kko: "Mengelola", text: "mengelola waktu belajar secara mandiri dengan membuat jadwal harian yang terstruktur dan mematuhinya dengan penuh disiplin dan tanggung jawab." },
+    { kko: "Menunjukkan", text: "menunjukkan integritas diri dengan bersikap jujur dalam setiap ujian, tugas, dan interaksi sosial tanpa perlu diawasi oleh siapa pun." },
+    { kko: "Menerapkan", text: "menerapkan pola hidup sehat melalui kebiasaan makan bergizi, istirahat teratur, olahraga, dan menjauhi perilaku yang merugikan kesehatan." },
+    { kko: "Menetapkan", text: "menetapkan tujuan belajar jangka pendek dan panjang secara realistis, kemudian berupaya mencapainya dengan ketekunan dan semangat yang konsisten." },
+    { kko: "Mengidentifikasi", text: "mengidentifikasi kekuatan dan kelemahan diri sendiri secara objektif sebagai dasar pengembangan potensi yang terarah dan bermakna." },
+    { kko: "Meregulasi", text: "meregulasi emosi dengan baik dalam menghadapi tekanan, kegagalan, atau situasi sulit sehingga tetap mampu berpikir dan bertindak secara rasional." },
+    { kko: "Membiasakan", text: "membiasakan diri untuk segera menyelesaikan tugas tanpa menunda-nunda sebagai latihan membangun karakter disiplin dan bertanggung jawab." },
+    { kko: "Mengembangkan", text: "mengembangkan potensi dan bakat diri melalui kegiatan ekstrakurikuler, latihan mandiri, dan eksplorasi minat secara konsisten dan penuh semangat." },
+    { kko: "Merefleksikan", text: "merefleksikan keberhasilan dan kegagalan yang dialami secara jujur untuk mengambil pelajaran berharga yang mendorong pertumbuhan pribadi." },
+    { kko: "Menghargai", text: "menghargai diri sendiri dengan tidak membandingkan pencapaian pribadi secara negatif dengan orang lain, melainkan fokus pada kemajuan sendiri." },
+    { kko: "Mempertanggungjawabkan", text: "mempertanggungjawabkan setiap keputusan dan tindakan pribadi dengan sikap berani mengakui kesalahan dan berupaya memperbaikinya secara nyata." },
+    { kko: "Merumuskan", text: "merumuskan rencana pengembangan diri secara periodik dengan mengacu pada hasil evaluasi diri yang jujur dan masukan dari orang-orang terpercaya." },
+    { kko: "Membangun", text: "membangun kepercayaan diri yang sehat dengan mengenali nilai-nilai positif dalam diri dan meyakini kemampuan untuk tumbuh dan berkembang." },
+    { kko: "Menolak", text: "menolak tekanan negatif dari lingkungan (peer pressure) yang dapat mendorong perilaku tidak sehat atau bertentangan dengan nilai-nilai yang diyakini." },
+    { kko: "Mengomunikasikan", text: "mengomunikasikan kebutuhan, perasaan, dan batasan diri kepada orang lain secara asertif, jelas, dan tetap menghormati pihak yang diajak bicara." },
+    { kko: "Menjaga", text: "menjaga kesehatan mental dengan aktif mencari bantuan ketika mengalami tekanan, berbicara kepada orang dewasa yang dipercaya, dan mengelola stres secara positif." },
+    { kko: "Menciptakan", text: "menciptakan rutinitas harian yang mendukung keseimbangan antara belajar, beristirahat, bersosialisasi, dan kegiatan spiritual secara harmonis." },
+    { kko: "Membedakan", text: "membedakan antara keinginan yang impulsif dan kebutuhan yang sesungguhnya sebagai dasar pengambilan keputusan yang bijaksana dan bertanggung jawab." },
+    { kko: "Mengapresiasi", text: "mengapresiasi setiap kemajuan kecil yang dicapai dalam proses belajar dan pertumbuhan diri sebagai motivasi untuk terus berusaha lebih baik." },
+    { kko: "Mewujudkan", text: "mewujudkan potensi terbaik diri melalui kerja keras, ketekunan, dan sikap pantang menyerah dalam menghadapi setiap rintangan yang ada." }
+  ]
+};
+
+// Render cards
+Object.entries(data).forEach(([cat, items]) => {
+  const grid = document.getElementById('grid-' + cat);
+  items.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = `desc-card cat-${cat}`;
+    card.dataset.cat = cat;
+    card.dataset.text = (item.kko + ' ' + item.text).toLowerCase();
+    card.innerHTML = `
+      <div class="desc-num">${(i + 1).toString().padStart(2,'0')}</div>
+      <div class="desc-text"><span class="desc-kko">${item.kko}</span>${item.text}</div>
+      <button class="copy-btn" title="Salin deskripsi" onclick="copyText(this, '${item.kko} ${item.text.replace(/'/g,"\\'")}')">📋</button>
+    `;
+    grid.appendChild(card);
+  });
+});
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.section').forEach(sec => {
+      if (cat === 'all' || sec.dataset.section === cat) {
+        sec.style.display = '';
+      } else {
+        sec.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Search
+document.getElementById('searchInput').addEventListener('input', function() {
+  const q = this.value.toLowerCase().trim();
+  let visible = 0;
+  document.querySelectorAll('.desc-card').forEach(card => {
+    const match = !q || card.dataset.text.includes(q);
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+  document.querySelectorAll('.section').forEach(sec => {
+    const anyVisible = [...sec.querySelectorAll('.desc-card')].some(c => !c.classList.contains('hidden'));
+    sec.style.display = anyVisible ? '' : 'none';
+  });
+  document.getElementById('noResult').style.display = visible === 0 ? 'block' : 'none';
+  // show all sections if search cleared
+  if (!q) {
+    const activeCat = document.querySelector('.filter-btn.active')?.dataset.cat || 'all';
+    document.querySelectorAll('.section').forEach(sec => {
+      sec.style.display = (activeCat === 'all' || sec.dataset.section === activeCat) ? '' : 'none';
+    });
+  }
+});
+
+// Copy
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+  });
+}
+</script>
+</body>
+</html>
