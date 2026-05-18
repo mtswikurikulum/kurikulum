@@ -492,16 +492,16 @@ const data = {
 Object.entries(data).forEach(([cat, items]) => {
   const grid = document.getElementById('grid-' + cat);
   items.forEach((item, i) => {
-    const fullText = item.kko + ' ' + item.text;
+    const copyText = item.text;
     const card = document.createElement('div');
     card.className = `desc-card cat-${cat}`;
     card.dataset.cat = cat;
-    card.dataset.text = fullText.toLowerCase();
-    const escaped = fullText.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    card.dataset.text = (item.kko + ' ' + item.text).toLowerCase();
+    const escaped = copyText.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     card.innerHTML = `
       <div class="desc-num">${String(i + 1).padStart(2,'0')}</div>
       <div class="desc-text"><span class="desc-kko">${item.kko}</span>${item.text}</div>
-      <button class="copy-btn" title="Salin deskripsi" onclick="copyText('${escaped}')">📋</button>
+      <button class="copy-btn" title="Salin deskripsi" onclick="doCopy('${escaped}')">📋</button>
     `;
     grid.appendChild(card);
   });
@@ -543,7 +543,7 @@ document.getElementById('searchInput').addEventListener('input', function () {
 });
 
 // Copy to clipboard
-function copyText(text) {
+function doCopy(text) {
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
     toast.classList.add('show');
