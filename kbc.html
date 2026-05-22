@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deskripsi Nilai Rapor – Lima Cinta</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c1: #c0392b;   /* Cinta Allah */
+    --c2: #1a6b4a;   /* Cinta Ilmu */
+    --c3: #2d6a4f;   /* Cinta Lingkungan */
+    --c4: #8e44ad;   /* Cinta Diri & Sesama */
+    --c5: #c0392b;   /* Cinta Tanah Air */
+
+    --gold: #d4af37;
+    --ink: #1a1a2e;
+    --paper: #fdf8f0;
+    --muted: #6b6b6b;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    text-align: center;
+    padding: 64px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg, transparent, transparent 40px,
+      rgba(255,255,255,.03) 40px, rgba(255,255,255,.03) 80px
+    );
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -.5px;
+    line-height: 1.1;
+    position: relative;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    margin-top: 14px;
+    font-size: .95rem;
+    color: rgba(255,255,255,.6);
+    font-style: italic;
+    position: relative;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-wrap {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--ink);
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 14px 22px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,.5);
+    font-family: 'DM Sans', sans-serif;
+    font-size: .85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .25s;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .nav-btn:hover { color: rgba(255,255,255,.85); }
+  .nav-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .section { display: none; animation: fadeUp .4s ease; }
+  .section.visible { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION HEADER ── */
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  .sec-count {
+    font-size: .8rem;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 3px;
+  }
+
+  /* ── SEARCH ── */
+  .search-wrap { margin-bottom: 28px; }
+  .search-input {
+    width: 100%;
+    max-width: 460px;
+    padding: 10px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .9rem;
+    background: #fff;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .search-input:focus { border-color: var(--gold); }
+
+  /* ── GRID ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    position: relative;
+    transition: box-shadow .2s, transform .2s;
+    cursor: default;
+  }
+  .card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,.09);
+    transform: translateY(-2px);
+  }
+  .card-num {
+    position: absolute;
+    top: 14px; right: 16px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    opacity: .35;
+  }
+  .card-text {
+    font-size: .88rem;
+    line-height: 1.65;
+    color: #2a2a2a;
+    padding-right: 28px;
+  }
+  .card-text .kko { font-style: italic; }
+  .card-text .kword {
+    font-weight: 600;
+  }
+
+  /* accent strip */
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* copy button */
+  .card-copy {
+    position: absolute;
+    bottom: 12px; right: 12px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 9px;
+    font-size: .7rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .card-copy:hover {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .card-copy.copied {
+    background: #27ae60;
+    color: #fff;
+    border-color: #27ae60;
+  }
+
+  /* section color theming */
+  [data-sec="1"] .card::before { background: #c0392b; }
+  [data-sec="1"] .card-num { color: #c0392b; }
+  [data-sec="1"] .sec-icon { background: #fdecea; }
+  [data-sec="1"] .sec-title { color: #c0392b; }
+
+  [data-sec="2"] .card::before { background: #1a6b4a; }
+  [data-sec="2"] .card-num { color: #1a6b4a; }
+  [data-sec="2"] .sec-icon { background: #e8f5f0; }
+  [data-sec="2"] .sec-title { color: #1a6b4a; }
+
+  [data-sec="3"] .card::before { background: #2d6a4f; }
+  [data-sec="3"] .card-num { color: #2d6a4f; }
+  [data-sec="3"] .sec-icon { background: #e6f4ee; }
+  [data-sec="3"] .sec-title { color: #2d6a4f; }
+
+  [data-sec="4"] .card::before { background: #8e44ad; }
+  [data-sec="4"] .card-num { color: #8e44ad; }
+  [data-sec="4"] .sec-icon { background: #f5edfb; }
+  [data-sec="4"] .sec-title { color: #8e44ad; }
+
+  [data-sec="5"] .card::before { background: #b7410e; }
+  [data-sec="5"] .card-num { color: #b7410e; }
+  [data-sec="5"] .sec-icon { background: #fdf0ec; }
+  [data-sec="5"] .sec-title { color: #b7410e; }
+
+  /* ── COPY ALL ── */
+  .copy-all-wrap { margin-top: 32px; text-align: right; }
+  .btn-copy-all {
+    padding: 10px 22px;
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    letter-spacing: .04em;
+  }
+  .btn-copy-all:hover { background: var(--ink); color: #fff; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: .78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── NO RESULT ── */
+  .no-result {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 48px;
+    color: var(--muted);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Deskripsi Nilai <span>Rapor</span><br>Lima Dimensi Cinta</h1>
+  <p>40 deskripsi × 5 nilai karakter · total 200 butir</p>
+</header>
+
+<nav class="nav-wrap">
+  <div class="nav">
+    <button class="nav-btn active" data-target="1">❤️ Cinta Allah &amp; Rasul</button>
+    <button class="nav-btn" data-target="2">📖 Cinta Ilmu</button>
+    <button class="nav-btn" data-target="3">🌿 Cinta Lingkungan</button>
+    <button class="nav-btn" data-target="4">🤝 Cinta Diri &amp; Sesama</button>
+    <button class="nav-btn" data-target="5">🇮🇩 Cinta Tanah Air</button>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- ===== SECTION 1 ===== -->
+  <div class="section visible" id="sec-1" data-sec="1">
+    <div class="sec-header">
+      <div class="sec-icon">❤️</div>
+      <div>
+        <div class="sec-title">Cinta Allah Swt. dan Rasul-Nya</div>
+        <div class="sec-count">40 deskripsi</div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="Cari deskripsi..." data-sec="1">
+    </div>
+    <div class="grid" id="grid-1"></div>
+    <div class="copy-all-wrap"><button class="btn-copy-all" data-sec="1">Salin Semua (1–40)</button></div>
+  </div>
+
+  <!-- ===== SECTION 2 ===== -->
+  <div class="section" id="sec-2" data-sec="2">
+    <div class="sec-header">
+      <div class="sec-icon">📖</div>
+      <div>
+        <div class="sec-title">Cinta Ilmu</div>
+        <div class="sec-count">40 deskripsi</div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="Cari deskripsi..." data-sec="2">
+    </div>
+    <div class="grid" id="grid-2"></div>
+    <div class="copy-all-wrap"><button class="btn-copy-all" data-sec="2">Salin Semua (1–40)</button></div>
+  </div>
+
+  <!-- ===== SECTION 3 ===== -->
+  <div class="section" id="sec-3" data-sec="3">
+    <div class="sec-header">
+      <div class="sec-icon">🌿</div>
+      <div>
+        <div class="sec-title">Cinta Lingkungan</div>
+        <div class="sec-count">40 deskripsi</div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="Cari deskripsi..." data-sec="3">
+    </div>
+    <div class="grid" id="grid-3"></div>
+    <div class="copy-all-wrap"><button class="btn-copy-all" data-sec="3">Salin Semua (1–40)</button></div>
+  </div>
+
+  <!-- ===== SECTION 4 ===== -->
+  <div class="section" id="sec-4" data-sec="4">
+    <div class="sec-header">
+      <div class="sec-icon">🤝</div>
+      <div>
+        <div class="sec-title">Cinta Diri dan Sesama</div>
+        <div class="sec-count">40 deskripsi</div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="Cari deskripsi..." data-sec="4">
+    </div>
+    <div class="grid" id="grid-4"></div>
+    <div class="copy-all-wrap"><button class="btn-copy-all" data-sec="4">Salin Semua (1–40)</button></div>
+  </div>
+
+  <!-- ===== SECTION 5 ===== -->
+  <div class="section" id="sec-5" data-sec="5">
+    <div class="sec-header">
+      <div class="sec-icon">🇮🇩</div>
+      <div>
+        <div class="sec-title">Cinta Tanah Air</div>
+        <div class="sec-count">40 deskripsi</div>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" type="text" placeholder="Cari deskripsi..." data-sec="5">
+    </div>
+    <div class="grid" id="grid-5"></div>
+    <div class="copy-all-wrap"><button class="btn-copy-all" data-sec="5">Salin Semua (1–40)</button></div>
+  </div>
+
+</main>
+
+<footer>Deskripsi Nilai Rapor · MTs · Jawa Tengah · 2024/2025</footer>
+
+<script>
+const data = {
+  1: [
+    "menunjukkan rasa Cinta Allah Swt. dan Rasul-Nya dengan selalu memulai kegiatan belajar menggunakan doa yang khusyuk",
+    "membiasakan membaca basmalah di awal dan hamdalah di akhir setiap sesi pembelajaran sebagai wujud Cinta Allah Swt. dan Rasul-Nya",
+    "mengintegrasikan nilai-nilai tauhid dalam tugas proyek sehingga tercermin Cinta Allah Swt. dan Rasul-Nya secara mendalam",
+    "meneladani akhlak Rasulullah Saw. dalam berinteraksi dengan guru dan teman sebagai ekspresi nyata Cinta Allah Swt. dan Rasul-Nya",
+    "menghubungkan materi pelajaran dengan ayat-ayat Al-Qur'an sebagai bentuk Cinta Allah Swt. dan Rasul-Nya dalam mencari ilmu",
+    "menampilkan semangat belajar yang tinggi karena menyadari bahwa menuntut ilmu adalah perintah Allah Swt., wujud Cinta Allah Swt. dan Rasul-Nya",
+    "menjaga adab dalam berdiskusi sesuai sunnah Rasulullah Saw. sebagai praktik Cinta Allah Swt. dan Rasul-Nya di lingkungan kelas",
+    "memperlihatkan kejujuran dalam mengerjakan tugas dan ujian sebagai cerminan Cinta Allah Swt. dan Rasul-Nya",
+    "mengamalkan sifat amanah dalam setiap tanggung jawab belajar sebagai bukti Cinta Allah Swt. dan Rasul-Nya",
+    "menginternalisasi nilai sabar ketika menghadapi materi sulit sebagai manifestasi Cinta Allah Swt. dan Rasul-Nya",
+    "menerapkan prinsip syukur dalam setiap pencapaian akademik sebagai ungkapan Cinta Allah Swt. dan Rasul-Nya",
+    "merefleksikan makna ibadah dalam kegiatan belajar sehari-hari sebagai wujud Cinta Allah Swt. dan Rasul-Nya",
+    "mencontohkan sikap rendah hati (tawadhu) kepada teman dan guru berdasarkan teladan Rasulullah Saw., ekspresi Cinta Allah Swt. dan Rasul-Nya",
+    "mengaitkan konten pembelajaran dengan nilai-nilai keislaman sebagai tanda Cinta Allah Swt. dan Rasul-Nya",
+    "menunjukkan semangat tadabbur dalam membaca teks pelajaran karena didorong oleh Cinta Allah Swt. dan Rasul-Nya",
+    "membiasakan istighfar saat melakukan kesalahan dalam proses belajar sebagai sikap Cinta Allah Swt. dan Rasul-Nya",
+    "mempraktikkan kejujuran dalam pelaporan data percobaan IPA sebagai implementasi Cinta Allah Swt. dan Rasul-Nya",
+    "menghadirkan nilai tawakal setelah berusaha maksimal dalam ujian sebagai bentuk Cinta Allah Swt. dan Rasul-Nya",
+    "meneladani keteguhan Rasulullah Saw. dalam belajar membaca dan menulis sebagai dorongan Cinta Allah Swt. dan Rasul-Nya",
+    "memulai presentasi dengan salam dan basmalah sebagai ekspresi Cinta Allah Swt. dan Rasul-Nya di hadapan publik",
+    "mengolah materi sejarah Islam dengan penuh takzim sebagai bentuk Cinta Allah Swt. dan Rasul-Nya",
+    "menerapkan nilai silaturahmi dalam kerja kelompok sebagai sunnah Rasulullah Saw. yang lahir dari Cinta Allah Swt. dan Rasul-Nya",
+    "memperlihatkan semangat membaca Al-Qur'an sebelum pelajaran dimulai sebagai wujud Cinta Allah Swt. dan Rasul-Nya",
+    "menjalankan tugas piket kelas dengan ikhlas sebagai ibadah dan cerminan Cinta Allah Swt. dan Rasul-Nya",
+    "mengaitkan konsep matematika dengan keteraturan ciptaan Allah Swt. sebagai ungkapan Cinta Allah Swt. dan Rasul-Nya",
+    "menyebarkan salam kepada seluruh warga sekolah sebagai sunnah Rasulullah Saw. dan wujud Cinta Allah Swt. dan Rasul-Nya",
+    "mendorong teman untuk jujur dalam ujian sebagai bentuk amar ma'ruf yang bersumber dari Cinta Allah Swt. dan Rasul-Nya",
+    "memanfaatkan waktu belajar secara efektif sebagai bentuk syukur atas nikmat Allah Swt. dan Cinta Allah Swt. dan Rasul-Nya",
+    "menggunakan bahasa santun dalam bertanya kepada guru sesuai adab yang diajarkan Rasulullah Saw., wujud Cinta Allah Swt. dan Rasul-Nya",
+    "menampilkan karya tulis yang mengutamakan kebenaran dan kejujuran sebagai implementasi Cinta Allah Swt. dan Rasul-Nya",
+    "membiasakan membaca salawat saat mengawali diskusi kelompok sebagai ekspresi Cinta Allah Swt. dan Rasul-Nya",
+    "menginternalisasi nilai qana'ah dalam menerima hasil penilaian sebagai refleksi Cinta Allah Swt. dan Rasul-Nya",
+    "mendemonstrasikan kepedulian kepada teman yang kesulitan belajar karena didorong Cinta Allah Swt. dan Rasul-Nya",
+    "menyisipkan nilai-nilai aqidah dalam tugas karya seni sebagai ungkapan Cinta Allah Swt. dan Rasul-Nya",
+    "memperlihatkan adab menghormati guru sebagai salah satu wujud Cinta Allah Swt. dan Rasul-Nya dalam kehidupan sekolah",
+    "menganalisis fenomena alam dalam pelajaran IPA sebagai tanda keagungan Allah Swt. dan ekspresi Cinta Allah Swt. dan Rasul-Nya",
+    "membimbing teman memahami materi agama dengan sabar sebagai bentuk dakwah yang bersumber dari Cinta Allah Swt. dan Rasul-Nya",
+    "mempertahankan integritas dalam penyusunan portofolio sebagai praktik Cinta Allah Swt. dan Rasul-Nya",
+    "menjaga lisan dari ucapan yang tidak bermanfaat selama pembelajaran sebagai wujud Cinta Allah Swt. dan Rasul-Nya",
+    "menghayati makna setiap doa yang dipanjatkan sebelum dan sesudah belajar sebagai ekspresi terdalam Cinta Allah Swt. dan Rasul-Nya"
+  ],
+  2: [
+    "menampilkan Cinta Ilmu melalui kebiasaan membaca buku referensi tambahan di luar materi wajib",
+    "memperlihatkan Cinta Ilmu dengan aktif mengajukan pertanyaan kritis saat diskusi kelas berlangsung",
+    "mengembangkan Cinta Ilmu melalui kegiatan riset mandiri untuk memperdalam topik yang diminati",
+    "menginternalisasi Cinta Ilmu dengan memanfaatkan perpustakaan sekolah secara rutin setiap minggu",
+    "menunjukkan Cinta Ilmu melalui semangat mengikuti olimpiade dan kompetisi akademik",
+    "membuktikan Cinta Ilmu dengan mencatat poin-poin penting dari setiap penjelasan guru secara sistematis",
+    "mengekspresikan Cinta Ilmu melalui karya tulis ilmiah yang disusun dengan data dan argumen yang kuat",
+    "mendorong semangat Cinta Ilmu dalam kelompok dengan mengajak teman berdiskusi melampaui materi kelas",
+    "mempraktikkan Cinta Ilmu melalui kebiasaan merevisi dan menyempurnakan setiap tugas yang dikumpulkan",
+    "mengaktualisasikan Cinta Ilmu dengan mempresentasikan temuan baru kepada kelas secara percaya diri",
+    "memperlihatkan Cinta Ilmu melalui antusiasme tinggi dalam kegiatan praktikum dan eksperimen sains",
+    "mewujudkan Cinta Ilmu dengan membuat peta konsep (mind map) untuk memahami topik yang kompleks",
+    "menumbuhkan Cinta Ilmu dalam diri sendiri melalui refleksi harian atas materi yang telah dipelajari",
+    "mengaplikasikan Cinta Ilmu dengan menghubungkan teori yang dipelajari dengan situasi nyata di sekitar",
+    "memanifestasikan Cinta Ilmu melalui inisiatif membentuk kelompok belajar yang terstruktur dan konsisten",
+    "membuktikan Cinta Ilmu dengan tekun mengulang materi yang belum dipahami tanpa perlu diingatkan guru",
+    "mendemonstrasikan Cinta Ilmu melalui kemampuan menjelaskan kembali materi pelajaran kepada teman sebaya",
+    "menunjukkan Cinta Ilmu dengan membiasakan membaca artikel ilmiah populer sebagai suplemen belajar",
+    "mengembangkan Cinta Ilmu melalui partisipasi aktif dalam webinar dan seminar edukatif",
+    "memperkuat Cinta Ilmu dengan memanfaatkan teknologi digital untuk mencari sumber belajar yang beragam",
+    "memperlihatkan Cinta Ilmu melalui ketekunan mengerjakan soal-soal latihan melebihi batas minimum",
+    "mengekspresikan Cinta Ilmu dengan mendokumentasikan proses belajar dalam jurnal refleksi pribadi",
+    "memotivasi Cinta Ilmu teman sekelas melalui berbagi ringkasan materi dan catatan yang rapi",
+    "menerapkan Cinta Ilmu dengan berpikir kritis terhadap informasi yang diperoleh dari berbagai sumber",
+    "menginternalisasi Cinta Ilmu melalui sikap pantang menyerah saat menghadapi soal-soal menantang",
+    "mengaktualisasikan Cinta Ilmu dalam kegiatan debat akademik dengan argumen yang didukung fakta",
+    "mewujudkan Cinta Ilmu melalui penyelesaian proyek penelitian sederhana secara mandiri dan kreatif",
+    "memperlihatkan Cinta Ilmu dengan selalu memverifikasi kebenaran informasi sebelum menerima begitu saja",
+    "menumbuhkan Cinta Ilmu melalui kebiasaan menulis rangkuman setelah setiap kegiatan belajar selesai",
+    "membuktikan Cinta Ilmu dengan mengajukan saran perbaikan konstruktif terhadap hasil kerja kelompok",
+    "mendemonstrasikan Cinta Ilmu dengan mempelajari kosakata baru dan istilah akademis secara mandiri",
+    "menunjukkan Cinta Ilmu melalui keberanian bereksperimen dengan metode belajar yang berbeda dan inovatif",
+    "mengembangkan Cinta Ilmu melalui kolaborasi lintas mapel untuk menemukan keterkaitan antar disiplin ilmu",
+    "mempraktikkan Cinta Ilmu dengan membuat produk kreatif sebagai hasil pemahaman terhadap materi pelajaran",
+    "mengekspresikan Cinta Ilmu melalui keaktifan merespons umpan balik guru dan segera melakukan perbaikan",
+    "memperlihatkan Cinta Ilmu dengan selalu hadir tepat waktu agar tidak melewatkan satu pun penjelasan guru",
+    "memperkuat Cinta Ilmu dengan membandingkan perspektif dari berbagai buku dan sumber referensi terpercaya",
+    "memotivasi Cinta Ilmu dalam diri sendiri melalui penetapan target belajar harian yang realistis dan terukur",
+    "mengaplikasikan Cinta Ilmu dengan menggunakan hasil belajar untuk memecahkan masalah nyata di lingkungan sekolah",
+    "menginternalisasi Cinta Ilmu melalui kesadaran bahwa setiap ilmu yang dipelajari adalah investasi masa depan"
+  ],
+  3: [
+    "menampilkan Cinta Lingkungan melalui kebiasaan membuang sampah pada tempatnya di seluruh area sekolah",
+    "memperlihatkan Cinta Lingkungan dengan aktif memilah sampah organik dan anorganik dalam kegiatan sekolah",
+    "mengembangkan Cinta Lingkungan melalui prakarsa membuat pojok tanaman hijau di sudut ruang kelas",
+    "menginternalisasi Cinta Lingkungan dengan mematikan lampu dan kipas saat meninggalkan ruang kelas",
+    "menunjukkan Cinta Lingkungan melalui inisiatif kampanye hemat air di lingkungan sekolah",
+    "membuktikan Cinta Lingkungan dengan mengikuti program penanaman pohon yang diselenggarakan sekolah",
+    "mengekspresikan Cinta Lingkungan melalui pembuatan poster edukatif tentang pentingnya menjaga kebersihan",
+    "mendorong Cinta Lingkungan pada teman dengan mengajak aksi bersih-bersih kelas setiap akhir pelajaran",
+    "mempraktikkan Cinta Lingkungan melalui penggunaan botol minum dan tempat makan reusable setiap hari",
+    "mengaktualisasikan Cinta Lingkungan dalam proyek daur ulang barang bekas menjadi benda bernilai guna",
+    "memperlihatkan Cinta Lingkungan melalui kepedulian terhadap tanaman yang ada di taman sekolah",
+    "mewujudkan Cinta Lingkungan dengan membuat laporan ilmiah tentang dampak polusi bagi ekosistem sekitar",
+    "menumbuhkan Cinta Lingkungan melalui kebiasaan membawa tas kain untuk mengurangi penggunaan plastik",
+    "mengaplikasikan Cinta Lingkungan dengan mengamati kondisi lingkungan sekolah dan melaporkan temuan kepada guru",
+    "memanifestasikan Cinta Lingkungan melalui partisipasi aktif dalam program adiwiyata tingkat madrasah",
+    "membuktikan Cinta Lingkungan dengan mengurangi penggunaan kertas melalui penugasan berbasis digital",
+    "mendemonstrasikan Cinta Lingkungan melalui praktik komposting sampah dapur di kebun sekolah",
+    "menunjukkan Cinta Lingkungan dengan menegur teman yang membuang sampah sembarangan secara santun",
+    "mengembangkan Cinta Lingkungan melalui penelitian mini tentang kualitas air dan udara di sekitar sekolah",
+    "memperkuat Cinta Lingkungan dengan merawat taman sekolah secara bergiliran bersama anggota kelas",
+    "memperlihatkan Cinta Lingkungan melalui esai kreatif tentang pentingnya kelestarian alam bagi generasi mendatang",
+    "mengekspresikan Cinta Lingkungan dalam karya seni rupa yang mengangkat tema konservasi alam",
+    "memotivasi Cinta Lingkungan teman sekitar dengan berbagi fakta ilmiah tentang perubahan iklim global",
+    "menerapkan Cinta Lingkungan dengan melakukan audit energi sederhana di ruang kelas secara berkala",
+    "menginternalisasi Cinta Lingkungan melalui refleksi atas jejak karbon yang dihasilkan dalam kehidupan sehari-hari",
+    "mengaktualisasikan Cinta Lingkungan dalam debat ilmiah tentang pentingnya kebijakan ramah lingkungan",
+    "mewujudkan Cinta Lingkungan melalui program bank sampah yang dikelola bersama komunitas kelas",
+    "memperlihatkan Cinta Lingkungan dengan melibatkan keluarga dalam gerakan hemat energi di rumah",
+    "menumbuhkan Cinta Lingkungan melalui observasi lapangan pada ekosistem sungai atau hutan terdekat",
+    "membuktikan Cinta Lingkungan dengan mendokumentasikan kondisi lingkungan sekolah dari waktu ke waktu",
+    "mendemonstrasikan Cinta Lingkungan melalui inovasi pembuatan pupuk organik dari limbah kantin sekolah",
+    "menunjukkan Cinta Lingkungan dengan aktif membaca literasi ekologi dan menyebarluaskannya kepada teman",
+    "mengembangkan Cinta Lingkungan melalui program go-green dalam tugas karya ilmiah remaja",
+    "mempraktikkan Cinta Lingkungan dengan mengganti penggunaan styrofoam dan plastik sekali pakai dalam kegiatan sekolah",
+    "mengekspresikan Cinta Lingkungan melalui pembuatan video pendek tentang tips hidup ramah lingkungan",
+    "memperlihatkan Cinta Lingkungan dengan berpartisipasi dalam diskusi solusi atas isu lingkungan lokal",
+    "memperkuat Cinta Lingkungan dengan menginisiasi sudut baca terbuka di taman sekolah yang asri",
+    "memotivasi Cinta Lingkungan melalui penyusunan panduan kebersihan kelas yang disepakati bersama",
+    "mengaplikasikan Cinta Lingkungan melalui kegiatan menanam sayuran organik di lahan sekolah secara berkelanjutan",
+    "menginternalisasi Cinta Lingkungan dengan memahami hubungan antara kelestarian alam dan kesejahteraan manusia"
+  ],
+  4: [
+    "menampilkan Cinta Diri dan Sesama melalui kebiasaan menjaga kesehatan fisik dan mental selama proses pembelajaran",
+    "memperlihatkan Cinta Diri dan Sesama dengan aktif membantu teman yang mengalami kesulitan memahami materi",
+    "mengembangkan Cinta Diri dan Sesama melalui sikap saling menghargai perbedaan pendapat dalam diskusi kelas",
+    "menginternalisasi Cinta Diri dan Sesama dengan menjaga pola tidur dan makan yang teratur demi kualitas belajar",
+    "menunjukkan Cinta Diri dan Sesama melalui kepedulian terhadap teman yang tidak hadir karena sakit",
+    "membuktikan Cinta Diri dan Sesama dengan menolak tindakan perundungan dan membela teman yang dirugikan",
+    "mengekspresikan Cinta Diri dan Sesama melalui apresiasi tulus atas keberhasilan teman dalam belajar",
+    "mendorong Cinta Diri dan Sesama dengan memberi semangat kepada teman yang merasa putus asa saat ulangan",
+    "mempraktikkan Cinta Diri dan Sesama melalui pengelolaan emosi yang baik saat menerima kritik dari guru",
+    "mengaktualisasikan Cinta Diri dan Sesama dalam kegiatan peer tutoring untuk membantu teman yang tertinggal",
+    "memperlihatkan Cinta Diri dan Sesama melalui kesadaran menjaga kebersihan diri sebagai bentuk penghargaan kepada sesama",
+    "mewujudkan Cinta Diri dan Sesama dengan mendengarkan pendapat teman secara aktif dan penuh perhatian",
+    "menumbuhkan Cinta Diri dan Sesama melalui kegiatan refleksi diri yang dilakukan secara berkala dan jujur",
+    "mengaplikasikan Cinta Diri dan Sesama dengan berbagi alat tulis dan sumber belajar kepada teman yang membutuhkan",
+    "memanifestasikan Cinta Diri dan Sesama melalui sikap inklusif terhadap teman yang berkebutuhan khusus",
+    "membuktikan Cinta Diri dan Sesama dengan menjaga ucapan agar tidak menyakiti perasaan orang lain",
+    "mendemonstrasikan Cinta Diri dan Sesama melalui kemampuan berempati terhadap kesulitan yang dialami teman",
+    "menunjukkan Cinta Diri dan Sesama dengan aktif berpartisipasi dalam kegiatan sosial dan bakti sekolah",
+    "mengembangkan Cinta Diri dan Sesama melalui kesadaran menjaga kesehatan mental dengan cara istirahat cukup",
+    "memperkuat Cinta Diri dan Sesama dengan membiasakan komunikasi asertif dalam setiap interaksi di kelas",
+    "memperlihatkan Cinta Diri dan Sesama melalui kepekaan terhadap kebutuhan teman dalam kerja kelompok",
+    "mengekspresikan Cinta Diri dan Sesama dalam karya tulis tentang pentingnya menjaga harga diri dan martabat",
+    "memotivasi Cinta Diri dan Sesama melalui contoh nyata perilaku tolong-menolong dalam kehidupan sekolah",
+    "menerapkan Cinta Diri dan Sesama dengan menolak ajakan yang dapat merugikan diri sendiri maupun orang lain",
+    "menginternalisasi Cinta Diri dan Sesama melalui pemahaman bahwa merawat diri adalah tanggung jawab moral",
+    "mengaktualisasikan Cinta Diri dan Sesama dalam kegiatan advokasi hak-hak teman di lingkungan madrasah",
+    "mewujudkan Cinta Diri dan Sesama dengan membuat komitmen bersama kelas untuk menjaga iklim belajar yang positif",
+    "memperlihatkan Cinta Diri dan Sesama melalui keberanian meminta maaf saat melakukan kesalahan kepada sesama",
+    "menumbuhkan Cinta Diri dan Sesama melalui kegiatan berbagi pengalaman belajar positif di forum kelas",
+    "membuktikan Cinta Diri dan Sesama dengan memprioritaskan kesehatan selama musim ujian tanpa mengabaikan belajar",
+    "mendemonstrasikan Cinta Diri dan Sesama melalui sikap terbuka menerima perbedaan latar belakang setiap teman",
+    "menunjukkan Cinta Diri dan Sesama dengan mengingatkan teman untuk menjaga protokol kesehatan di sekolah",
+    "mengembangkan Cinta Diri dan Sesama melalui pemahaman tentang pentingnya menjaga privasi dan hak orang lain",
+    "mempraktikkan Cinta Diri dan Sesama dengan menjadi penengah yang bijak saat terjadi konflik antar teman",
+    "mengekspresikan Cinta Diri dan Sesama melalui pembuatan kartu ucapan motivasi bagi teman yang sedang berjuang",
+    "memperlihatkan Cinta Diri dan Sesama dengan menghargai waktu orang lain melalui ketepatan hadir dalam kegiatan",
+    "memperkuat Cinta Diri dan Sesama melalui kebiasaan menanyakan kabar teman dan menunjukkan kepedulian tulus",
+    "memotivasi Cinta Diri dan Sesama melalui perhatian terhadap teman yang tampak murung atau kurang bersemangat",
+    "mengaplikasikan Cinta Diri dan Sesama dengan merawat fasilitas bersama sebagai bentuk menghargai hak orang lain",
+    "menginternalisasi Cinta Diri dan Sesama melalui kesadaran bahwa kebahagiaan diri terhubung erat dengan kebaikan kepada sesama"
+  ],
+  5: [
+    "menampilkan Cinta Tanah Air melalui kebiasaan menyanyikan lagu kebangsaan dengan penuh penghayatan dan semangat",
+    "memperlihatkan Cinta Tanah Air dengan aktif mempelajari sejarah perjuangan bangsa Indonesia dari berbagai sumber",
+    "mengembangkan Cinta Tanah Air melalui eksplorasi budaya daerah Jawa Tengah dalam tugas seni dan budaya",
+    "menginternalisasi Cinta Tanah Air dengan menghormati simbol-simbol negara dalam setiap upacara bendera",
+    "menunjukkan Cinta Tanah Air melalui semangat mengikuti lomba akademik sebagai kebanggaan madrasah dan bangsa",
+    "membuktikan Cinta Tanah Air dengan memanfaatkan produk dalam negeri sebagai bentuk dukungan ekonomi nasional",
+    "mengekspresikan Cinta Tanah Air melalui karya sastra yang mengangkat nilai-nilai kepahlawanan dan nasionalisme",
+    "mendorong Cinta Tanah Air dalam diri sendiri melalui studi tentang kekayaan sumber daya alam Indonesia",
+    "mempraktikkan Cinta Tanah Air dengan menjaga kerukunan antar teman yang berbeda suku, bahasa, dan adat",
+    "mengaktualisasikan Cinta Tanah Air dalam kegiatan debat tentang isu-isu kebangsaan yang relevan dan aktual",
+    "memperlihatkan Cinta Tanah Air melalui kepedulian terhadap pelestarian bahasa daerah sebagai kekayaan budaya",
+    "mewujudkan Cinta Tanah Air dengan menampilkan tarian tradisional pada kegiatan pentas seni sekolah",
+    "menumbuhkan Cinta Tanah Air melalui kajian mendalam tentang nilai-nilai Pancasila dalam kehidupan sehari-hari",
+    "mengaplikasikan Cinta Tanah Air dengan mendukung produk UMKM lokal dalam kegiatan kewirausahaan sekolah",
+    "memanifestasikan Cinta Tanah Air melalui proyek pemetaan potensi wisata dan budaya daerah tempat tinggal",
+    "membuktikan Cinta Tanah Air dengan membuat makalah tentang kontribusi tokoh daerah bagi kemajuan bangsa",
+    "mendemonstrasikan Cinta Tanah Air melalui partisipasi aktif dalam kegiatan paskibra dan upacara kemerdekaan",
+    "menunjukkan Cinta Tanah Air dengan menghindari penyebaran konten yang dapat memecah belah persatuan bangsa",
+    "mengembangkan Cinta Tanah Air melalui penelitian tentang kearifan lokal yang relevan dengan materi pelajaran IPS",
+    "memperkuat Cinta Tanah Air dengan memperkenalkan kuliner tradisional daerah dalam kegiatan gelar karya sekolah",
+    "memperlihatkan Cinta Tanah Air melalui penulisan esai tentang pentingnya bela negara bagi generasi muda Islam",
+    "mengekspresikan Cinta Tanah Air dalam pertunjukan drama yang mengisahkan perjuangan tokoh-tokoh nasional",
+    "memotivasi Cinta Tanah Air teman sekelas melalui diskusi tentang peran pemuda dalam membangun Indonesia maju",
+    "menerapkan Cinta Tanah Air dengan mematuhi tata tertib sekolah sebagai cerminan kepatuhan kepada aturan negara",
+    "menginternalisasi Cinta Tanah Air melalui pemahaman bahwa berprestasi adalah salah satu bentuk pengabdian kepada bangsa",
+    "mengaktualisasikan Cinta Tanah Air dalam kegiatan literasi digital tentang hoaks yang mengancam persatuan Indonesia",
+    "mewujudkan Cinta Tanah Air melalui koleksi dan dokumentasi lagu-lagu daerah Nusantara sebagai proyek seni budaya",
+    "memperlihatkan Cinta Tanah Air dengan mengikuti kegiatan pramuka yang menanamkan jiwa kemandirian dan kebangsaan",
+    "menumbuhkan Cinta Tanah Air melalui peringatan hari besar nasional yang diisi dengan kegiatan edukatif bermakna",
+    "membuktikan Cinta Tanah Air dengan menghasilkan karya inovatif yang terinspirasi dari kearifan budaya lokal",
+    "mendemonstrasikan Cinta Tanah Air melalui presentasi tentang keunggulan komparatif Indonesia di mata dunia",
+    "menunjukkan Cinta Tanah Air dengan aktif mengikuti kegiatan ekstrakurikuler yang bernuansa kebangsaan",
+    "mengembangkan Cinta Tanah Air melalui pembuatan media pembelajaran berbasis konten budaya Nusantara",
+    "mempraktikkan Cinta Tanah Air dengan menjaga fasilitas sekolah sebagai aset milik negara yang harus dirawat",
+    "mengekspresikan Cinta Tanah Air melalui video dokumenter singkat tentang keindahan alam dan budaya lokal",
+    "memperlihatkan Cinta Tanah Air dengan berbicara menggunakan Bahasa Indonesia yang baik dan benar dalam kegiatan formal",
+    "memperkuat Cinta Tanah Air melalui gerakan membaca buku-buku karya sastrawan dan ilmuwan Indonesia",
+    "memotivasi Cinta Tanah Air dengan membagikan informasi positif tentang prestasi anak bangsa di media sosial",
+    "mengaplikasikan Cinta Tanah Air melalui keterlibatan aktif dalam program OSIS yang berorientasi kemajuan sekolah dan bangsa",
+    "menginternalisasi Cinta Tanah Air melalui kesadaran bahwa menjaga persatuan dan kerukunan adalah tanggung jawab setiap warga negara"
+  ]
+};
+
+function highlight(text, keyword) {
+  if (!keyword) return text;
+  const re = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  return text.replace(re, '<mark style="background:#fef08a;border-radius:3px;padding:0 2px">$1</mark>');
+}
+
+function renderGrid(secId, keyword = '') {
+  const grid = document.getElementById('grid-' + secId);
+  const items = data[secId];
+  const kw = keyword.toLowerCase().trim();
+  grid.innerHTML = '';
+  let count = 0;
+  items.forEach((item, i) => {
+    if (kw && !item.toLowerCase().includes(kw)) return;
+    count++;
+    const card = document.createElement('div');
+    card.className = 'card';
+    const displayText = keyword ? highlight(item, keyword) : item;
+    card.innerHTML = `
+      <span class="card-num">${String(i+1).padStart(2,'0')}</span>
+      <p class="card-text">${displayText}</p>
+      <button class="card-copy" data-text="${item.replace(/"/g,'&quot;')}">salin</button>
+    `;
+    grid.appendChild(card);
+  });
+  if (count === 0) {
+    grid.innerHTML = '<div class="no-result">Tidak ada deskripsi yang cocok.</div>';
+  }
+}
+
+// Init
+[1,2,3,4,5].forEach(s => renderGrid(s));
+
+// Tab switching
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.target;
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    document.getElementById('sec-' + target).classList.add('visible');
+  });
+});
+
+// Search
+document.querySelectorAll('.search-input').forEach(input => {
+  input.addEventListener('input', () => {
+    renderGrid(input.dataset.sec, input.value);
+  });
+});
+
+// Copy single
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('card-copy')) {
+    const text = e.target.getAttribute('data-text');
+    navigator.clipboard.writeText(text).then(() => {
+      e.target.textContent = '✓ disalin';
+      e.target.classList.add('copied');
+      setTimeout(() => {
+        e.target.textContent = 'salin';
+        e.target.classList.remove('copied');
+      }, 1800);
+    });
+  }
+});
+
+// Copy all
+document.querySelectorAll('.btn-copy-all').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const secId = btn.dataset.sec;
+    const text = data[secId].map((d, i) => `${i+1}. ${d}`).join('\n');
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Tersalin!';
+      setTimeout(() => btn.textContent = orig, 2000);
+    });
+  });
+});
+</script>
+</body>
+</html>
