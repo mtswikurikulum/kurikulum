@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Haflah Akhirussanah MWI Kebarongan 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Palette sampled from the invitation images: mint green + warm gold */
+    --mint-deep:    #4a7c59;
+    --mint-mid:     #7ab893;
+    --mint-pale:    #c8e6d0;
+    --mint-bg:      #dff0e6;
+    --gold:         #c9a44a;
+    --gold-light:   #e8cc7a;
+    --gold-dark:    #8c6d2a;
+    --gold-glow:    rgba(201,168,76,0.45);
+    --cream:        #fdf8ee;
+    --dark-overlay: rgba(20,50,30,0.72);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #1a3324;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ─── AMBIENT BACKGROUND ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(122,184,147,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 90%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── FLOATING CONFETTI ─── */
+  .confetti-wrap {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .confetti-dot {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatConfetti var(--d,10s) ease-in var(--delay,0s) infinite;
+    opacity: 0;
+  }
+  @keyframes floatConfetti {
+    0%   { transform: translateY(110vh) rotate(0deg) scale(0.8); opacity:0; }
+    8%   { opacity: 0.85; }
+    92%  { opacity: 0.5; }
+    100% { transform: translateY(-80px)  rotate(720deg) scale(1.1); opacity:0; }
+  }
+
+  /* ─── STARS ─── */
+  .stars-wrap {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gold-light);
+    animation: twinkle var(--td,3s) ease-in-out var(--tdelay,0s) infinite alternate;
+  }
+  @keyframes twinkle {
+    from { opacity: 0.05; transform: scale(0.7); }
+    to   { opacity: var(--op,0.7); transform: scale(1.3); }
+  }
+
+  /* ─── PAGE WRAPPER ─── */
+  .page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 64px;
+    gap: 40px;
+  }
+
+  /* ─── SECTION LABEL ─── */
+  .section-label {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .section-label.show { opacity: 1; transform: translateY(0); }
+  .section-label span {
+    display: inline-block;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold-light);
+    padding: 6px 20px;
+    border: 1px solid var(--gold-dark);
+    border-radius: 40px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+  }
+
+  /* ─── IMAGE CARD ─── */
+  .img-card {
+    width: 100%;
+    max-width: 640px;
+    position: relative;
+    border-radius: 20px;
+    overflow: visible;          /* allow glow to bleed outside */
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .img-card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Glow ring */
+  .img-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--gold-light), var(--mint-mid), var(--gold));
+    z-index: -1;
+    animation: borderGlow 4s ease-in-out infinite alternate;
+  }
+  @keyframes borderGlow {
+    from { opacity: 0.6; filter: blur(4px); }
+    to   { opacity: 1;   filter: blur(8px); }
+  }
+
+  /* Solid border on top of glow */
+  .img-card::after {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    border-radius: 21px;
+    border: 1.5px solid rgba(201,168,76,0.55);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Corner gems */
+  .gem {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+    z-index: 3;
+    filter: drop-shadow(0 0 6px var(--gold-glow));
+    animation: gemPulse 3s ease-in-out infinite alternate;
+  }
+  @keyframes gemPulse {
+    from { filter: drop-shadow(0 0 4px var(--gold-glow)); }
+    to   { filter: drop-shadow(0 0 12px rgba(232,204,122,0.9)); }
+  }
+  .gem.tl { top: -8px;  left: -8px; }
+  .gem.tr { top: -8px;  right: -8px; }
+  .gem.bl { bottom: -8px; left: -8px; }
+  .gem.br { bottom: -8px; right: -8px; }
+
+  /* The image itself */
+  .img-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    position: relative;
+    z-index: 1;
+    /* Subtle warm-green overlay tint to unify with page palette */
+    filter: saturate(1.05) brightness(1.02);
+    transition: filter .4s ease, transform .4s ease;
+  }
+  .img-card:hover img {
+    filter: saturate(1.1) brightness(1.05);
+    transform: scale(1.005);
+  }
+
+  /* Reflective sheen on hover */
+  .sheen {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(135deg,
+      rgba(255,255,255,0.10) 0%,
+      rgba(255,255,255,0.02) 40%,
+      transparent 60%);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .4s ease;
+  }
+  .img-card:hover .sheen { opacity: 1; }
+
+  /* ─── DIVIDER ORNAMENT ─── */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity .7s ease .2s;
+  }
+  .ornament-divider.show { opacity: 1; }
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  }
+  .ornament-divider .center-gem {
+    color: var(--gold);
+    font-size: 18px;
+    animation: spin 8s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(201,168,76,0.4);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .footer.show { opacity: 1; }
+
+  /* ─── OPENING OVERLAY ─── */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: radial-gradient(ellipse at 50% 40%, #2d7a4f 0%, #0d2518 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transition: opacity .9s ease, visibility .9s ease;
+  }
+  .overlay.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .overlay-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(28px,6vw,42px);
+    color: var(--gold-light);
+    direction: rtl;
+    text-align: center;
+    text-shadow: 0 0 40px var(--gold-glow);
+    animation: fadeUp 1s ease both;
+  }
+  .overlay-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(10px,2.5vw,13px);
+    color: var(--mint-pale);
+    letter-spacing: 4px;
+    text-align: center;
+    animation: fadeUp 1s .25s ease both;
+  }
+  .overlay-date {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: rgba(201,168,76,0.8);
+    letter-spacing: 2px;
+    text-align: center;
+    animation: fadeUp 1s .45s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .open-btn {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold-light);
+    background: transparent;
+    border: 1.5px solid var(--gold);
+    border-radius: 50px;
+    padding: 14px 36px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color .3s ease;
+    animation: fadeUp 1s .65s ease both;
+  }
+  .open-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+    z-index: -1;
+  }
+  .open-btn:hover { color: #1a3324; }
+  .open-btn:hover::before { transform: scaleX(1); }
+
+  /* Scroll hint */
+  .scroll-hint {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: rgba(201,168,76,0.55);
+    font-size: 9px;
+    letter-spacing: 3px;
+    font-family: 'Cinzel Decorative', serif;
+    animation: hintBounce 2s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity .4s;
+  }
+  .scroll-hint.gone { opacity: 0; }
+  @keyframes hintBounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(7px); }
+  }
+
+  @media (max-width: 500px) {
+    .page { padding: 36px 14px 48px; gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ OPENING OVERLAY ═══ -->
+<div class="overlay" id="overlay">
+  <div class="overlay-arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+  <div class="overlay-title">UNDANGAN HAFLAH AKHIRUSSANAH</div>
+  <div class="overlay-date">MWI KEBARONGAN &nbsp;·&nbsp; AHAD, 31 MEI 2026</div>
+  <button class="open-btn" onclick="openInvitation()">✦ &nbsp;BUKA UNDANGAN&nbsp; ✦</button>
+</div>
+
+<!-- Stars -->
+<div class="stars-wrap" id="starsWrap"></div>
+
+<!-- Confetti -->
+<div class="confetti-wrap" id="confettiWrap"></div>
+
+<!-- Scroll hint -->
+<div class="scroll-hint" id="scrollHint">SCROLL ⌄</div>
+
+<!-- ═══ MAIN PAGE ═══ -->
+<div class="page">
+
+  <!-- Label cover -->
+  <div class="section-label" id="lbl1">
+    <span>✦ &nbsp; COVER UNDANGAN &nbsp; ✦</span>
+  </div>
+
+  <!-- COVER IMAGE CARD -->
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  IMAGE LINK #1  →  UNDANGAN_HAFLAH_COVER.png               │
+    │  Letakkan file "UNDANGAN_HAFLAH_COVER.png"                  │
+    │  di folder yang sama dengan file HTML ini,                  │
+    │  lalu pastikan src di bawah sudah sesuai namanya.           │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+  <div class="img-card" id="coverCard">
+    <div class="gem tl"></div>
+    <div class="gem tr"></div>
+    <div class="gem bl"></div>
+    <div class="gem br"></div>
+    <img src="cover.jpeg" alt="Cover Undangan Haflah Akhirussanah MWI Kebarongan 2026">
+    <div class="sheen"></div>
+  </div>
+
+  <!-- Ornament divider -->
+  <div class="ornament-divider" id="div1">
+    <div class="center-gem">✦</div>
+  </div>
+
+  <!-- Label isi -->
+  <div class="section-label" id="lbl2">
+    <span>✦ &nbsp; ISI UNDANGAN &nbsp; ✦</span>
+  </div>
+
+  <!-- CONTENT IMAGE CARD -->
+  <!--
+    ┌─────────────────────────────────────────────────────────────┐
+    │  IMAGE LINK #2  →  UNDANGAN_HAFLAH_ISI.png                 │
+    │  Letakkan file "UNDANGAN_HAFLAH_ISI.png"                    │
+    │  di folder yang sama dengan file HTML ini,                  │
+    │  lalu pastikan src di bawah sudah sesuai namanya.           │
+    └─────────────────────────────────────────────────────────────┘
+  -->
+  <div class="img-card" id="isiCard">
+    <div class="gem tl"></div>
+    <div class="gem tr"></div>
+    <div class="gem bl"></div>
+    <div class="gem br"></div>
+    <img src="isi.jpeg" alt="Isi Undangan Haflah Akhirussanah MWI Kebarongan 2026">
+    <div class="sheen"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer" id="footer">
+    ✦ &nbsp; YAYASAN POMESMAWI KEBARONGAN &nbsp; · &nbsp; 2026 &nbsp; ✦
+  </div>
+
+</div>
+
+<script>
+  /* ─── STARS ─── */
+  const sw = document.getElementById('starsWrap');
+  for (let i = 0; i < 70; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 2.4 + 0.4;
+    s.style.cssText = `
+      width:${sz}px;height:${sz}px;
+      top:${Math.random()*100}%;left:${Math.random()*100}%;
+      --td:${(Math.random()*3+2).toFixed(1)}s;
+      --tdelay:${(Math.random()*4).toFixed(1)}s;
+      --op:${(Math.random()*0.55+0.15).toFixed(2)};
+    `;
+    sw.appendChild(s);
+  }
+
+  /* ─── CONFETTI ─── */
+  const cw = document.getElementById('confettiWrap');
+  const confettiColors = ['#c9a44a','#e8cc7a','#7ab893','#c8e6d0','#ffffff','#8c6d2a'];
+  for (let i = 0; i < 30; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti-dot';
+    const sz = Math.random() * 7 + 3;
+    c.style.cssText = `
+      width:${sz}px;height:${sz}px;
+      left:${Math.random()*100}%;
+      background:${confettiColors[Math.floor(Math.random()*confettiColors.length)]};
+      --d:${(Math.random()*10+8).toFixed(1)}s;
+      --delay:${(Math.random()*12).toFixed(1)}s;
+      border-radius:${Math.random()>0.5?'50%':'2px'};
+    `;
+    cw.appendChild(c);
+  }
+
+  /* ─── OPEN INVITATION ─── */
+  function openInvitation() {
+    document.getElementById('overlay').classList.add('hide');
+    // staggered reveal
+    const items = [
+      { id:'lbl1',     delay:400  },
+      { id:'coverCard',delay:700  },
+      { id:'div1',     delay:1100 },
+      { id:'lbl2',     delay:1300 },
+      { id:'isiCard',  delay:1600 },
+      { id:'footer',   delay:2200 },
+    ];
+    items.forEach(({ id, delay }) => {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('show');
+      }, delay);
+    });
+  }
+
+  /* ─── SCROLL HINT ─── */
+  const hint = document.getElementById('scrollHint');
+  window.addEventListener('scroll', () => {
+    hint.classList.toggle('gone', window.scrollY > 80);
+  }, { passive: true });
+
+  /* ─── INTERSECTION OBSERVER for lazy reveal ─── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.img-card, .section-label, .ornament-divider, .footer')
+    .forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
