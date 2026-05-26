@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasil TKA 2026 – MTs Wathoniyah Islamiyah Kebarongan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green-deep:   #0d4a2f;
+      --green-mid:    #1a6b44;
+      --green-light:  #2e8b57;
+      --gold:         #c8973a;
+      --gold-light:   #e8b84b;
+      --gold-pale:    #fdf3dc;
+      --cream:        #faf8f2;
+      --white:        #ffffff;
+      --text-dark:    #1a2e22;
+      --text-mid:     #3d5a47;
+      --text-soft:    #6b856f;
+      --border:       #d4c5a0;
+      --shadow:       rgba(13,74,47,0.14);
+
+      --badge-baik-istimewa-bg: #fff7e6; --badge-baik-istimewa-text: #92400e; --badge-baik-istimewa-border: #f59e0b;
+      --badge-baik-bg:          #ecfdf5; --badge-baik-text:          #065f46; --badge-baik-border:          #10b981;
+      --badge-memadai-bg:       #eff6ff; --badge-memadai-text:        #1e40af; --badge-memadai-border:        #3b82f6;
+      --badge-kurang-bg:        #fff1f2; --badge-kurang-text:         #9f1239; --badge-kurang-border:         #f43f5e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      min-height: 100vh;
+      color: var(--text-dark);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ── DECORATIVE BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 20%, rgba(13,74,47,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(200,151,58,0.08) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* geometric pattern overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(13,74,47,0.025) 30px, rgba(13,74,47,0.025) 31px),
+        repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(200,151,58,0.018) 30px, rgba(200,151,58,0.018) 31px);
+      pointer-events: none; z-index: 0;
+    }
+
+    .wrapper {
+      position: relative; z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      padding: 2.5rem 2rem 2rem;
+      background: linear-gradient(155deg, var(--green-deep) 0%, var(--green-mid) 55%, #23704a 100%);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px var(--shadow), 0 2px 8px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle 200px at 10% 90%, rgba(200,151,58,0.18) 0%, transparent 70%),
+        radial-gradient(circle 160px at 90% 10%, rgba(200,151,58,0.12) 0%, transparent 70%);
+    }
+
+    /* decorative arch lines */
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 100px;
+      border-top: 2px solid rgba(200,151,58,0.25);
+      border-radius: 50% 50% 0 0;
+    }
+
+    .header-inner { position: relative; z-index: 1; }
+
+    .bismillah {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .ornament-line {
+      flex: 1; max-width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .ornament-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      box-shadow: 0 0 6px rgba(200,151,58,0.6);
+    }
+
+    .school-name {
+      font-family: 'Lora', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+
+    .school-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .divider-gold {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 2px;
+      margin: 0 auto 1.25rem;
+    }
+
+    .page-title {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.02em;
+    }
+
+    .badge-year {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.3rem 1.2rem;
+      background: rgba(200,151,58,0.25);
+      border: 1px solid rgba(200,151,58,0.5);
+      border-radius: 50px;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── SEARCH CARD ── */
+    .search-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 2rem 2rem 2.25rem;
+      box-shadow: 0 6px 30px var(--shadow), 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid rgba(212,197,160,0.4);
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-light), var(--gold));
+      border-radius: 18px 18px 0 0;
+    }
+
+    .search-title {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    .search-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .nisn-input {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.85rem 1.1rem;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nisn-input::placeholder { color: #aabbb0; font-weight: 400; letter-spacing: 0; }
+
+    .nisn-input:focus {
+      border-color: var(--green-light);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(46,139,87,0.12);
+    }
+
+    .btn-search {
+      padding: 0.85rem 1.75rem;
+      background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+      box-shadow: 0 4px 14px rgba(13,74,47,0.3);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .btn-search:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(13,74,47,0.38);
+    }
+    .btn-search:active { transform: translateY(0); }
+
+    /* ── RESULT CARD ── */
+    .result-wrap {
+      animation: slideUp 0.45s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 36px var(--shadow), 0 2px 8px rgba(0,0,0,0.07);
+      border: 1px solid rgba(212,197,160,0.5);
+    }
+
+    .result-header {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .result-avatar {
+      width: 56px; height: 56px;
+      background: rgba(200,151,58,0.2);
+      border: 2px solid rgba(200,151,58,0.5);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .result-name-wrap { flex: 1; min-width: 0; }
+
+    .result-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    .result-name {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .result-nisn-badge {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.2rem 0.75rem;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .result-body { padding: 2rem; }
+
+    .scores-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .score-box {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(212,197,160,0.5);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .score-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13,74,47,0.1);
+    }
+
+    .score-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+      border-radius: 14px 0 0 14px;
+      background: var(--green-light);
+    }
+
+    .score-box.bi::before { background: var(--gold); }
+
+    .score-box-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .score-subject {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .score-value {
+      font-family: 'Lora', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1.5px solid;
+    }
+
+    .badge.baik-istimewa {
+      background: var(--badge-baik-istimewa-bg);
+      color: var(--badge-baik-istimewa-text);
+      border-color: var(--badge-baik-istimewa-border);
+    }
+    .badge.baik {
+      background: var(--badge-baik-bg);
+      color: var(--badge-baik-text);
+      border-color: var(--badge-baik-border);
+    }
+    .badge.memadai {
+      background: var(--badge-memadai-bg);
+      color: var(--badge-memadai-text);
+      border-color: var(--badge-memadai-border);
+    }
+    .badge.kurang {
+      background: var(--badge-kurang-bg);
+      color: var(--badge-kurang-text);
+      border-color: var(--badge-kurang-border);
+    }
+
+    /* ── DETAIL ROW ── */
+    .detail-section {
+      border-top: 1px solid rgba(212,197,160,0.5);
+      padding-top: 1.25rem;
+    }
+
+    .detail-title {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed rgba(212,197,160,0.4);
+    }
+    .detail-row:last-child { border-bottom: none; }
+
+    .detail-key {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+    .detail-val {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* ── ERROR / EMPTY ── */
+    .msg-box {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border-radius: 18px;
+      border: 1px solid rgba(212,197,160,0.4);
+      box-shadow: 0 4px 20px var(--shadow);
+      animation: slideUp 0.35s ease both;
+    }
+
+    .msg-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+    .msg-text {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212,197,160,0.4);
+    }
+
+    .footer-ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.5rem; margin-bottom: 0.75rem;
+    }
+    .footer-line {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .footer-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+    .footer-text {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .footer-text strong { color: var(--green-mid); }
+
+    /* ── TOTAL SCORE BAR ── */
+    .total-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      border-radius: 14px;
+      padding: 1.1rem 1.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .total-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 700;
+    }
+
+    .total-value {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .total-value span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 400;
+    }
+
+    .rank-bubble {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,151,58,0.22);
+      border: 2px solid rgba(200,151,58,0.55);
+      border-radius: 12px;
+      padding: 0.6rem 1.1rem;
+      min-width: 80px;
+    }
+
+    .rank-bubble .rank-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .rank-bubble .rank-num {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+
+    .rank-bubble .rank-of {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── TOP-10 HEADER GLOW ── */
+    .result-header.top10 {
+      background: linear-gradient(135deg, #7c4a03 0%, #c8780a 45%, #7c4a03 100%);
+      animation: goldenPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes goldenPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200,151,58,0); }
+      50%       { box-shadow: 0 0 24px 6px rgba(200,151,58,0.35); }
+    }
+
+    /* ── CELEBRATION OVERLAY ── */
+    #celebOverlay {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: rgba(10,30,18,0.82);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    #celebOverlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .celeb-box {
+      background: linear-gradient(155deg, #0d4a2f, #1a6b44);
+      border: 2px solid rgba(200,151,58,0.6);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(200,151,58,0.2);
+      animation: popIn 0.5s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .celeb-box::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle 160px at 50% 0%, rgba(200,151,58,0.15), transparent);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .celeb-stars {
+      font-size: 2.2rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      animation: starFloat 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes starFloat {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-6px); }
+    }
+
+    .celeb-rank-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #c8973a, #e8b84b, #c8973a);
+      color: #3d1f00;
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.4rem 1.4rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 16px rgba(200,151,58,0.4);
+    }
+
+    .celeb-title {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .celeb-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .celeb-msg {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .celeb-total {
+      background: rgba(200,151,58,0.18);
+      border: 1px solid rgba(200,151,58,0.4);
+      border-radius: 12px;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .celeb-total small {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn-close-celeb {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      padding: 0.6rem 1.75rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-close-celeb:hover { background: rgba(255,255,255,0.18); }
+
+    /* ── CONFETTI CANVAS ── */
+    #confettiCanvas {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .school-name { font-size: 1.35rem; }
+      .scores-grid { grid-template-columns: 1fr; }
+      .input-group { flex-direction: column; }
+      .btn-search { width: 100%; }
+      .result-header { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ════ HEADER ════ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line" style="background:linear-gradient(90deg,rgba(200,151,58,1),transparent)"></div>
+      </div>
+
+      <div class="school-name">MTs Wathoniyah Islamiyah Kebarongan</div>
+      <div class="school-sub">Kab. Banyumas · Jawa Tengah · NPSN 20363427</div>
+      <div class="divider-gold"></div>
+      <div class="page-title">Hasil Tes Kompetensi Akademik Tahun 2026</div>
+      <div class="badge-year">TKA · TAHUN AJARAN 2025/2026</div>
+    </div>
+  </header>
+
+  <!-- ════ SEARCH CARD ════ -->
+  <div class="search-card">
+    <div class="search-title">🔍 Cek Hasil Nilai Anda</div>
+    <div class="search-desc">
+      Masukkan NISN (Nomor Induk Siswa Nasional) yang tertera pada kartu peserta untuk menampilkan hasil tes Anda.
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        id="nisnInput"
+        class="nisn-input"
+        placeholder="Contoh: 0117820752"
+        maxlength="12"
+        inputmode="numeric"
+        autocomplete="off"
+      />
+      <button class="btn-search" onclick="cariSiswa()">Tampilkan Hasil</button>
+    </div>
+  </div>
+
+  <!-- ════ RESULT AREA ════ -->
+  <div id="resultArea"></div>
+
+  <!-- ════ CELEBRATION OVERLAY ════ -->
+  <div id="celebOverlay">
+    <canvas id="confettiCanvas"></canvas>
+    <div class="celeb-box" id="celebBox">
+      <div class="celeb-stars">⭐ 🏆 ⭐</div>
+      <div class="celeb-rank-badge" id="celebRankBadge">Peringkat #1</div>
+      <div class="celeb-title">Selamat! 🎉</div>
+      <div class="celeb-name" id="celebName"></div>
+      <div class="celeb-msg" id="celebMsg"></div>
+      <div class="celeb-total">
+        <small>Total Nilai</small>
+        <span id="celebTotal"></span>
+      </div>
+      <button class="btn-close-celeb" onclick="closeCeleb()">Tutup &times;</button>
+    </div>
+  </div>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="footer">
+    <div class="footer-ornament">
+      <div class="footer-line"></div>
+      <div class="footer-dot"></div>
+      <div class="footer-line" style="background:linear-gradient(90deg,rgba(200,151,58,1),transparent)"></div>
+    </div>
+    <div class="footer-text">
+      <strong>MTs Wathoniyah Islamiyah Kebarongan</strong><br/>
+      Dinas Pendidikan Kab. Banyumas · Provinsi Jawa Tengah<br/>
+      Data bersumber dari: Tes Kemampuan Akademik SMP/MTs Tahun 2026
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const students = [
+    {nisn:"0117820752",nama:"MUAMMAR FARRAS",mat:"43.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116447100",nama:"FADLAN KHAIRULLOH",mat:"40.00",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3106869848",nama:"DZAUQ MAULA ROBBANI",mat:"40.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0116635927",nama:"GHAZY ILHAM PRATAMA",mat:"50.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3110433487",nama:"LATIEF NUR KHOLID",mat:"46.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3118465286",nama:"GALIH PRASETIYA NUGRAHA",mat:"40.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"0101949978",nama:"RIZKY FIRMANSYAH",mat:"63.33",matKet:"Baik",bi:"90.00",biKet:"Baik"},
+    {nisn:"0111142477",nama:"DIYAR BANI HASIM",mat:"46.67",matKet:"Memadai",bi:"93.33",biKet:"Baik"},
+    {nisn:"0103542125",nama:"ZINDAGI OKTOVIANDES",mat:"40.00",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0119388326",nama:"Muhammad Daanish Agung Qushoyyi",mat:"36.67",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3117320013",nama:"MUKHAMAD IRFAN SETIAWAN",mat:"56.67",matKet:"Baik",bi:"96.67",biKet:"Baik - Istimewa"},
+    {nisn:"3106773734",nama:"RAHFI HILMI PRATHAMA",mat:"46.67",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0119917195",nama:"HAIDAR UMAR SYAHIDAN",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0114255269",nama:"FADILA RAKHA SAPUTRA",mat:"36.67",matKet:"Memadai",bi:"60.00",biKet:"Memadai"},
+    {nisn:"0114254002",nama:"NAJMI FAIZUL AKMAL",mat:"40.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0119266213",nama:"IBNU KHULDUN ALQODRI",mat:"30.00",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116270390",nama:"Ahmad Faith Mumtaz Syah",mat:"53.33",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0111324157",nama:"ARYA AHMAD PERMADI",mat:"50.00",matKet:"Memadai",bi:"93.33",biKet:"Baik"},
+    {nisn:"0119669091",nama:"HAMZAH LARINDAN ABDILLAH",mat:"50.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0116589374",nama:"DHAIFULLAH AFKAR AL ADL",mat:"46.67",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"0102659308",nama:"NAUFAL AZZAM AKBAR",mat:"40.00",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0111741682",nama:"ARFI ANGGARASANDI WIJAYASUKMA",mat:"40.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0114707086",nama:"DZULFIKRI AZHARI",mat:"50.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3115349090",nama:"VALLEN ALIF SAPUTRA",mat:"46.67",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0114374432",nama:"ADAM SUKRON NUR ABDILAH",mat:"50.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3104283058",nama:"NAZAR ROIS AL UMAM",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3090230176",nama:"RIFQO ULINNUHA",mat:"50.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0113659961",nama:"PRASETYO MARCO AL BUKHORI",mat:"43.33",matKet:"Memadai",bi:"36.67",biKet:"Kurang"},
+    {nisn:"0117847236",nama:"MUHAMMAD HANAN IBKAR",mat:"60.00",matKet:"Baik",bi:"60.00",biKet:"Memadai"},
+    {nisn:"3107826684",nama:"AZYAN DHIYAULHAQ",mat:"56.67",matKet:"Baik",bi:"86.67",biKet:"Baik"},
+    {nisn:"0106512816",nama:"DANU ADI SETIAWAN",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0111313114",nama:"FALIH PUTRA RAMADHAN",mat:"30.00",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0116212839",nama:"AKILA GIAN ANDARU",mat:"36.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0101324264",nama:"ARFFA PRIYADI OCTAVIAN",mat:"46.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116074088",nama:"HAIDAR MUSYAFFA KHOIRULLAH",mat:"50.00",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0112449493",nama:"SA'YAN MASYKURAN SATIMAN",mat:"40.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0118781838",nama:"NIDAL NAWAF SALAM",mat:"36.67",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0105899986",nama:"ZAIDAAN AKHDAN PRATAMA",mat:"30.00",matKet:"Kurang",bi:"50.00",biKet:"Memadai"},
+    {nisn:"0103326810",nama:"YAQUB AZIZ SATRIA WIJAYA",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0114265061",nama:"RAIS FARQOLITH",mat:"36.67",matKet:"Memadai",bi:"50.00",biKet:"Memadai"},
+    {nisn:"0112459258",nama:"Fajar Syafiq Ashlah",mat:"43.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3113909984",nama:"RAZA ALFIAN ROZAQI",mat:"46.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0115353113",nama:"ADE RIZQI HIDAYAT",mat:"43.33",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0116469120",nama:"Mohammad Faishol Nashif",mat:"60.00",matKet:"Baik",bi:"76.67",biKet:"Baik"},
+    {nisn:"0116938250",nama:"RASYA ALVINO WIYANSYAH",mat:"36.67",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0113585294",nama:"WILDHAN ABDAU ELVAWAZ",mat:"43.33",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"0114525000",nama:"ALAM AKBAR AL FATAH",mat:"60.00",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"0115710770",nama:"ANANDA ALFIN HASNA FIRDAUS",mat:"56.67",matKet:"Baik",bi:"76.67",biKet:"Baik"},
+    {nisn:"0104210625",nama:"KHOIRUL MUBIN",mat:"30.00",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0114928070",nama:"Fayyadh Arib Elfawaz",mat:"43.33",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"3119265689",nama:"RAFIANSYAH SATRIA NUGRAHA",mat:"43.33",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0112479143",nama:"MUHAMMAD QOOBUS ALFARIZY",mat:"43.33",matKet:"Memadai",bi:"46.67",biKet:"Kurang"},
+    {nisn:"0112091753",nama:"MUHAMMAD ZULFA ARKAAN",mat:"40.00",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3100968325",nama:"CAHYA WENDI SETIAWAN",mat:"36.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0102751508",nama:"SYAHRUL FADHEL MUBARROK",mat:"36.67",matKet:"Memadai",bi:"40.00",biKet:"Kurang"},
+    {nisn:"0114661493",nama:"FARHAN ZULFIKAR",mat:"40.00",matKet:"Memadai",bi:"50.00",biKet:"Memadai"},
+    {nisn:"3115562770",nama:"FADHIL OKTAVIAN SYAH",mat:"46.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0092908194",nama:"RIZKI ROMADHONI",mat:"43.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0104817625",nama:"Muhammad Sulthan Ghathfan Athaillah",mat:"36.67",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3100276459",nama:"ROSYID RIDLOTUN HAQ",mat:"30.00",matKet:"Kurang",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0112597213",nama:"ADAM SYAFI' WIRATMOKO",mat:"40.00",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0112050234",nama:"Dodhy Jova Utama",mat:"36.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0118643903",nama:"BINTANG PRATAMA PUTRA ASIANTO",mat:"36.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0103552522",nama:"AZZAM AL FAQIH",mat:"30.00",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"0103799234",nama:"PRABAHOKI SENTOSA",mat:"40.00",matKet:"Memadai",bi:"40.00",biKet:"Kurang"},
+    {nisn:"3109503384",nama:"NAURA CANTIKA SABRINA",mat:"40.00",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"3116089059",nama:"NABILATUL FA'IZAH",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0104687758",nama:"BARIKLIA HAYATI",mat:"43.33",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0118028272",nama:"NAYLA AZKIYA MUMTAZA",mat:"60.00",matKet:"Baik",bi:"76.67",biKet:"Baik"},
+    {nisn:"3102272727",nama:"SASMITA RAHAYU",mat:"43.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0111710381",nama:"LAYLA KAMEELIA RAHMAN",mat:"63.33",matKet:"Baik",bi:"80.00",biKet:"Baik"},
+    {nisn:"3118803247",nama:"SYAKIRAH PUTRI ALMA ADHIVA",mat:"23.33",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"3118246201",nama:"DIANA ISLAMIATI",mat:"50.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0106022627",nama:"QUINTA NOVIA ZUHAIROH",mat:"56.67",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"3111105977",nama:"AISYAH NURUSSYIFA",mat:"50.00",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0117358205",nama:"SAFIRA NUR SYABANA",mat:"43.33",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0116457873",nama:"NAILA RIDHA BILQISTHI",mat:"50.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3119623092",nama:"HAFIIZAH WAHYU AULIA SARWO EDY",mat:"53.33",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0117974097",nama:"SEKAR ANGGITA KUSUMA WIJAYANTI",mat:"50.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"3114463461",nama:"HUSNIA YASMIN HUMAIRA",mat:"33.33",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3103893847",nama:"RAISYA KIRANA WAHYUDI",mat:"36.67",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"3100254814",nama:"KHARISMA DEWI SALSABILA",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0114597812",nama:"AZKI RIANA ASMITA",mat:"66.67",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"0113521732",nama:"Aqila Syahlaa",mat:"43.33",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"0117010617",nama:"DE NISA PUTRI ALLILA",mat:"33.33",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0104822573",nama:"TSALITSA SALSABILA AZZAHRAH",mat:"40.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0102283105",nama:"ALIFAH DZAKIROH GHINA",mat:"20.00",matKet:"Kurang",bi:"83.33",biKet:"Baik"},
+    {nisn:"3110275083",nama:"NIDA MUFIDAH",mat:"33.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0115276125",nama:"HAFIZA SYAKIRA LUBNA",mat:"43.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3113075877",nama:"CAHYA TSURAYYA DALYPUTRI",mat:"46.67",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"3106114035",nama:"SAFIRA AULIA LUTFIANA",mat:"33.33",matKet:"Memadai",bi:"50.00",biKet:"Memadai"},
+    {nisn:"3112270268",nama:"CALYSTA ASRILIA RIZKI",mat:"43.33",matKet:"Memadai",bi:"93.33",biKet:"Baik"},
+    {nisn:"3118560783",nama:"RAHMA WULANDARI",mat:"46.67",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0109021726",nama:"SALWA AULIA HAMNA",mat:"26.67",matKet:"Kurang",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0101047902",nama:"FATIMAH YAZID",mat:"26.67",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"0115103513",nama:"ALVINA KHAERUNNISA",mat:"40.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0111952170",nama:"MEYLITA PERMATA VIOLA",mat:"46.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0116563565",nama:"Naura Rihabatul Adzkia",mat:"40.00",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"0111724752",nama:"MUSTAQIMAH",mat:"30.00",matKet:"Kurang",bi:"60.00",biKet:"Memadai"},
+    {nisn:"3109638267",nama:"NAYYARA SYAELA NAILLUROHMAH",mat:"53.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0103818104",nama:"SYAIFIATUL RIZQI ZAKIYAH",mat:"43.33",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0106708527",nama:"NAIVA MUAZNI RIFQI",mat:"40.00",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3118596457",nama:"JAMILAH ZUHROTU SOLEHAH",mat:"40.00",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"3107036939",nama:"JAUHARAH KHUSNA FAOZAN",mat:"43.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0105840557",nama:"SEPTI RAHAYU FITRIANINGSIH",mat:"50.00",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0101562676",nama:"FAMULAN AULIA DEWI",mat:"63.33",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"0101839229",nama:"NITA KHOLIFFIANA",mat:"46.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3114763675",nama:"UMI KHOZIYAH SAROFAH",mat:"43.33",matKet:"Memadai",bi:"40.00",biKet:"Kurang"},
+    {nisn:"3109392925",nama:"ARISSA WIJAYANTI",mat:"36.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3105450945",nama:"MAHRA KEYSA MELIYA HUSNA",mat:"33.33",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0111707493",nama:"FAHDA JAMILAH",mat:"40.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0117168238",nama:"AGHNIA FUADATUR ROHMAH",mat:"40.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"3112509607",nama:"KHOTIMATUL ADZKIA",mat:"43.33",matKet:"Memadai",bi:"60.00",biKet:"Memadai"},
+    {nisn:"0118022057",nama:"ANNISA DINDA BILQIS SUJARWO",mat:"53.33",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0114779115",nama:"DEBY OLIVIANA PUTRI",mat:"26.67",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3104699127",nama:"AFIVAH NUR DWI ANASTASYA",mat:"60.00",matKet:"Baik",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3115273205",nama:"NANDITA ZAHRA AULIA RIFANA",mat:"53.33",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"3119924110",nama:"RAHMI AZIZAH",mat:"46.67",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3110020920",nama:"INAS AWALIYA HUSNA",mat:"50.00",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"3116164516",nama:"QONITAH SALSABILA",mat:"50.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0112370233",nama:"REGINA PUTRI ALIENSYAH",mat:"30.00",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3100049230",nama:"BELINDA PUTRI",mat:"36.67",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0101633978",nama:"AULIYA NUR RAHMADILAH",mat:"40.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"0104922470",nama:"KAFA LAILATUL HIDAYAH",mat:"40.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3127728903",nama:"NAZWA NABILA YUMNAYAH",mat:"40.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116527090",nama:"GENDHIS SHAZIA PUTRI HIDAYAT",mat:"23.33",matKet:"Kurang",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0117527146",nama:"SHOOFI LISTIARIN SYAH PUTRI",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0107852383",nama:"SITI HAFSHAH",mat:"36.67",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0115967846",nama:"WIDYA SHAFA NUR AZIZAH",mat:"73.33",matKet:"Baik",bi:"93.33",biKet:"Baik"},
+    {nisn:"0112555453",nama:"NUR AZIZAH",mat:"40.00",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"3113592720",nama:"ONIEVIA KINTAN BERLIAN",mat:"23.33",matKet:"Kurang",bi:"40.00",biKet:"Kurang"},
+    {nisn:"3102268960",nama:"NESSA RAHMA WATI",mat:"36.67",matKet:"Memadai",bi:"30.00",biKet:"Kurang"},
+    {nisn:"0116077644",nama:"DHIENATA RANA GHIYATS",mat:"46.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0111663813",nama:"MUTIARA NADINI",mat:"50.00",matKet:"Memadai",bi:"60.00",biKet:"Memadai"},
+    {nisn:"0117496284",nama:"ALDILLA REYKHANA PUTRI SALSABILA",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0112670762",nama:"EVRILIANA",mat:"46.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"3102356344",nama:"PUTRI AZIZAH",mat:"23.33",matKet:"Kurang",bi:"60.00",biKet:"Memadai"},
+    {nisn:"3115369456",nama:"NASYWA AISYAH ATHALLAH",mat:"30.00",matKet:"Kurang",bi:"50.00",biKet:"Memadai"},
+    {nisn:"3110451169",nama:"LAELY NUGI FEBRIANA",mat:"33.33",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0118594616",nama:"Atika Nur Syahira",mat:"46.67",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0112048558",nama:"NOURALISHA QIRANI SULARTO",mat:"36.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0113119059",nama:"DHEA AISYA FAIHA AZZAHRA",mat:"30.00",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"3116206724",nama:"ALFIA NUR FARHAH AKMALIYAH",mat:"36.67",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0114698136",nama:"FARHAH YASMIN MALILLAH",mat:"36.67",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"3113274516",nama:"ARKANA HARI FADILA",mat:"60.00",matKet:"Baik",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3115005527",nama:"NOVITA CHOERUNNISA",mat:"53.33",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0111185820",nama:"MASNI RAHMANIA",mat:"50.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0112696610",nama:"NEYSHA RAIHANA AZZAMI",mat:"53.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0122569593",nama:"ARKENZY ALLUNA",mat:"30.00",matKet:"Kurang",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3117325216",nama:"AZKYA QOTRUNNADA MAHARANI KHAN",mat:"50.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0106993037",nama:"AGHNIAUL MUAMALAH",mat:"30.00",matKet:"Kurang",bi:"50.00",biKet:"Memadai"},
+  ];
+
+  // ── Compute totals & rankings ──
+  students.forEach(s => {
+    s.total = Math.round((parseFloat(s.mat) + parseFloat(s.bi)) * 100) / 100;
+  });
+
+  // Sort descending by total for ranking (stable)
+  const sorted = [...students].sort((a, b) => b.total - a.total);
+  sorted.forEach((s, i) => { s.rank = i + 1; });
+
+  // Build lookup map
+  const lookup = {};
+  students.forEach(s => { lookup[s.nisn] = s; });
+
+  // ── Helpers ──
+  function badgeClass(ket) {
+    const k = ket.toLowerCase();
+    if (k.includes('istimewa')) return 'baik-istimewa';
+    if (k === 'baik') return 'baik';
+    if (k === 'memadai') return 'memadai';
+    return 'kurang';
+  }
+
+  function badgeIcon(ket) {
+    const k = ket.toLowerCase();
+    if (k.includes('istimewa')) return '🏆';
+    if (k === 'baik') return '✅';
+    if (k === 'memadai') return '📘';
+    return '⚠️';
+  }
+
+  function namaInisial(nama) {
+    return nama.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+  }
+
+  function rankEmoji(rank) {
+    if (rank === 1) return '🥇';
+    if (rank === 2) return '🥈';
+    if (rank === 3) return '🥉';
+    if (rank <= 10) return '🏅';
+    return '';
+  }
+
+  // ── Main search ──
+  function cariSiswa() {
+    const val  = document.getElementById('nisnInput').value.trim();
+    const area = document.getElementById('resultArea');
+
+    if (!val) {
+      area.innerHTML = `
+        <div class="msg-box">
+          <div class="msg-icon">💡</div>
+          <div class="msg-text">Silakan masukkan NISN terlebih dahulu.</div>
+        </div>`;
+      return;
+    }
+
+    const siswa = lookup[val];
+
+    if (!siswa) {
+      area.innerHTML = `
+        <div class="msg-box">
+          <div class="msg-icon">🔍</div>
+          <div class="msg-text">
+            NISN <strong>${val}</strong> tidak ditemukan dalam data tes.<br/>
+            <span style="font-size:0.85rem;color:#9ca3af;font-style:normal;margin-top:0.4rem;display:block;">Pastikan nomor yang dimasukkan sudah benar.</span>
+          </div>
+        </div>`;
+      return;
+    }
+
+    const matClass  = badgeClass(siswa.matKet);
+    const biClass   = badgeClass(siswa.biKet);
+    const matIcon   = badgeIcon(siswa.matKet);
+    const biIcon    = badgeIcon(siswa.biKet);
+    const initials  = namaInisial(siswa.nama);
+    const matKetDisplay = siswa.matKet.charAt(0).toUpperCase() + siswa.matKet.slice(1);
+    const biKetDisplay  = siswa.biKet.charAt(0).toUpperCase() + siswa.biKet.slice(1);
+    const isTop10   = siswa.rank <= 10;
+    const emoji     = rankEmoji(siswa.rank);
+
+    area.innerHTML = `
+      <div class="result-wrap">
+        <div class="result-card">
+          <div class="result-header${isTop10 ? ' top10' : ''}">
+            <div class="result-avatar">${initials}</div>
+            <div class="result-name-wrap">
+              <div class="result-label">Nama Peserta</div>
+              <div class="result-name">${siswa.nama}</div>
+              <div class="result-nisn-badge">NISN: ${siswa.nisn}</div>
+            </div>
+          </div>
+
+          <div class="result-body">
+
+            <!-- TOTAL + RANKING BAR -->
+            <div class="total-bar">
+              <div>
+                <div class="total-label">Total Nilai</div>
+                <div class="total-value">${siswa.total.toFixed(2)} <span>/ 200</span></div>
+              </div>
+              <div class="rank-bubble">
+                <div class="rank-label">Peringkat</div>
+                <div class="rank-num">${emoji} #${siswa.rank}</div>
+                <div class="rank-of">dari 151 siswa</div>
+              </div>
+            </div>
+
+            <!-- SCORE BOXES -->
+            <div class="scores-grid">
+              <div class="score-box">
+                <div class="score-box-icon">📐</div>
+                <div class="score-subject">Matematika</div>
+                <div class="score-value">${siswa.mat}</div>
+                <div class="badge ${matClass}">${matIcon} ${matKetDisplay}</div>
+              </div>
+              <div class="score-box bi">
+                <div class="score-box-icon">📖</div>
+                <div class="score-subject">Bahasa Indonesia</div>
+                <div class="score-value">${siswa.bi}</div>
+                <div class="badge ${biClass}">${biIcon} ${biKetDisplay}</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <div class="detail-title">📋 Keterangan Predikat</div>
+              <div class="detail-row">
+                <span class="detail-key">Baik - Istimewa</span>
+                <span class="detail-val" style="color:#92400e">Nilai ≥ 90</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Baik</span>
+                <span class="detail-val" style="color:#065f46">Nilai 60 – 89,99</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Memadai</span>
+                <span class="detail-val" style="color:#1e40af">Nilai 30 – 59,99</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Kurang</span>
+                <span class="detail-val" style="color:#9f1239">Nilai &lt; 30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    // Trigger celebration for top 10
+    if (isTop10) {
+      setTimeout(() => showCeleb(siswa), 600);
+    }
+  }
+
+  // ── Celebration ──
+  const congMessages = [
+    "Luar biasa! Kamu meraih peringkat terbaik dari 151 peserta. Pertahankan semangat belajarmu!",
+    "Prestasi yang membanggakan! Kerja kerasmu telah membuahkan hasil yang gemilang.",
+    "Kamu adalah bintang madrasah! Teruslah berprestasi dan menginspirasi teman-temanmu.",
+    "Hasil yang membanggakan! Terus semangat dan raih prestasi yang lebih tinggi lagi.",
+  ];
+
+  function showCeleb(siswa) {
+    document.getElementById('celebRankBadge').textContent = `${rankEmoji(siswa.rank)} Peringkat #${siswa.rank} dari 151 Siswa`;
+    document.getElementById('celebName').textContent = siswa.nama;
+    document.getElementById('celebTotal').textContent = siswa.total.toFixed(2) + ' / 200';
+    document.getElementById('celebMsg').textContent = congMessages[Math.min(siswa.rank - 1, congMessages.length - 1)];
+
+    const overlay = document.getElementById('celebOverlay');
+    overlay.classList.add('show');
+    startConfetti();
+  }
+
+  function closeCeleb() {
+    document.getElementById('celebOverlay').classList.remove('show');
+    stopConfetti();
+  }
+
+  // ── Confetti engine ──
+  let confettiAnim = null;
+  let particles   = [];
+
+  function startConfetti() {
+    const canvas = document.getElementById('confettiCanvas');
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+
+    const colors = ['#c8973a','#e8b84b','#2e8b57','#ffffff','#f59e0b','#10b981','#fde68a'];
+    particles = Array.from({length: 120}, () => ({
+      x:  Math.random() * canvas.width,
+      y:  Math.random() * -canvas.height,
+      w:  6 + Math.random() * 10,
+      h:  3 + Math.random() * 5,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vy: 2 + Math.random() * 4,
+      vx: (Math.random() - 0.5) * 2,
+      rot: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 6,
+      opacity: 0.8 + Math.random() * 0.2,
+    }));
+
+    function frame() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.y   += p.vy;
+        p.x   += p.vx;
+        p.rot += p.rotSpeed;
+        if (p.y > canvas.height) {
+          p.y = -20; p.x = Math.random() * canvas.width;
+        }
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle   = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      });
+      confettiAnim = requestAnimationFrame(frame);
+    }
+    frame();
+  }
+
+  function stopConfetti() {
+    if (confettiAnim) cancelAnimationFrame(confettiAnim);
+    const canvas = document.getElementById('confettiCanvas');
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // Close overlay on backdrop click
+  document.getElementById('celebOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeCeleb();
+  });
+
+  // Enter key support
+  document.getElementById('nisnInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') cariSiswa();
+  });
+</script>
+</body>
+</html>
