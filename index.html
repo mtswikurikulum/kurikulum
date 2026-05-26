@@ -1,1416 +1,1189 @@
 <!DOCTYPE html>
-<html lang="id" dir="ltr">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rancangan Perubahan Kurikulum MTs Wathoniyah Islamiyah</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
-    <style>        
-	html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Mencegah scrollbar ganda */
-	}
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
-	*, *::before, *::after {
-    box-sizing: border-box;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasil TKA 2026 – MTs Wathoniyah Islamiyah Kebarongan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-/* Update pada html, body yang sudah ada */
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+  <style>
+    :root {
+      --green-deep:   #0d4a2f;
+      --green-mid:    #1a6b44;
+      --green-light:  #2e8b57;
+      --gold:         #c8973a;
+      --gold-light:   #e8b84b;
+      --gold-pale:    #fdf3dc;
+      --cream:        #faf8f2;
+      --white:        #ffffff;
+      --text-dark:    #1a2e22;
+      --text-mid:     #3d5a47;
+      --text-soft:    #6b856f;
+      --border:       #d4c5a0;
+      --shadow:       rgba(13,74,47,0.14);
 
-        :root {
-            --primary-green: #2d5f3f;
-            --gold: #d4af37;
-            --light-green: #e8f4ea;
-            --dark-text: #1a3a2a;
-            --accent-teal: #3a8a7a;
-            --contrast-bg: #1a2e22;
-        }
-        
-        .reveal {
-    font-family: 'Poppins', sans-serif;
-    
-    /* Memadukan gambar dengan lapisan putih transparan (90% putih) */
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('backg.jpg');
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* ... settingan posisi lainnya tetap sama ... */
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-        
-        .reveal h1, .reveal h2, .reveal h3 {
-            font-family: 'Amiri', serif;
-            color: var(--primary-green);
-            text-transform: none;
-            font-weight: 700;
-        }
-        
-        .reveal h1 {
-            font-size: clamp(1.5em, 5vw, 2.8em);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .reveal h2 {
-            font-size: clamp(1.3em, 4vw, 2.2em);
-            margin-bottom: 15px;
-            border-bottom: 3px solid var(--gold);
-            padding-bottom: 10px;
-        }
-        
-        .reveal h3 {
-            font-size: clamp(1.1em, 3vw, 1.6em);
-            color: var(--accent-teal);
-        }
-        
-        .reveal p, .reveal li {
-            font-size: clamp(0.9em, 2.5vw, 1.3em);
-            line-height: 1.6;
-            color: var(--dark-text);
-        }
-        
-        .reveal strong {
-            color: var(--primary-green);
-            font-weight: 600;
-        }
-        
-        .slides section {
-    padding: 20px;
-    box-sizing: border-box; /* Memastikan padding tidak menambah lebar */
-}
-
-@media (min-width: 768px) {
-    .slides section {
-        /* Ubah padding kiri-kanan dari 60px menjadi 80px atau 100px */
-        padding: 40px 100px; 
-        width: 100%; /* Pastikan section tidak melebar sendiri */
+      --badge-baik-istimewa-bg: #fff7e6; --badge-baik-istimewa-text: #92400e; --badge-baik-istimewa-border: #f59e0b;
+      --badge-baik-bg:          #ecfdf5; --badge-baik-text:          #065f46; --badge-baik-border:          #10b981;
+      --badge-memadai-bg:       #eff6ff; --badge-memadai-text:        #1e40af; --badge-memadai-border:        #3b82f6;
+      --badge-kurang-bg:        #fff1f2; --badge-kurang-text:         #9f1239; --badge-kurang-border:         #f43f5e;
     }
-}
-                        
-        .islamic-pattern {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            opacity: 0.1;
-            background: radial-gradient(circle, var(--gold) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        
-        @media (min-width: 768px) {
-            .islamic-pattern {
-                width: 200px;
-                height: 200px;
-            }
-        }
-        
-        .slide-header {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        @media (min-width: 768px) {
-            .slide-header {
-                padding: 30px;
-                margin-bottom: 30px;
-                border-radius: 15px;
-            }
-        }
-        
-        .slide-header h2 {
-            color: white;
-            border: none;
-            margin: 0;
-        }
-        
-        .info-box {
-            background: white;
-            border-left: 5px solid var(--gold);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            /* Transition for hover/click */
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-        }
-        
-        @media (min-width: 768px) {
-            .info-box {
-                padding: 25px;
-                margin: 20px 0;
-            }
-        }
-        
-        .stat-card {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        @media (min-width: 768px) {
-            .stat-card {
-                padding: 30px;
-                margin: 15px;
-            }
-        }
-        
-        .stat-number {
-            font-size: clamp(2em, 6vw, 3.5em);
-            font-weight: 700;
-            color: var(--gold);
-            margin: 10px 0;
-        }
-        
-        .stat-label {
-            font-size: clamp(0.9em, 2vw, 1.2em);
-            opacity: 0.9;
-        }
-        
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            align-items: start;
-        }
-        
-        @media (min-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-        }
-        
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-        
-        @media (min-width: 768px) {
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
-            }
-        }
-        
-        .comparison-table {
-            width: 100%;
-            margin: 15px 0;
-            border-collapse: separate;
-            border-spacing: 0;
-            overflow-x: auto;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        @media (min-width: 768px) {
-            .comparison-table {
-                margin: 25px 0;
-                display: table;
-            }
-        }
-        
-        .comparison-table th {
-            background: var(--primary-green);
-            color: white;
-            padding: 12px 8px;
-            font-size: clamp(0.9em, 2.5vw, 1.3em);
-            font-weight: 600;
-        }
-        
-        @media (min-width: 768px) {
-            .comparison-table th {
-                padding: 20px;
-            }
-        }
-        
-        .comparison-table td {
-            background: white;
-            padding: 10px 8px;
-            font-size: clamp(0.8em, 2vw, 1.2em);
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        @media (min-width: 768px) {
-            .comparison-table td {
-                padding: 18px;
-            }
-        }
-        
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .highlight-green {
-            background: var(--light-green);
-            padding: 3px 10px;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-        
-        .badge {
-            display: inline-block;
-            background: var(--gold);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: clamp(0.8em, 2vw, 1.1em);
-            font-weight: 600;
-            margin: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        @media (min-width: 768px) {
-            .badge {
-                padding: 8px 20px;
-            }
-        }
-        
-        .progress-bar {
-            background: #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 25px;
-            margin: 15px 0;
-            transition: transform 0.3s ease;
-        }
-        
-        @media (min-width: 768px) {
-            .progress-bar {
-                height: 30px;
-            }
-        }
-        
-        .progress-fill {
-            background: linear-gradient(90deg, var(--primary-green) 0%, var(--accent-teal) 100%);
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: clamp(0.8em, 2vw, 1.1em);
-            width: 0%; /* Start at 0 for animation */
-            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        
-        .arabic-text {
-            font-family: 'Amiri', serif;
-            font-size: clamp(1em, 3vw, 1.4em);
-            color: var(--primary-green);
-            direction: rtl;
-            font-weight: 700;
-        }
-        
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        ul li::before {
-            content: "◆";
-            color: var(--gold);
-            font-weight: bold;
-            display: inline-block;
-            width: 1.2em;
-            margin-left: 10px;
-        }
-        
-        .icon-box {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        @media (min-width: 768px) {
-            .icon-box {
-                padding: 25px;
-            }
-        }
-        
-        .icon {
-            font-size: clamp(2em, 5vw, 3em);
-            margin-bottom: 10px;
-        }
-        
-        @media (min-width: 768px) {
-            .icon {
-                margin-bottom: 15px;
-            }
-        }
-        
-        .chart-container {
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        @media (min-width: 768px) {
-            .chart-container {
-                padding: 30px;
-            }
-        }
-        
-        .kitab-item {
-            background: white;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 8px;
-            border-left: 4px solid var(--gold);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        @media (min-width: 768px) {
-            .kitab-item {
-                padding: 15px;
-                margin: 10px 0;
-            }
-        }
-        
-        .kitab-title {
-            font-family: 'Amiri', serif;
-            font-size: clamp(1em, 2.5vw, 1.3em);
-            color: var(--primary-green);
-            font-weight: 700;
-            direction: rtl;
-            margin-bottom: 5px;
-        }
-        
-        .kitab-subject {
-            font-size: clamp(0.75em, 2vw, 0.95em);
-            color: var(--accent-teal);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-		/* Tim Penyusun specific styles */
-.team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    align-items: stretch;
-}
 
-.member {
-    flex: 1 1 200px;
-    margin: 0;
-    padding: 15px;
-    text-align: center;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.member[data-color="gold"] { border-left: 4px solid var(--gold); }
-.member[data-color="teal"] { border-left: 4px solid var(--accent-teal); }
-.member[data-color="green"] { border-left: 4px solid var(--primary-green); }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      min-height: 100vh;
+      color: var(--text-dark);
+      position: relative;
+      overflow-x: hidden;
+    }
 
-.member:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(45, 95, 63, 0.2);
-}
+    /* ── DECORATIVE BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% 20%, rgba(13,74,47,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 90% 80%, rgba(200,151,58,0.08) 0%, transparent 60%);
+      pointer-events: none; z-index: 0;
+    }
 
-.member-name {
-    font-weight: 700;
-    color: var(--primary-green);
-    font-size: 0.95em;
-    margin-bottom: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+    /* geometric pattern overlay */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(13,74,47,0.025) 30px, rgba(13,74,47,0.025) 31px),
+        repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(200,151,58,0.018) 30px, rgba(200,151,58,0.018) 31px);
+      pointer-events: none; z-index: 0;
+    }
 
-.badge[data-type="ketua"] { background: var(--gold); }
-.badge[data-type="secretary"] { background: var(--accent-teal); }
-.badge[data-type="unit"] { background: #666; }
-.badge[data-type="consultant"] { background: #888; }
+    .wrapper {
+      position: relative; z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
 
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      padding: 2.5rem 2rem 2rem;
+      background: linear-gradient(155deg, var(--green-deep) 0%, var(--green-mid) 55%, #23704a 100%);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px var(--shadow), 0 2px 8px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
 
-        /* =========================================
-           ANIMATION & INTERACTION STYLES
-           ========================================= */
+    .header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle 200px at 10% 90%, rgba(200,151,58,0.18) 0%, transparent 70%),
+        radial-gradient(circle 160px at 90% 10%, rgba(200,151,58,0.12) 0%, transparent 70%);
+    }
 
-        /* 1. Element Entrance Animations (On Slide Enter) */
-        /* Sembunyikan member secara default */
-.reveal .slides section .member {
-    opacity: 0;
-}
+    /* decorative arch lines */
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 100px;
+      border-top: 2px solid rgba(200,151,58,0.25);
+      border-radius: 50% 50% 0 0;
+    }
 
-/* Jalankan animasi saat slide aktif (class .present) */
-.reveal .slides section.present .member {
-    animation: flyInBottom 0.8s ease-out forwards;
-}
-        /* Fly in from left */
-        @keyframes flyInLeft {
-            0% { opacity: 0; transform: translateX(-50px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
+    .header-inner { position: relative; z-index: 1; }
 
-        /* Fly in from bottom */
-        @keyframes flyInBottom {
-            0% { opacity: 0; transform: translateY(50px) scale(0.9); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-        }
+    .bismillah {
+      font-family: 'Amiri', serif;
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
 
-        /* Pop in */
-        @keyframes popIn {
-            0% { opacity: 0; transform: scale(0.5); }
-            70% { transform: scale(1.05); }
-            100% { opacity: 1; transform: scale(1); }
-        }
+    .ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .ornament-line {
+      flex: 1; max-width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .ornament-diamond {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      box-shadow: 0 0 6px rgba(200,151,58,0.6);
+    }
 
-        /* Initial state for elements before animation triggers */
-        .reveal .slides section .info-box,
-        .reveal .slides section .stat-card,
-        .reveal .slides section .icon-box,
-        .reveal .slides section .kitab-item,
-        .reveal .slides section .badge {
-            opacity: 0; /* Hidden by default until slide is present */
-        }
+    .school-name {
+      font-family: 'Lora', serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
 
-        /* Trigger animations when slide has class 'present' */
-        .reveal .slides section.present .info-box:nth-child(odd),
-        .reveal .slides section.present .icon-box:nth-child(odd),
-        .reveal .slides section.present .stat-card:nth-child(odd),
-        .reveal .slides section.present .kitab-item:nth-child(odd) {
-            animation: flyInLeft 0.8s ease-out forwards;
-        }
+    .school-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
 
-        .reveal .slides section.present .info-box:nth-child(even),
-        .reveal .slides section.present .icon-box:nth-child(even),
-        .reveal .slides section.present .stat-card:nth-child(even),
-        .reveal .slides section.present .kitab-item:nth-child(even) {
-            animation: flyInBottom 0.8s ease-out forwards;
-        }
+    .divider-gold {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 2px;
+      margin: 0 auto 1.25rem;
+    }
 
-        .reveal .slides section.present .slide-header {
-            animation: popIn 0.6s ease-out forwards;
-        }
-        
-        .reveal .slides section.present .badge {
-            animation: popIn 0.5s ease-out forwards;
-        }
+    .page-title {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.02em;
+    }
 
+    .badge-year {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.3rem 1.2rem;
+      background: rgba(200,151,58,0.25);
+      border: 1px solid rgba(200,151,58,0.5);
+      border-radius: 50px;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
 
-        /* 2. Enhanced Hover Effects */
-        
-        .info-box:hover, .stat-card:hover, .icon-box:hover, .kitab-item:hover {
-            transform: translateY(-8px) rotate(1deg) scale(1.02);
-            box-shadow: 0 15px 30px rgba(45, 95, 63, 0.2);
-            border-bottom: 4px solid var(--gold);
-            z-index: 5;
-            cursor: pointer;
-        }
-        
-        .badge:hover {
-            transform: scale(1.1) rotate(-3deg);
-            background: var(--accent-teal);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        }
+    /* ── SEARCH CARD ── */
+    .search-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 2rem 2rem 2.25rem;
+      box-shadow: 0 6px 30px var(--shadow), 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid rgba(212,197,160,0.4);
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .comparison-table tr:hover td {
-            background-color: var(--light-green);
-            transform: scale(1.01);
-            transition: all 0.2s;
-            cursor: cell;
-        }
+    .search-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-light), var(--gold));
+      border-radius: 18px 18px 0 0;
+    }
 
+    .search-title {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.35rem;
+    }
 
-        /* 3. Click Interaction: HIGH CONTRAST MODE */
-        
-        .contrast-active {
-            background: var(--contrast-bg) !important;
-            border: 2px solid var(--gold) !important;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5) !important;
-            transform: scale(1.05) !important;
-            z-index: 100 !important;
-        }
-        
-        /* Force text colors in contrast mode */
-        .contrast-active h3, 
-        .contrast-active h2, 
-        .contrast-active .stat-number, 
-        .contrast-active strong,
-        .contrast-active .kitab-title {
-            color: var(--gold) !important;
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
-        }
-        
-        .contrast-active p, 
-        .contrast-active li, 
-        .contrast-active .stat-label,
-        .contrast-active .kitab-subject,
-        .contrast-active .icon {
-            color: white !important;
-            opacity: 1 !important;
-        }
+    .search-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
 
-        .contrast-active .badge {
-            background: white !important;
-            color: var(--contrast-bg) !important;
-        }
+    .input-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
 
-    </style>
+    .nisn-input {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.85rem 1.1rem;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: var(--cream);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+      letter-spacing: 0.06em;
+    }
+
+    .nisn-input::placeholder { color: #aabbb0; font-weight: 400; letter-spacing: 0; }
+
+    .nisn-input:focus {
+      border-color: var(--green-light);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(46,139,87,0.12);
+    }
+
+    .btn-search {
+      padding: 0.85rem 1.75rem;
+      background: linear-gradient(135deg, var(--green-mid), var(--green-deep));
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+      box-shadow: 0 4px 14px rgba(13,74,47,0.3);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .btn-search:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(13,74,47,0.38);
+    }
+    .btn-search:active { transform: translateY(0); }
+
+    /* ── RESULT CARD ── */
+    .result-wrap {
+      animation: slideUp 0.45s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 36px var(--shadow), 0 2px 8px rgba(0,0,0,0.07);
+      border: 1px solid rgba(212,197,160,0.5);
+    }
+
+    .result-header {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .result-avatar {
+      width: 56px; height: 56px;
+      background: rgba(200,151,58,0.2);
+      border: 2px solid rgba(200,151,58,0.5);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .result-name-wrap { flex: 1; min-width: 0; }
+
+    .result-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    .result-name {
+      font-family: 'Lora', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .result-nisn-badge {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.2rem 0.75rem;
+      background: rgba(255,255,255,0.12);
+      border-radius: 50px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .result-body { padding: 2rem; }
+
+    .scores-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .score-box {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(212,197,160,0.5);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .score-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(13,74,47,0.1);
+    }
+
+    .score-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0; width: 4px;
+      border-radius: 14px 0 0 14px;
+      background: var(--green-light);
+    }
+
+    .score-box.bi::before { background: var(--gold); }
+
+    .score-box-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .score-subject {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .score-value {
+      font-family: 'Lora', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1.5px solid;
+    }
+
+    .badge.baik-istimewa {
+      background: var(--badge-baik-istimewa-bg);
+      color: var(--badge-baik-istimewa-text);
+      border-color: var(--badge-baik-istimewa-border);
+    }
+    .badge.baik {
+      background: var(--badge-baik-bg);
+      color: var(--badge-baik-text);
+      border-color: var(--badge-baik-border);
+    }
+    .badge.memadai {
+      background: var(--badge-memadai-bg);
+      color: var(--badge-memadai-text);
+      border-color: var(--badge-memadai-border);
+    }
+    .badge.kurang {
+      background: var(--badge-kurang-bg);
+      color: var(--badge-kurang-text);
+      border-color: var(--badge-kurang-border);
+    }
+
+    /* ── DETAIL ROW ── */
+    .detail-section {
+      border-top: 1px solid rgba(212,197,160,0.5);
+      padding-top: 1.25rem;
+    }
+
+    .detail-title {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed rgba(212,197,160,0.4);
+    }
+    .detail-row:last-child { border-bottom: none; }
+
+    .detail-key {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+    .detail-val {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* ── ERROR / EMPTY ── */
+    .msg-box {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--white);
+      border-radius: 18px;
+      border: 1px solid rgba(212,197,160,0.4);
+      box-shadow: 0 4px 20px var(--shadow);
+      animation: slideUp 0.35s ease both;
+    }
+
+    .msg-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+    .msg-text {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212,197,160,0.4);
+    }
+
+    .footer-ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.5rem; margin-bottom: 0.75rem;
+    }
+    .footer-line {
+      width: 40px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .footer-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+    .footer-text {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+    .footer-text strong { color: var(--green-mid); }
+
+    /* ── TOTAL SCORE BAR ── */
+    .total-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      border-radius: 14px;
+      padding: 1.1rem 1.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .total-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 700;
+    }
+
+    .total-value {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .total-value span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 400;
+    }
+
+    .rank-bubble {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(200,151,58,0.22);
+      border: 2px solid rgba(200,151,58,0.55);
+      border-radius: 12px;
+      padding: 0.6rem 1.1rem;
+      min-width: 80px;
+    }
+
+    .rank-bubble .rank-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .rank-bubble .rank-num {
+      font-family: 'Lora', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1.1;
+    }
+
+    .rank-bubble .rank-of {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── TOP-10 HEADER GLOW ── */
+    .result-header.top10 {
+      background: linear-gradient(135deg, #7c4a03 0%, #c8780a 45%, #7c4a03 100%);
+      animation: goldenPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes goldenPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200,151,58,0); }
+      50%       { box-shadow: 0 0 24px 6px rgba(200,151,58,0.35); }
+    }
+
+    /* ── CELEBRATION OVERLAY ── */
+    #celebOverlay {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: rgba(10,30,18,0.82);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    #celebOverlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .celeb-box {
+      background: linear-gradient(155deg, #0d4a2f, #1a6b44);
+      border: 2px solid rgba(200,151,58,0.6);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(200,151,58,0.2);
+      animation: popIn 0.5s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .celeb-box::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle 160px at 50% 0%, rgba(200,151,58,0.15), transparent);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .celeb-stars {
+      font-size: 2.2rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      animation: starFloat 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes starFloat {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-6px); }
+    }
+
+    .celeb-rank-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #c8973a, #e8b84b, #c8973a);
+      color: #3d1f00;
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.4rem 1.4rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 16px rgba(200,151,58,0.4);
+    }
+
+    .celeb-title {
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .celeb-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .celeb-msg {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .celeb-total {
+      background: rgba(200,151,58,0.18);
+      border: 1px solid rgba(200,151,58,0.4);
+      border-radius: 12px;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Lora', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .celeb-total small {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .btn-close-celeb {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      padding: 0.6rem 1.75rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-close-celeb:hover { background: rgba(255,255,255,0.18); }
+
+    /* ── CONFETTI CANVAS ── */
+    #confettiCanvas {
+      position: fixed; inset: 0;
+      pointer-events: none;
+      z-index: 10000;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .school-name { font-size: 1.35rem; }
+      .scores-grid { grid-template-columns: 1fr; }
+      .input-group { flex-direction: column; }
+      .btn-search { width: 100%; }
+      .result-header { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-    <div class="reveal">
-        <div class="slides">
-            
-            <section>
-                <div class="islamic-pattern"></div>
-                <h1>RANCANGAN PERUBAHAN STRUKTUR KURIKULUM</h1>
-                <h3>MTs Wathoniyah Islamiyah Kebarongan</h3>
-                <div style="margin: 40px 0;">
-                    <p class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
-                </div>
-                <p style="font-size: clamp(1em, 3vw, 1.4em); color: var(--accent-teal); font-style: italic;">
-                    "Menuju Integrasi Kurikulum Nasional dan Pesantren<br>yang Efektif dan Mendalam"
-                </p>
-                <p style="margin-top: 40px; font-size: clamp(0.9em, 2.5vw, 1.2em);">
-                    <strong>YAYASAN POMESMAWI</strong><br>
-                    Kabupaten Banyumas, Jawa Tengah<br>
-                    2026
-                </p>
-            </section>
+<div class="wrapper">
 
-            <section>
-                <div class="slide-header">
-                    <h2>VISI MTs WATHONIYAH ISLAMIYAH</h2>
-                </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
-                    <p style="font-size: clamp(1em, 3vw, 1.5em); text-align: center; line-height: 1.8;">
-                        <strong>"Terwujudnya Generasi <span style="color: var(--gold);">Ulul Albab</span>,<br>
-                        yang Senantiasa Memurnikan Aqidah,<br>
-                        Mengamalkan Syari'ah, Berakhlaq Karimah,<br>
-                        Mencintai Ilmu Pengetahuan,<br>
-                        dan Menebarkan Rahmat bagi Seluruh Alam"</strong>
-                    </p>
-                </div>
-                <div style="margin-top: 30px;">
-                    <p class="arabic-text" style="text-align: center; font-size: clamp(1.2em, 3.5vw, 1.6em);">
-                        رَحْمَةً لِلْعَالَمِينَ
-                    </p>
-                </div>
-            </section>
+  <!-- ════ HEADER ════ -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
 
-            <section>
-                <div class="slide-header">
-                    <h2>LATAR BELAKANG PERUBAHAN</h2>
-                </div>
-                <div class="grid-2">
-                    <div class="icon-box">
-                        <div class="icon">⚖️</div>
-                        <h3>Ketidakseimbangan</h3>
-                        <p>Muatan pesantren masih terbatas dibanding kurikulum Kemenag</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">📚</div>
-                        <h3>Beban Berlebih</h3>
-                        <p>25-26 mata pelajaran per tingkat membebani siswa</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">🔄</div>
-                        <h3>Tumpang Tindih</h3>
-                        <p>Beberapa materi beririsan mengurangi efektivitas</p>
-                    </div>
-                    <div class="icon-box">
-                        <div class="icon">📊</div>
-                        <h3>Distribusi Tidak Merata</h3>
-                        <p>Mata pelajaran pesantren tidak konsisten di semua tingkat</p>
-                    </div>
-                </div>
-            </section>
+      <div class="ornament">
+        <div class="ornament-line"></div>
+        <div class="ornament-diamond"></div>
+        <div class="ornament-line" style="background:linear-gradient(90deg,rgba(200,151,58,1),transparent)"></div>
+      </div>
 
-            <section>
-                <div class="slide-header">
-                    <h2>KONDISI KURIKULUM SAAT INI</h2>
-                </div>
-                <div class="grid-3">
-                    <div class="stat-card">
-                        <div class="stat-number">28</div>
-                        <div class="stat-label">Jam Kurikulum<br>Kemenag/Minggu</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">26</div>
-                        <div class="stat-label">Jam Kurikulum<br>Pesantren/Minggu</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">54</div>
-                        <div class="stat-label">Total Jam<br>Pembelajaran/Minggu</div>
-                    </div>
-                </div>
-                <div class="chart-container" style="margin-top: 20px;">
-                    <h3 style="text-align: center; margin-bottom: 15px;">Perbandingan Alokasi Waktu</h3>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 52%;" data-width="52%">Kemenag: 52%</div>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 48%; background: linear-gradient(90deg, var(--gold) 0%, #c9a030 100%);" data-width="48%">
-                            Pesantren: 48%
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="slide-header">
-                    <h2>TUJUAN PERUBAHAN KURIKULUM</h2>
-                </div>
-                <div class="grid-2" style="margin-top: 20px;">
-                    <div class="info-box">
-                        <h3>🎯 Menyeimbangkan Muatan</h3>
-                        <p>Kurikulum nasional dan pesantren yang harmonis</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>📈 Meningkatkan Kualitas</h3>
-                        <p>Pembelajaran ilmu keislaman secara mendalam</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>🗣️ Memperkuat Bahasa Arab</h3>
-                        <p>Sebagai alat memahami khazanah Islam klasik</p>
-                    </div>
-                    <div class="info-box">
-                        <h3>🌟 Mengoptimalkan Visi-Misi</h3>
-                        <p>Mewujudkan generasi Ulul Albab yang unggul</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="slide-header">
-                    <h2>PRINSIP-PRINSIP PERUBAHAN</h2>
-                </div>
-                <div style="margin-top: 20px;">
-                    <div class="info-box" style="margin: 15px 0;">
-                        <h3 style="margin-bottom: 10px;">1️⃣ PRIORITAS</h3>
-                        <p>Memprioritaskan muatan pesantren tanpa meninggalkan muatan nasional esensial</p>
-                    </div>
-                    <div class="info-box" style="margin: 15px 0;">
-                        <h3 style="margin-bottom: 10px;">2️⃣ INTEGRASI</h3>
-                        <p>Mengintegrasikan mata pelajaran yang memiliki kesamaan substansi</p>
-                    </div>
-                    <div class="info-box" style="margin: 15px 0;">
-                        <h3 style="margin-bottom: 10px;">3️⃣ EFISIENSI</h3>
-                        <p>Mengoptimalkan alokasi waktu tanpa membebani peserta didik secara berlebihan</p>
-                    </div>
-                    <div class="info-box" style="margin: 15px 0;">
-                        <h3 style="margin-bottom: 10px;">4️⃣ KONTINUITAS & FLEKSIBILITAS</h3>
-                        <p>Memastikan keberlanjutan dan memberikan ruang penyesuaian</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="slide-header">
-                    <h2>STRATEGI INTEGRASI KURIKULUM</h2>
-                </div>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Mata Pelajaran Kemenag</th>
-                            <th>Diintegrasikan Dengan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Al-Qur'an Hadis</strong></td>
-                            <td class="highlight-green">Hadits (Pesantren)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Akidah Akhlak</strong></td>
-                            <td class="highlight-green">At-Tauhid (Pesantren)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fikih</strong></td>
-                            <td class="highlight-green">Al-Fiqh (Pesantren)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>SKI</strong></td>
-                            <td class="highlight-green">Sirah Nabawi (Pesantren)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Bahasa Arab</strong></td>
-                            <td class="highlight-green">Al-Lughotul 'Arobiyyah (Pesantren)</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="text-align: center; margin-top: 20px; font-size: clamp(0.9em, 2.5vw, 1.3em);">
-                    <span class="badge">✓ Efisiensi Pembelajaran</span>
-                    <span class="badge">✓ Pendalaman Materi</span>
-                </p>
-            </section>
-
-            <section>
-                <div class="slide-header">
-                    <h2>PERBANDINGAN STRUKTUR KURIKULUM</h2>
-                </div>
-                <div class="grid-2">
-                    <div class="chart-container">
-                        <h3 style="color: var(--primary-green); margin-bottom: 15px;">SEBELUM</h3>
-                        <div class="stat-card" style="margin: 10px 0;">
-                            <div class="stat-label">Kurikulum Kemenag</div>
-                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em);">28 Jam</div>
-                        </div>
-                        <div class="stat-card" style="margin: 10px 0;">
-                            <div class="stat-label">Kurikulum Pesantren</div>
-                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em);">26 Jam</div>
-                        </div>
-                        <div style="margin-top: 15px; padding: 12px; background: var(--light-green); border-radius: 10px;">
-                            <p style="font-size: clamp(0.9em, 2vw, 1.1em); margin: 0;"><strong>Total Mapel:</strong> 25-26</p>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <h3 style="color: var(--gold); margin-bottom: 15px;">SESUDAH</h3>
-                        <div class="stat-card" style="margin: 10px 0; background: linear-gradient(135deg, var(--gold) 0%, #c9a030 100%);">
-                            <div class="stat-label">Kurikulum Kemenag</div>
-                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em); color: white;">20 Jam</div>
-                        </div>
-                        <div class="stat-card" style="margin: 10px 0; background: linear-gradient(135deg, var(--gold) 0%, #c9a030 100%);">
-                            <div class="stat-label">Kurikulum Pesantren</div>
-                            <div class="stat-number" style="font-size: clamp(1.8em, 5vw, 2.5em); color: white;">34 Jam</div>
-                        </div>
-                        <div style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 10px;">
-                            <p style="font-size: clamp(0.9em, 2vw, 1.1em); margin: 0;"><strong>Total Mapel:</strong> 21</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="slide-header">
-                    <h2>KOMPOSISI KURIKULUM BARU</h2>
-                </div>
-                <div class="grid-3" style="margin-bottom: 20px;">
-                    <div class="stat-card">
-                        <div class="stat-number">20</div>
-                        <div class="stat-label">Jam Kurikulum<br>Kemenag</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">34</div>
-                        <div class="stat-label">Jam Kurikulum<br>Pesantren</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">54</div>
-                        <div class="stat-label">Total Jam<br>Per Minggu</div>
-                    </div>
-                </div>
-                <div class="chart-container">
-                    <h3 style="text-align: center; margin-bottom: 20px;">Persentase Distribusi</h3>
-                    <div class="progress-bar" style="height: clamp(35px, 8vw, 50px);">
-                        <div class="progress-fill" style="width: 37%;" data-width="37%">
-                            Kemenag: 37%
-                        </div>
-                    </div>
-                    <div class="progress-bar" style="height: clamp(35px, 8vw, 50px); margin-top: 15px;">
-                        <div class="progress-fill" style="width: 63%; background: linear-gradient(90deg, var(--gold) 0%, #c9a030 100%);" data-width="63%">
-                            Pesantren: 63%
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-             <section>
-                <div class="slide-header">
-                    <h2>PENGUATAN BAHASA ARAB</h2>
-                </div>
-                <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%); margin-bottom: 30px;">
-                    <p class="arabic-text" style="font-size: 1.8em; text-align: center;">
-                        اللغة والعلوم الآلية
-                    </p>
-                    <p style="text-align: center; font-size: 1.3em; margin-top: 15px;">
-                        <em>(Bahasa dan Ilmu Alat)</em>
-                    </p>
-                </div>
-                <div class="grid-2">
-                    <div class="stat-card" style="background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);">
-                        <div class="stat-label">SEBELUM</div>
-                        <div class="stat-number">10</div>
-                        <div class="stat-label">Jam/Minggu</div>
-                    </div>
-                    <div class="stat-card" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">
-                        <div class="stat-label">SESUDAH</div>
-                        <div class="stat-number">14</div>
-                        <div class="stat-label">Jam/Minggu</div>
-                    </div>
-                </div>
-                <div class="info-box" style="margin-top: 30px;">
-                    <h3 style="text-align: center; margin-bottom: 20px;">Empat Kemahiran Berbahasa</h3>
-                    <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-                        <span class="badge">مهارة الاستماع</span>
-                        <span class="badge">مهارة الكلام</span>
-                        <span class="badge">مهارة القراءة</span>
-                        <span class="badge">مهارة الكتابة</span>
-                    </div>
-                </div>
-            </section>
-<section>
-            <div class="slide-header">
-                <h2>MATA PELAJARAN PESANTREN</h2>
-            </div>
-            <div class="grid-3">
-                <div class="info-box">
-                    <p class="arabic-text">علوم الدين</p>
-                    <h3>Ulumuddin</h3>
-                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">At-Tauhid • Hadits • Al-Quran • At-Tajwid • At-Tafsir • Al-Fiqh • Sirah Nabawi</p>
-                    <div class="badge" style="background: var(--primary-green); margin-top: 10px;">18 Jam/Minggu</div>
-                </div>
-                <div class="info-box">
-                    <p class="arabic-text">اللغة والعلوم الآلية</p>
-                    <h3>Bahasa & Ilmu Alat</h3>
-                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">Al-Lughotul 'Arobiyyah • An-Nahwu • Ash-Shorof • At-Tahaji & Al-Imla • Al-Khot</p>
-                    <div class="badge" style="background: var(--accent-teal); margin-top: 10px;">14 Jam/Minggu</div>
-                </div>
-                <div class="info-box">
-                    <p class="arabic-text">الآداب والأخلاق</p>
-                    <h3>Adab & Akhlak</h3>
-                    <p style="font-size: clamp(0.8em, 2vw, 1.1em);">Al-Mahfudzot • Pembentukan Karakter Islami</p>
-                    <div class="badge" style="background: var(--gold); margin-top: 10px;">2 Jam/Minggu</div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>📚 KITAB & BUKU RUJUKAN</h2>
-            </div>
-            <div class="grid-2">
-                <div>
-                    <h3 style="color: var(--primary-green); margin-bottom: 12px; font-size: clamp(1em, 2.5vw, 1.4em);">📖 Ulumuddin</h3>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">At-Tauhid</div>
-                        <div class="kitab-title">كتاب التوحيد</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Hadits</div>
-                        <div class="kitab-title">الْأَرْبَعِينَ النَّوَوِيَّةُ</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">At-Tajwid</div>
-                        <div class="kitab-title">هِدَايَةُ الصِّبْيَانِ</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">At-Tafsir</div>
-                        <div class="kitab-title">التفسير الْمُيَسَّرُ</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Al-Fiqh</div>
-                        <div class="kitab-title">سَفِينَةُ النَّجَاةِ / مَتْنُ أَبِي شُجَاعٍ</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Sirah Nabawi</div>
-                        <div class="kitab-title">خُلَاصَةُ نُورِ الْيَقِينِ</div>
-                    </div>
-                </div>
-                <div>
-                    <h3 style="color: var(--accent-teal); margin-bottom: 12px; font-size: clamp(1em, 2.5vw, 1.4em);">✍️ Bahasa & Ilmu Alat</h3>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Al-Lughotul 'Arobiyyah</div>
-                        <div class="kitab-title">العَرَبِيَّةُ بَيْنَ أَوْلَادِنَا</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">At-Tahaji</div>
-                        <div class="kitab-title">التَّهَجِّي</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Al-Khot</div>
-                        <div class="kitab-title">Qowaid Khot</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">An-Nahwu</div>
-                        <div class="kitab-title">Modul Ust Muflih</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Ash-Shorof</div>
-                        <div class="kitab-title">سُلَّمُ الْمَعْرِفَةِ</div>
-                    </div>
-                    <div class="kitab-item">
-                        <div class="kitab-subject">Al-Mahfudzot</div>
-                        <div class="kitab-title">كِتَابُ الْمَحْفُوظَاتِ</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>KEUNGGULAN KURIKULUM BARU</h2>
-            </div>
-            <div class="grid-2">
-                <div class="icon-box">
-                    <div class="icon">🔗</div>
-                    <h3>Integrasi Lebih Baik</h3>
-                    <p>PAI Kemenag terintegrasi penuh dengan muatan pesantren</p>
-                    <div class="badge">26 → 21 Mapel</div>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">⚖️</div>
-                    <h3>Pemerataan Distribusi</h3>
-                    <p>Semua mapel pesantren konsisten di kelas 7, 8, dan 9</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">📖</div>
-                    <h3>Penguatan Bahasa Arab</h3>
-                    <p>Alokasi waktu meningkat dari 10 jam menjadi 14 jam/minggu</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">🎯</div>
-                    <h3>Fokus Kompetensi Inti</h3>
-                    <p>Pendalaman Ulumuddin mendapat 18 jam/minggu</p>
-                </div>
-            </div>
-            <div class="info-box" style="margin-top: 20px; text-align: center;">
-                <p style="font-size: clamp(1em, 3vw, 1.4em); margin: 0;">
-                    <strong>✓ Tetap Memenuhi Standar Nasional</strong>
-                </p>
-                <p style="font-size: clamp(0.9em, 2.5vw, 1.2em); margin-top: 10px;">
-                    Muatan mata pelajaran umum esensial sesuai standar pemerintah
-                </p>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>TAHAPAN IMPLEMENTASI</h2>
-            </div>
-            <div class="info-box" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); color: white; margin: 15px 0;">
-                <h3 style="color: white;">TAHAP 1: PERSIAPAN (3 Bulan)</h3>
-                <ul style="color: white;">
-                    <li>Sosialisasi kepada stakeholder</li>
-                    <li>Penyusunan silabus dan RPP</li>
-                    <li>Pelatihan guru dan tenaga kependidikan</li>
-                    <li>Penyiapan sarana dan prasarana</li>
-                </ul>
-            </div>
-            <div class="info-box" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; margin: 15px 0;">
-                <h3 style="color: white;">TAHAP 2: UJI COBA (1 Semester)</h3>
-                <ul style="color: white;">
-                    <li>Implementasi di kelas 7</li>
-                    <li>Monitoring dan evaluasi berkala</li>
-                    <li>Penyesuaian dan perbaikan</li>
-                </ul>
-            </div>
-            <div class="info-box" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; margin: 15px 0;">
-                <h3 style="color: white;">TAHAP 3: IMPLEMENTASI PENUH</h3>
-                <ul style="color: white;">
-                    <li>Tahun ke-2: Kelas 7 dan 8</li>
-                    <li>Tahun ke-3: Semua tingkat (7, 8, 9)</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>STRATEGI PEMBELAJARAN</h2>
-            </div>
-            <div class="grid-2">
-                <div class="icon-box">
-                    <div class="icon">🔗</div>
-                    <h3>Integrasi Pembelajaran</h3>
-                    <p>Menghubungkan antar mata pelajaran yang berkaitan</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">👥</div>
-                    <h3>Pembelajaran Aktif</h3>
-                    <p>Melibatkan partisipasi aktif peserta didik</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">💻</div>
-                    <h3>Berbasis IT</h3>
-                    <p>Memanfaatkan teknologi informasi dalam pembelajaran</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">🌍</div>
-                    <h3>Kontekstual</h3>
-                    <p>Menghubungkan materi dengan kehidupan nyata</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>SISTEM EVALUASI</h2>
-            </div>
-            <div style="margin-top: 20px;">
-                <div class="info-box" style="margin: 20px 0;">
-                    <h3 style="color: var(--primary-green); margin-bottom: 12px;">📊 EVALUASI PROSES</h3>
-                    <p>Penilaian terhadap proses pembelajaran yang dilakukan secara berkala untuk memastikan kualitas pembelajaran berjalan optimal</p>
-                </div>
-                <div class="info-box" style="margin: 20px 0;">
-                    <h3 style="color: var(--accent-teal); margin-bottom: 12px;">📝 EVALUASI HASIL</h3>
-                    <p>Penilaian terhadap hasil belajar peserta didik melalui ujian dan tes untuk mengukur pencapaian kompetensi</p>
-                </div>
-                <div class="info-box" style="margin: 20px 0;">
-                    <h3 style="color: var(--gold); margin-bottom: 12px;">🎯 EVALUASI PROGRAM</h3>
-                    <p>Penilaian terhadap efektivitas implementasi kurikulum secara keseluruhan untuk perbaikan berkelanjutan</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>MANFAAT PERUBAHAN KURIKULUM</h2>
-            </div>
-            <div class="grid-2">
-                <div class="info-box">
-                    <h3>👨‍🎓 Bagi Peserta Didik</h3>
-                    <ul>
-                        <li>Pendidikan seimbang ilmu umum dan agama</li>
-                        <li>Penguasaan bahasa Arab yang baik</li>
-                        <li>Beban belajar lebih efisien</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>👨‍🏫 Bagi Pendidik</h3>
-                    <ul>
-                        <li>Panduan pembelajaran yang jelas</li>
-                        <li>Alokasi waktu yang memadai</li>
-                        <li>Integrasi materi yang lebih baik</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>🏫 Bagi Lembaga</h3>
-                    <ul>
-                        <li>Peningkatan mutu dan daya saing</li>
-                        <li>Keunggulan sebagai pesantren modern</li>
-                        <li>Reputasi lembaga yang amanah</li>
-                    </ul>
-                </div>
-                <div class="info-box">
-                    <h3>👥 Bagi Masyarakat</h3>
-                    <ul>
-                        <li>Lulusan berkualitas dan berakhlak mulia</li>
-                        <li>Kontribusi positif bagi masyarakat</li>
-                        <li>Generasi Ulul Albab yang unggul</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>KEBUTUHAN SARANA & PRASARANA</h2>
-            </div>
-            <div class="grid-3">
-                <div class="icon-box">
-                    <div class="icon">🏛️</div>
-                    <h3>Ruang Kelas</h3>
-                    <p>Ruang kelas memadai, perpustakaan lengkap, dan aula untuk kegiatan bersama</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">📚</div>
-                    <h3>Bahan Ajar</h3>
-                    <p>Buku teks, kitab klasik, dan media pembelajaran audio-visual</p>
-                </div>
-                <div class="icon-box">
-                    <div class="icon">👨‍🏫</div>
-                    <h3>Tenaga Pendidik</h3>
-                    <p>Guru kompeten, ustadz/ustadzah ahli, rasio ideal 1:20</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>TARGET PENCAPAIAN LULUSAN</h2>
-            </div>
-            <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%); margin-bottom: 20px;">
-                <h3 style="text-align: center; color: var(--primary-green); font-size: clamp(1.2em, 3.5vw, 1.8em);">Generasi Ulul Albab</h3>
-            </div>
-            <div class="grid-2">
-                <div class="stat-card">
-                    <div class="icon">🕌</div>
-                    <h3 style="color: white; margin: 12px 0;">Memurnikan Aqidah</h3>
-                    <p style="color: white; opacity: 0.9;">Pemahaman tauhid yang benar dan mendalam</p>
-                </div>
-                <div class="stat-card">
-                    <div class="icon">📿</div>
-                    <h3 style="color: white; margin: 12px 0;">Mengamalkan Syari'ah</h3>
-                    <p style="color: white; opacity: 0.9;">Praktik ibadah yang benar sesuai tuntunan</p>
-                </div>
-                <div class="stat-card">
-                    <div class="icon">🌟</div>
-                    <h3 style="color: white; margin: 12px 0;">Berakhlaq Karimah</h3>
-                    <p style="color: white; opacity: 0.9;">Karakter mulia dalam kehidupan sehari-hari</p>
-                </div>
-                <div class="stat-card">
-                    <div class="icon">📖</div>
-                    <h3 style="color: white; margin: 12px 0;">Mencintai Ilmu</h3>
-                    <p style="color: white; opacity: 0.9;">Semangat belajar sepanjang hayat</p>
-                </div>
-            </div>
-            <div class="info-box" style="margin-top: 20px; text-align: center; background: var(--gold); color: white;">
-                <p class="arabic-text" style="font-size: clamp(1.2em, 3.5vw, 1.8em); color: white; margin-bottom: 8px;">
-                    رَحْمَةً لِلْعَالَمِينَ
-                </p>
-                <p style="font-size: clamp(1em, 2.5vw, 1.4em); margin: 0;">
-                    <strong>Menebarkan Rahmat bagi Seluruh Alam</strong>
-                </p>
-            </div>
-        </section>
-
-        <section>
-            <div class="slide-header">
-                <h2>KESIMPULAN</h2>
-            </div>
-            <div class="info-box" style="background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);">
-                <p style="font-size: clamp(1em, 3vw, 1.4em); line-height: 1.8;">
-                    Rancangan perubahan kurikulum ini merupakan <strong style="color: var(--gold);">langkah strategis</strong> untuk:
-                </p>
-            </div>
-            <div style="margin-top: 20px;">
-                <div class="info-box" style="margin: 15px 0;">
-                    <h3>✓ Menyeimbangkan Muatan Nasional dan Pesantren</h3>
-                    <p>Dari 52:48 menjadi 37:63 dengan total 54 jam per minggu</p>
-                </div>
-                <div class="info-box" style="margin: 15px 0;">
-                    <h3>✓ Meningkatkan Efisiensi Pembelajaran</h3>
-                    <p>Mengurangi beban dari 25-26 menjadi 21 mata pelajaran</p>
-                </div>
-                <div class="info-box" style="margin: 15px 0;">
-                    <h3>✓ Memperkuat Identitas Pesantren</h3>
-                    <p>Penguatan Ulumuddin (18 jam) dan Bahasa Arab (14 jam)</p>
-                </div>
-                <div class="info-box" style="margin: 15px 0;">
-                    <h3>✓ Mewujudkan Visi Generasi Ulul Albab</h3>
-                    <p>Lulusan unggul dalam akademik dan keislaman</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="islamic-pattern"></div>
-            <div class="slide-header">
-                <h2>PENUTUP</h2>
-            </div>
-            <div class="info-box" style="background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-teal) 100%); color: white; padding: 30px; margin: 20px 0;">
-                <p class="arabic-text" style="color: white; font-size: clamp(1.3em, 4vw, 2em); text-align: center; margin-bottom: 15px;">
-                    بَارَكَ اللَّهُ فِيكُمْ
-                </p>
-                <p style="text-align: center; font-size: clamp(1em, 3vw, 1.5em); color: white;">
-                    Semoga Allah SWT memberikan kemudahan dan keberkahan<br>dalam setiap langkah perbaikan pendidikan di madrasah ini
-                </p>
-            </div>
-            <div style="margin-top: 30px; padding: 15px; background: var(--light-green); border-radius: 10px;">
-                <p style="text-align: center; font-size: clamp(0.9em, 2.5vw, 1.2em); margin: 0;">
-                    <strong>YAYASAN POMESMAWI</strong><br>
-                    MTs Wathoniyah Islamiyah Kebarongan<br>
-                    Kabupaten Banyumas, Jawa Tengah
-                </p>
-            </div>
-        </section>
-    <section>
-        <div class="slide-header">
-            <h2>TIM PENYUSUN</h2>
-        </div>
-        
-        <div class="team-grid">
-            <div class="member" data-color="gold">
-                <div class="member-name">Agus Eko Purnomo, S.Ag.</div>
-                <span class="badge" data-type="ketua">Ketua</span>
-            </div>
-
-            <div class="member" data-color="teal">
-                <div class="member-name">Nengklif Saberi, S.Si.</div>
-                <span class="badge" data-type="secretary">Sekretaris I</span>
-            </div>
-
-            <div class="member" data-color="teal">
-                <div class="member-name">Imam Suhada, S.T.</div>
-                <span class="badge" data-type="secretary">Sekretaris II</span>
-            </div>
-
-            <div class="member" data-color="teal">
-                <div class="member-name">Sunaryo, S.Pd.</div>
-                <span class="badge" data-type="secretary">Bendahara</span>
-            </div>
-
-            <div class="member" data-color="green">
-                <div class="member-name">Syahidin, S.Ag.</div>
-                <span class="badge" data-type="unit">Unit Pondok</span>
-            </div>
-
-            <div class="member" data-color="green">
-                <div class="member-name">Yoga Sapta Prawira, S.Pd.I</div>
-                <span class="badge" data-type="unit">Unit Pondok</span>
-            </div>
-
-            <div class="member" data-color="green">
-                <div class="member-name">Taufik, S.Ag.</div>
-                <span class="badge" data-type="unit">Unit MA</span>
-            </div>
-
-            <div class="member" data-color="green">
-                <div class="member-name">Mukhlisin, S.Pd.I</div>
-                <span class="badge" data-type="unit">Unit MI</span>
-            </div>
-
-            <div class="member" data-color="gold">
-                <div class="member-name">Ade Saepudin, B.A., M.Pd.</div>
-                <span class="badge" data-type="consultant">Imam Bukhori</span>
-            </div>
-
-            <div class="member" data-color="gold">
-                <div class="member-name">Syakel ElJauhar, Lc.</div>
-                <span class="badge" data-type="consultant">Imam Bukhori</span>
-            </div>
-
-            <div class="member" data-color="gold">
-                <div class="member-name">'Ashim, Lc., M.H.</div>
-                <span class="badge" data-type="consultant">Imam Bukhori</span>
-            </div>
-        </div>
-        
-        <div class="footer-date">
-            <em>Kebarongan, 21 Januari 2026</em>
-        </div>
-    </section>
+      <div class="school-name">MTs Wathoniyah Islamiyah Kebarongan</div>
+      <div class="school-sub">Kab. Banyumas · Jawa Tengah · NPSN 20363427</div>
+      <div class="divider-gold"></div>
+      <div class="page-title">Hasil Tes Kompetensi Akademik Tahun 2026</div>
+      <div class="badge-year">TKA · TAHUN AJARAN 2025/2026</div>
     </div>
+  </header>
+
+  <!-- ════ SEARCH CARD ════ -->
+  <div class="search-card">
+    <div class="search-title">🔍 Cek Hasil Nilai Anda</div>
+    <div class="search-desc">
+      Masukkan NISN (Nomor Induk Siswa Nasional) yang tertera pada kartu peserta untuk menampilkan hasil tes Anda.
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        id="nisnInput"
+        class="nisn-input"
+        placeholder="Contoh: 0117820752"
+        maxlength="12"
+        inputmode="numeric"
+        autocomplete="off"
+      />
+      <button class="btn-search" onclick="cariSiswa()">Tampilkan Hasil</button>
+    </div>
+  </div>
+
+  <!-- ════ RESULT AREA ════ -->
+  <div id="resultArea"></div>
+
+  <!-- ════ CELEBRATION OVERLAY ════ -->
+  <div id="celebOverlay">
+    <canvas id="confettiCanvas"></canvas>
+    <div class="celeb-box" id="celebBox">
+      <div class="celeb-stars">⭐ 🏆 ⭐</div>
+      <div class="celeb-rank-badge" id="celebRankBadge">Peringkat #1</div>
+      <div class="celeb-title">Selamat! 🎉</div>
+      <div class="celeb-name" id="celebName"></div>
+      <div class="celeb-msg" id="celebMsg"></div>
+      <div class="celeb-total">
+        <small>Total Nilai</small>
+        <span id="celebTotal"></span>
+      </div>
+      <button class="btn-close-celeb" onclick="closeCeleb()">Tutup &times;</button>
+    </div>
+  </div>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="footer">
+    <div class="footer-ornament">
+      <div class="footer-line"></div>
+      <div class="footer-dot"></div>
+      <div class="footer-line" style="background:linear-gradient(90deg,rgba(200,151,58,1),transparent)"></div>
+    </div>
+    <div class="footer-text">
+      <strong>MTs Wathoniyah Islamiyah Kebarongan</strong><br/>
+      Dinas Pendidikan Kab. Banyumas · Provinsi Jawa Tengah<br/>
+      Data bersumber dari: Tes Kemampuan Akademik SMP/MTs Tahun 2026
+    </div>
+  </footer>
+
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        
-        // 1. RANDOMIZE SLIDE TRANSITIONS
-        // Assign a random data-transition to each section before Reveal init
-        const transitions = ['zoom', 'fade', 'slide', 'convex', 'concave'];
-        const sections = document.querySelectorAll('.slides section');
-        
-        sections.forEach(section => {
-            const randomTransition = transitions[Math.floor(Math.random() * transitions.length)];
-            section.setAttribute('data-transition', randomTransition);
-        });
+  const students = [
+    {nisn:"0117820752",nama:"MUAMMAR FARRAS",mat:"43.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116447100",nama:"FADLAN KHAIRULLOH",mat:"40.00",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3106869848",nama:"DZAUQ MAULA ROBBANI",mat:"40.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0116635927",nama:"GHAZY ILHAM PRATAMA",mat:"50.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3110433487",nama:"LATIEF NUR KHOLID",mat:"46.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3118465286",nama:"GALIH PRASETIYA NUGRAHA",mat:"40.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"0101949978",nama:"RIZKY FIRMANSYAH",mat:"63.33",matKet:"Baik",bi:"90.00",biKet:"Baik"},
+    {nisn:"0111142477",nama:"DIYAR BANI HASIM",mat:"46.67",matKet:"Memadai",bi:"93.33",biKet:"Baik"},
+    {nisn:"0103542125",nama:"ZINDAGI OKTOVIANDES",mat:"40.00",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0119388326",nama:"Muhammad Daanish Agung Qushoyyi",mat:"36.67",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3117320013",nama:"MUKHAMAD IRFAN SETIAWAN",mat:"56.67",matKet:"Baik",bi:"96.67",biKet:"Baik - Istimewa"},
+    {nisn:"3106773734",nama:"RAHFI HILMI PRATHAMA",mat:"46.67",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0119917195",nama:"HAIDAR UMAR SYAHIDAN",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0114255269",nama:"FADILA RAKHA SAPUTRA",mat:"36.67",matKet:"Memadai",bi:"60.00",biKet:"Memadai"},
+    {nisn:"0114254002",nama:"NAJMI FAIZUL AKMAL",mat:"40.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0119266213",nama:"IBNU KHULDUN ALQODRI",mat:"30.00",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116270390",nama:"Ahmad Faith Mumtaz Syah",mat:"53.33",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0111324157",nama:"ARYA AHMAD PERMADI",mat:"50.00",matKet:"Memadai",bi:"93.33",biKet:"Baik"},
+    {nisn:"0119669091",nama:"HAMZAH LARINDAN ABDILLAH",mat:"50.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0116589374",nama:"DHAIFULLAH AFKAR AL ADL",mat:"46.67",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"0102659308",nama:"NAUFAL AZZAM AKBAR",mat:"40.00",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0111741682",nama:"ARFI ANGGARASANDI WIJAYASUKMA",mat:"40.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0114707086",nama:"DZULFIKRI AZHARI",mat:"50.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3115349090",nama:"VALLEN ALIF SAPUTRA",mat:"46.67",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0114374432",nama:"ADAM SUKRON NUR ABDILAH",mat:"50.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3104283058",nama:"NAZAR ROIS AL UMAM",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3090230176",nama:"RIFQO ULINNUHA",mat:"50.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0113659961",nama:"PRASETYO MARCO AL BUKHORI",mat:"43.33",matKet:"Memadai",bi:"36.67",biKet:"Kurang"},
+    {nisn:"0117847236",nama:"MUHAMMAD HANAN IBKAR",mat:"60.00",matKet:"Baik",bi:"60.00",biKet:"Memadai"},
+    {nisn:"3107826684",nama:"AZYAN DHIYAULHAQ",mat:"56.67",matKet:"Baik",bi:"86.67",biKet:"Baik"},
+    {nisn:"0106512816",nama:"DANU ADI SETIAWAN",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0111313114",nama:"FALIH PUTRA RAMADHAN",mat:"30.00",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0116212839",nama:"AKILA GIAN ANDARU",mat:"36.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0101324264",nama:"ARFFA PRIYADI OCTAVIAN",mat:"46.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116074088",nama:"HAIDAR MUSYAFFA KHOIRULLAH",mat:"50.00",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0112449493",nama:"SA'YAN MASYKURAN SATIMAN",mat:"40.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0118781838",nama:"NIDAL NAWAF SALAM",mat:"36.67",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0105899986",nama:"ZAIDAAN AKHDAN PRATAMA",mat:"30.00",matKet:"Kurang",bi:"50.00",biKet:"Memadai"},
+    {nisn:"0103326810",nama:"YAQUB AZIZ SATRIA WIJAYA",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0114265061",nama:"RAIS FARQOLITH",mat:"36.67",matKet:"Memadai",bi:"50.00",biKet:"Memadai"},
+    {nisn:"0112459258",nama:"Fajar Syafiq Ashlah",mat:"43.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3113909984",nama:"RAZA ALFIAN ROZAQI",mat:"46.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0115353113",nama:"ADE RIZQI HIDAYAT",mat:"43.33",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0116469120",nama:"Mohammad Faishol Nashif",mat:"60.00",matKet:"Baik",bi:"76.67",biKet:"Baik"},
+    {nisn:"0116938250",nama:"RASYA ALVINO WIYANSYAH",mat:"36.67",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0113585294",nama:"WILDHAN ABDAU ELVAWAZ",mat:"43.33",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"0114525000",nama:"ALAM AKBAR AL FATAH",mat:"60.00",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"0115710770",nama:"ANANDA ALFIN HASNA FIRDAUS",mat:"56.67",matKet:"Baik",bi:"76.67",biKet:"Baik"},
+    {nisn:"0104210625",nama:"KHOIRUL MUBIN",mat:"30.00",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0114928070",nama:"Fayyadh Arib Elfawaz",mat:"43.33",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"3119265689",nama:"RAFIANSYAH SATRIA NUGRAHA",mat:"43.33",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0112479143",nama:"MUHAMMAD QOOBUS ALFARIZY",mat:"43.33",matKet:"Memadai",bi:"46.67",biKet:"Kurang"},
+    {nisn:"0112091753",nama:"MUHAMMAD ZULFA ARKAAN",mat:"40.00",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3100968325",nama:"CAHYA WENDI SETIAWAN",mat:"36.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0102751508",nama:"SYAHRUL FADHEL MUBARROK",mat:"36.67",matKet:"Memadai",bi:"40.00",biKet:"Kurang"},
+    {nisn:"0114661493",nama:"FARHAN ZULFIKAR",mat:"40.00",matKet:"Memadai",bi:"50.00",biKet:"Memadai"},
+    {nisn:"3115562770",nama:"FADHIL OKTAVIAN SYAH",mat:"46.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0092908194",nama:"RIZKI ROMADHONI",mat:"43.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0104817625",nama:"Muhammad Sulthan Ghathfan Athaillah",mat:"36.67",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3100276459",nama:"ROSYID RIDLOTUN HAQ",mat:"30.00",matKet:"Kurang",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0112597213",nama:"ADAM SYAFI' WIRATMOKO",mat:"40.00",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0112050234",nama:"Dodhy Jova Utama",mat:"36.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0118643903",nama:"BINTANG PRATAMA PUTRA ASIANTO",mat:"36.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"0103552522",nama:"AZZAM AL FAQIH",mat:"30.00",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"0103799234",nama:"PRABAHOKI SENTOSA",mat:"40.00",matKet:"Memadai",bi:"40.00",biKet:"Kurang"},
+    {nisn:"3109503384",nama:"NAURA CANTIKA SABRINA",mat:"40.00",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"3116089059",nama:"NABILATUL FA'IZAH",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0104687758",nama:"BARIKLIA HAYATI",mat:"43.33",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0118028272",nama:"NAYLA AZKIYA MUMTAZA",mat:"60.00",matKet:"Baik",bi:"76.67",biKet:"Baik"},
+    {nisn:"3102272727",nama:"SASMITA RAHAYU",mat:"43.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0111710381",nama:"LAYLA KAMEELIA RAHMAN",mat:"63.33",matKet:"Baik",bi:"80.00",biKet:"Baik"},
+    {nisn:"3118803247",nama:"SYAKIRAH PUTRI ALMA ADHIVA",mat:"23.33",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"3118246201",nama:"DIANA ISLAMIATI",mat:"50.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0106022627",nama:"QUINTA NOVIA ZUHAIROH",mat:"56.67",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"3111105977",nama:"AISYAH NURUSSYIFA",mat:"50.00",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0117358205",nama:"SAFIRA NUR SYABANA",mat:"43.33",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0116457873",nama:"NAILA RIDHA BILQISTHI",mat:"50.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3119623092",nama:"HAFIIZAH WAHYU AULIA SARWO EDY",mat:"53.33",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0117974097",nama:"SEKAR ANGGITA KUSUMA WIJAYANTI",mat:"50.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"3114463461",nama:"HUSNIA YASMIN HUMAIRA",mat:"33.33",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"3103893847",nama:"RAISYA KIRANA WAHYUDI",mat:"36.67",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"3100254814",nama:"KHARISMA DEWI SALSABILA",mat:"33.33",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0114597812",nama:"AZKI RIANA ASMITA",mat:"66.67",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"0113521732",nama:"Aqila Syahlaa",mat:"43.33",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"0117010617",nama:"DE NISA PUTRI ALLILA",mat:"33.33",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0104822573",nama:"TSALITSA SALSABILA AZZAHRAH",mat:"40.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0102283105",nama:"ALIFAH DZAKIROH GHINA",mat:"20.00",matKet:"Kurang",bi:"83.33",biKet:"Baik"},
+    {nisn:"3110275083",nama:"NIDA MUFIDAH",mat:"33.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0115276125",nama:"HAFIZA SYAKIRA LUBNA",mat:"43.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3113075877",nama:"CAHYA TSURAYYA DALYPUTRI",mat:"46.67",matKet:"Memadai",bi:"90.00",biKet:"Baik"},
+    {nisn:"3106114035",nama:"SAFIRA AULIA LUTFIANA",mat:"33.33",matKet:"Memadai",bi:"50.00",biKet:"Memadai"},
+    {nisn:"3112270268",nama:"CALYSTA ASRILIA RIZKI",mat:"43.33",matKet:"Memadai",bi:"93.33",biKet:"Baik"},
+    {nisn:"3118560783",nama:"RAHMA WULANDARI",mat:"46.67",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0109021726",nama:"SALWA AULIA HAMNA",mat:"26.67",matKet:"Kurang",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0101047902",nama:"FATIMAH YAZID",mat:"26.67",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"0115103513",nama:"ALVINA KHAERUNNISA",mat:"40.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"0111952170",nama:"MEYLITA PERMATA VIOLA",mat:"46.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0116563565",nama:"Naura Rihabatul Adzkia",mat:"40.00",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"0111724752",nama:"MUSTAQIMAH",mat:"30.00",matKet:"Kurang",bi:"60.00",biKet:"Memadai"},
+    {nisn:"3109638267",nama:"NAYYARA SYAELA NAILLUROHMAH",mat:"53.33",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0103818104",nama:"SYAIFIATUL RIZQI ZAKIYAH",mat:"43.33",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0106708527",nama:"NAIVA MUAZNI RIFQI",mat:"40.00",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3118596457",nama:"JAMILAH ZUHROTU SOLEHAH",mat:"40.00",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"3107036939",nama:"JAUHARAH KHUSNA FAOZAN",mat:"43.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0105840557",nama:"SEPTI RAHAYU FITRIANINGSIH",mat:"50.00",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0101562676",nama:"FAMULAN AULIA DEWI",mat:"63.33",matKet:"Baik",bi:"83.33",biKet:"Baik"},
+    {nisn:"0101839229",nama:"NITA KHOLIFFIANA",mat:"46.67",matKet:"Memadai",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3114763675",nama:"UMI KHOZIYAH SAROFAH",mat:"43.33",matKet:"Memadai",bi:"40.00",biKet:"Kurang"},
+    {nisn:"3109392925",nama:"ARISSA WIJAYANTI",mat:"36.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"3105450945",nama:"MAHRA KEYSA MELIYA HUSNA",mat:"33.33",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"0111707493",nama:"FAHDA JAMILAH",mat:"40.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0117168238",nama:"AGHNIA FUADATUR ROHMAH",mat:"40.00",matKet:"Memadai",bi:"86.67",biKet:"Baik"},
+    {nisn:"3112509607",nama:"KHOTIMATUL ADZKIA",mat:"43.33",matKet:"Memadai",bi:"60.00",biKet:"Memadai"},
+    {nisn:"0118022057",nama:"ANNISA DINDA BILQIS SUJARWO",mat:"53.33",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0114779115",nama:"DEBY OLIVIANA PUTRI",mat:"26.67",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3104699127",nama:"AFIVAH NUR DWI ANASTASYA",mat:"60.00",matKet:"Baik",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3115273205",nama:"NANDITA ZAHRA AULIA RIFANA",mat:"53.33",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"3119924110",nama:"RAHMI AZIZAH",mat:"46.67",matKet:"Memadai",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3110020920",nama:"INAS AWALIYA HUSNA",mat:"50.00",matKet:"Memadai",bi:"43.33",biKet:"Kurang"},
+    {nisn:"3116164516",nama:"QONITAH SALSABILA",mat:"50.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0112370233",nama:"REGINA PUTRI ALIENSYAH",mat:"30.00",matKet:"Kurang",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3100049230",nama:"BELINDA PUTRI",mat:"36.67",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0101633978",nama:"AULIYA NUR RAHMADILAH",mat:"40.00",matKet:"Memadai",bi:"83.33",biKet:"Baik"},
+    {nisn:"0104922470",nama:"KAFA LAILATUL HIDAYAH",mat:"40.00",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"3127728903",nama:"NAZWA NABILA YUMNAYAH",mat:"40.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0116527090",nama:"GENDHIS SHAZIA PUTRI HIDAYAT",mat:"23.33",matKet:"Kurang",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0117527146",nama:"SHOOFI LISTIARIN SYAH PUTRI",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0107852383",nama:"SITI HAFSHAH",mat:"36.67",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0115967846",nama:"WIDYA SHAFA NUR AZIZAH",mat:"73.33",matKet:"Baik",bi:"93.33",biKet:"Baik"},
+    {nisn:"0112555453",nama:"NUR AZIZAH",mat:"40.00",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"3113592720",nama:"ONIEVIA KINTAN BERLIAN",mat:"23.33",matKet:"Kurang",bi:"40.00",biKet:"Kurang"},
+    {nisn:"3102268960",nama:"NESSA RAHMA WATI",mat:"36.67",matKet:"Memadai",bi:"30.00",biKet:"Kurang"},
+    {nisn:"0116077644",nama:"DHIENATA RANA GHIYATS",mat:"46.67",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0111663813",nama:"MUTIARA NADINI",mat:"50.00",matKet:"Memadai",bi:"60.00",biKet:"Memadai"},
+    {nisn:"0117496284",nama:"ALDILLA REYKHANA PUTRI SALSABILA",mat:"30.00",matKet:"Kurang",bi:"76.67",biKet:"Baik"},
+    {nisn:"0112670762",nama:"EVRILIANA",mat:"46.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"3102356344",nama:"PUTRI AZIZAH",mat:"23.33",matKet:"Kurang",bi:"60.00",biKet:"Memadai"},
+    {nisn:"3115369456",nama:"NASYWA AISYAH ATHALLAH",mat:"30.00",matKet:"Kurang",bi:"50.00",biKet:"Memadai"},
+    {nisn:"3110451169",nama:"LAELY NUGI FEBRIANA",mat:"33.33",matKet:"Memadai",bi:"70.00",biKet:"Memadai"},
+    {nisn:"0118594616",nama:"Atika Nur Syahira",mat:"46.67",matKet:"Memadai",bi:"66.67",biKet:"Memadai"},
+    {nisn:"0112048558",nama:"NOURALISHA QIRANI SULARTO",mat:"36.67",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0113119059",nama:"DHEA AISYA FAIHA AZZAHRA",mat:"30.00",matKet:"Kurang",bi:"80.00",biKet:"Baik"},
+    {nisn:"3116206724",nama:"ALFIA NUR FARHAH AKMALIYAH",mat:"36.67",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0114698136",nama:"FARHAH YASMIN MALILLAH",mat:"36.67",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"3113274516",nama:"ARKANA HARI FADILA",mat:"60.00",matKet:"Baik",bi:"63.33",biKet:"Memadai"},
+    {nisn:"3115005527",nama:"NOVITA CHOERUNNISA",mat:"53.33",matKet:"Memadai",bi:"56.67",biKet:"Memadai"},
+    {nisn:"0111185820",nama:"MASNI RAHMANIA",mat:"50.00",matKet:"Memadai",bi:"73.33",biKet:"Memadai"},
+    {nisn:"0112696610",nama:"NEYSHA RAIHANA AZZAMI",mat:"53.33",matKet:"Memadai",bi:"76.67",biKet:"Baik"},
+    {nisn:"0122569593",nama:"ARKENZY ALLUNA",mat:"30.00",matKet:"Kurang",bi:"53.33",biKet:"Memadai"},
+    {nisn:"3117325216",nama:"AZKYA QOTRUNNADA MAHARANI KHAN",mat:"50.00",matKet:"Memadai",bi:"80.00",biKet:"Baik"},
+    {nisn:"0106993037",nama:"AGHNIAUL MUAMALAH",mat:"30.00",matKet:"Kurang",bi:"50.00",biKet:"Memadai"},
+  ];
 
-        // 2. Initialize Reveal
-        Reveal.initialize({
-            hash: true,
-            transitionSpeed: 'default', // controlled via random data attributes now
-            backgroundTransition: 'fade',
-            controls: true,
-            progress: true,
-            center: true,
-            slideNumber: 'c/t',
-            width: '100%',
-            height: '100%',
-            margin: 0.1,
-            minScale: 0.2,
-            maxScale: 2.0,
-            embedded: false,
-            disableLayout: false
-        });
+  // ── Compute totals & rankings ──
+  students.forEach(s => {
+    s.total = Math.round((parseFloat(s.mat) + parseFloat(s.bi)) * 100) / 100;
+  });
 
-        // 3. AUTOMATED STAGGERED DELAYS
-        // Adds delays to grid children so they animate one by one
-        const grids = document.querySelectorAll('.grid-2, .grid-3');
-        grids.forEach(grid => {
-            const children = grid.children;
-            Array.from(children).forEach((child, index) => {
-                child.style.animationDelay = `${(index + 1) * 0.15}s`;
-            });
-        });
-        // 3.b. AUTOMATED STAGGERED DELAYS FOR TEAM (Logika Baru)
-const teamGrids = document.querySelectorAll('.team-grid');
-teamGrids.forEach(grid => {
-    const members = grid.querySelectorAll('.member');
-    members.forEach((member, index) => {
-        // Delay 1 detik per orang (index * 1s)
-        // Member 1 muncul di detik ke-0 (atau 0.5), Member 2 di detik ke-1.5, dst.
-        // Kita tambah sedikit delay awal (0.5s) agar tidak kaget saat slide baru terbuka
-        member.style.animationDelay = `${0.5 + (index * 1)}s`; 
-    });
-});
-        // Stagger list items in kitabs
-        const kitabs = document.querySelectorAll('.kitab-item');
-        kitabs.forEach((item, index) => {
-             // Modulo ensures we don't wait 10 seconds for the last item in a long presentation
-             item.style.animationDelay = `${(index % 5) * 0.1}s`;
-        });
+  // Sort descending by total for ranking (stable)
+  const sorted = [...students].sort((a, b) => b.total - a.total);
+  sorted.forEach((s, i) => { s.rank = i + 1; });
 
-        // 4. CLICK INTERACTION (HIGH CONTRAST)
-        const interactives = document.querySelectorAll('.info-box, .stat-card, .icon-box, .kitab-item, .badge');
-        
-        interactives.forEach(el => {
-            el.addEventListener('click', function(e) {
-                e.stopPropagation(); // prevent bubbling
-                
-                // Toggle the contrast class
-                if (this.classList.contains('contrast-active')) {
-                    this.classList.remove('contrast-active');
-                } else {
-                    // Optional: remove from all others to keep focus on one
-                    interactives.forEach(i => i.classList.remove('contrast-active'));
-                    this.classList.add('contrast-active');
-                }
-            });
-        });
-        
-        // 5. Progress Bar Animation Reset
-        // Ensure progress bars re-animate when slide is shown
-        Reveal.on('slidechanged', event => {
-            // Reset widths
-            document.querySelectorAll('.progress-fill').forEach(bar => {
-               bar.style.width = '0%'; 
-            });
-            
-            // Set widths for current slide
-            setTimeout(() => {
-                const currentSlide = event.currentSlide;
-                currentSlide.querySelectorAll('.progress-fill').forEach(bar => {
-                    const targetWidth = bar.getAttribute('data-width');
-                    if(targetWidth) bar.style.width = targetWidth;
-                });
-            }, 100);
-        });
-        
-        // Initial progress bar load
-        setTimeout(() => {
-             document.querySelectorAll('.present .progress-fill').forEach(bar => {
-                const targetWidth = bar.getAttribute('data-width');
-                if(targetWidth) bar.style.width = targetWidth;
-            });
-        }, 500);
+  // Build lookup map
+  const lookup = {};
+  students.forEach(s => { lookup[s.nisn] = s; });
 
-        window.addEventListener('resize', () => {
-            Reveal.layout();
-        });
-    });
+  // ── Helpers ──
+  function badgeClass(ket) {
+    const k = ket.toLowerCase();
+    if (k.includes('istimewa')) return 'baik-istimewa';
+    if (k === 'baik') return 'baik';
+    if (k === 'memadai') return 'memadai';
+    return 'kurang';
+  }
+
+  function badgeIcon(ket) {
+    const k = ket.toLowerCase();
+    if (k.includes('istimewa')) return '🏆';
+    if (k === 'baik') return '✅';
+    if (k === 'memadai') return '📘';
+    return '⚠️';
+  }
+
+  function namaInisial(nama) {
+    return nama.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
+  }
+
+  function rankEmoji(rank) {
+    if (rank === 1) return '🥇';
+    if (rank === 2) return '🥈';
+    if (rank === 3) return '🥉';
+    if (rank <= 10) return '🏅';
+    return '';
+  }
+
+  // ── Main search ──
+  function cariSiswa() {
+    const val  = document.getElementById('nisnInput').value.trim();
+    const area = document.getElementById('resultArea');
+
+    if (!val) {
+      area.innerHTML = `
+        <div class="msg-box">
+          <div class="msg-icon">💡</div>
+          <div class="msg-text">Silakan masukkan NISN terlebih dahulu.</div>
+        </div>`;
+      return;
+    }
+
+    const siswa = lookup[val];
+
+    if (!siswa) {
+      area.innerHTML = `
+        <div class="msg-box">
+          <div class="msg-icon">🔍</div>
+          <div class="msg-text">
+            NISN <strong>${val}</strong> tidak ditemukan dalam data tes.<br/>
+            <span style="font-size:0.85rem;color:#9ca3af;font-style:normal;margin-top:0.4rem;display:block;">Pastikan nomor yang dimasukkan sudah benar.</span>
+          </div>
+        </div>`;
+      return;
+    }
+
+    const matClass  = badgeClass(siswa.matKet);
+    const biClass   = badgeClass(siswa.biKet);
+    const matIcon   = badgeIcon(siswa.matKet);
+    const biIcon    = badgeIcon(siswa.biKet);
+    const initials  = namaInisial(siswa.nama);
+    const matKetDisplay = siswa.matKet.charAt(0).toUpperCase() + siswa.matKet.slice(1);
+    const biKetDisplay  = siswa.biKet.charAt(0).toUpperCase() + siswa.biKet.slice(1);
+    const isTop10   = siswa.rank <= 10;
+    const emoji     = rankEmoji(siswa.rank);
+
+    area.innerHTML = `
+      <div class="result-wrap">
+        <div class="result-card">
+          <div class="result-header${isTop10 ? ' top10' : ''}">
+            <div class="result-avatar">${initials}</div>
+            <div class="result-name-wrap">
+              <div class="result-label">Nama Peserta</div>
+              <div class="result-name">${siswa.nama}</div>
+              <div class="result-nisn-badge">NISN: ${siswa.nisn}</div>
+            </div>
+          </div>
+
+          <div class="result-body">
+
+            <!-- TOTAL + RANKING BAR -->
+            <div class="total-bar">
+              <div>
+                <div class="total-label">Total Nilai</div>
+                <div class="total-value">${siswa.total.toFixed(2)} <span>/ 200</span></div>
+              </div>
+              <div class="rank-bubble">
+                <div class="rank-label">Peringkat</div>
+                <div class="rank-num">${emoji} #${siswa.rank}</div>
+                <div class="rank-of">dari 151 siswa</div>
+              </div>
+            </div>
+
+            <!-- SCORE BOXES -->
+            <div class="scores-grid">
+              <div class="score-box">
+                <div class="score-box-icon">📐</div>
+                <div class="score-subject">Matematika</div>
+                <div class="score-value">${siswa.mat}</div>
+                <div class="badge ${matClass}">${matIcon} ${matKetDisplay}</div>
+              </div>
+              <div class="score-box bi">
+                <div class="score-box-icon">📖</div>
+                <div class="score-subject">Bahasa Indonesia</div>
+                <div class="score-value">${siswa.bi}</div>
+                <div class="badge ${biClass}">${biIcon} ${biKetDisplay}</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <div class="detail-title">📋 Keterangan Predikat</div>
+              <div class="detail-row">
+                <span class="detail-key">Baik - Istimewa</span>
+                <span class="detail-val" style="color:#92400e">Nilai ≥ 90</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Baik</span>
+                <span class="detail-val" style="color:#065f46">Nilai 60 – 89,99</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Memadai</span>
+                <span class="detail-val" style="color:#1e40af">Nilai 30 – 59,99</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-key">Kurang</span>
+                <span class="detail-val" style="color:#9f1239">Nilai &lt; 30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+
+    // Trigger celebration for top 10
+    if (isTop10) {
+      setTimeout(() => showCeleb(siswa), 600);
+    }
+  }
+
+  // ── Celebration ──
+  const congMessages = [
+    "Luar biasa! Kamu meraih peringkat terbaik dari 151 peserta. Pertahankan semangat belajarmu!",
+    "Prestasi yang membanggakan! Kerja kerasmu telah membuahkan hasil yang gemilang.",
+    "Kamu adalah bintang madrasah! Teruslah berprestasi dan menginspirasi teman-temanmu.",
+    "Hasil yang membanggakan! Terus semangat dan raih prestasi yang lebih tinggi lagi.",
+  ];
+
+  function showCeleb(siswa) {
+    document.getElementById('celebRankBadge').textContent = `${rankEmoji(siswa.rank)} Peringkat #${siswa.rank} dari 151 Siswa`;
+    document.getElementById('celebName').textContent = siswa.nama;
+    document.getElementById('celebTotal').textContent = siswa.total.toFixed(2) + ' / 200';
+    document.getElementById('celebMsg').textContent = congMessages[Math.min(siswa.rank - 1, congMessages.length - 1)];
+
+    const overlay = document.getElementById('celebOverlay');
+    overlay.classList.add('show');
+    startConfetti();
+  }
+
+  function closeCeleb() {
+    document.getElementById('celebOverlay').classList.remove('show');
+    stopConfetti();
+  }
+
+  // ── Confetti engine ──
+  let confettiAnim = null;
+  let particles   = [];
+
+  function startConfetti() {
+    const canvas = document.getElementById('confettiCanvas');
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext('2d');
+
+    const colors = ['#c8973a','#e8b84b','#2e8b57','#ffffff','#f59e0b','#10b981','#fde68a'];
+    particles = Array.from({length: 120}, () => ({
+      x:  Math.random() * canvas.width,
+      y:  Math.random() * -canvas.height,
+      w:  6 + Math.random() * 10,
+      h:  3 + Math.random() * 5,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vy: 2 + Math.random() * 4,
+      vx: (Math.random() - 0.5) * 2,
+      rot: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 6,
+      opacity: 0.8 + Math.random() * 0.2,
+    }));
+
+    function frame() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.y   += p.vy;
+        p.x   += p.vx;
+        p.rot += p.rotSpeed;
+        if (p.y > canvas.height) {
+          p.y = -20; p.x = Math.random() * canvas.width;
+        }
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rot * Math.PI) / 180);
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle   = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      });
+      confettiAnim = requestAnimationFrame(frame);
+    }
+    frame();
+  }
+
+  function stopConfetti() {
+    if (confettiAnim) cancelAnimationFrame(confettiAnim);
+    const canvas = document.getElementById('confettiCanvas');
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // Close overlay on backdrop click
+  document.getElementById('celebOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeCeleb();
+  });
+
+  // Enter key support
+  document.getElementById('nisnInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') cariSiswa();
+  });
 </script>
 </body>
 </html>
